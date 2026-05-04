@@ -1,6 +1,5 @@
 {
-  "generatedAt": "2026-05-04T16:12:01.723Z",
-  "historyGeneratedAt": "2026-05-04T16:12:01.723Z",
+  "generatedAt": "2026-05-04T16:24:57.450Z",
   "shard": "steam",
   "trackedPlayers": [
     "ClassMusic",
@@ -10,16 +9,7 @@
   ],
   "limits": {
     "recentMatchDays": 14,
-    "maxMatchesPerPlayer": 32,
-    "maxRankedSeasonsPerPlayer": 8,
-    "historyRefreshHours": 6
-  },
-  "seasons": {
-    "current": {
-      "id": "division.bro.official.pc-2018-41",
-      "label": "PC 2018-41",
-      "isOffseason": false
-    }
+    "maxMatchesPerPlayer": 32
   },
   "players": [
     {
@@ -685,57 +675,7 @@
           "longestKill": 92,
           "survivedMinutes": 27.1
         }
-      ],
-      "history": {
-        "lifetime": {
-          "duo": {
-            "rounds": 111,
-            "wins": 0,
-            "top10s": 29,
-            "kills": 71,
-            "assists": 8,
-            "damage": 10492,
-            "avgDamage": 95,
-            "kd": 0.64,
-            "winRate": 0,
-            "top10Rate": 26.1,
-            "rankPoints": 0,
-            "tier": "",
-            "subTier": ""
-          },
-          "solo": {
-            "rounds": 69,
-            "wins": 0,
-            "top10s": 12,
-            "kills": 38,
-            "assists": 2,
-            "damage": 5314,
-            "avgDamage": 77,
-            "kd": 0.55,
-            "winRate": 0,
-            "top10Rate": 17.4,
-            "rankPoints": 1,
-            "tier": "",
-            "subTier": ""
-          },
-          "squad": {
-            "rounds": 388,
-            "wins": 21,
-            "top10s": 215,
-            "kills": 308,
-            "assists": 99,
-            "damage": 44796,
-            "avgDamage": 115,
-            "kd": 0.84,
-            "winRate": 5.4,
-            "top10Rate": 55.4,
-            "rankPoints": 1496,
-            "tier": "",
-            "subTier": ""
-          }
-        },
-        "rankedSeasons": []
-      }
+      ]
     },
     {
       "id": "account.e2d2618e382d4e03b7313e696fa8492b",
@@ -1060,57 +1000,7 @@
           "longestKill": 113,
           "survivedMinutes": 25.7
         }
-      ],
-      "history": {
-        "lifetime": {
-          "duo": {
-            "rounds": 77,
-            "wins": 1,
-            "top10s": 14,
-            "kills": 94,
-            "assists": 8,
-            "damage": 13111,
-            "avgDamage": 170,
-            "kd": 1.24,
-            "winRate": 1.3,
-            "top10Rate": 18.2,
-            "rankPoints": 0,
-            "tier": "",
-            "subTier": ""
-          },
-          "solo": {
-            "rounds": 2,
-            "wins": 0,
-            "top10s": 0,
-            "kills": 0,
-            "assists": 0,
-            "damage": 0,
-            "avgDamage": 0,
-            "kd": 0,
-            "winRate": 0,
-            "top10Rate": 0,
-            "rankPoints": 0,
-            "tier": "",
-            "subTier": ""
-          },
-          "squad": {
-            "rounds": 211,
-            "wins": 10,
-            "top10s": 117,
-            "kills": 344,
-            "assists": 71,
-            "damage": 48159,
-            "avgDamage": 228,
-            "kd": 1.71,
-            "winRate": 4.7,
-            "top10Rate": 55.5,
-            "rankPoints": 0,
-            "tier": "",
-            "subTier": ""
-          }
-        },
-        "rankedSeasons": []
-      }
+      ]
     },
     {
       "id": "account.07898eaabddf4b93861abc7622f9056b",
@@ -1735,72 +1625,7 @@
           "longestKill": 76,
           "survivedMinutes": 11.7
         }
-      ],
-      "history": {
-        "lifetime": {
-          "duo": {
-            "rounds": 78,
-            "wins": 1,
-            "top10s": 20,
-            "kills": 37,
-            "assists": 13,
-            "damage": 6092,
-            "avgDamage": 78,
-            "kd": 0.48,
-            "winRate": 1.3,
-            "top10Rate": 25.6,
-            "rankPoints": 0,
-            "tier": "",
-            "subTier": ""
-          },
-          "duo-fpp": {
-            "rounds": 1,
-            "wins": 0,
-            "top10s": 0,
-            "kills": 1,
-            "assists": 0,
-            "damage": 57,
-            "avgDamage": 57,
-            "kd": 1,
-            "winRate": 0,
-            "top10Rate": 0,
-            "rankPoints": 0,
-            "tier": "",
-            "subTier": ""
-          },
-          "solo": {
-            "rounds": 11,
-            "wins": 0,
-            "top10s": 4,
-            "kills": 58,
-            "assists": 0,
-            "damage": 5654,
-            "avgDamage": 514,
-            "kd": 5.27,
-            "winRate": 0,
-            "top10Rate": 36.4,
-            "rankPoints": 0,
-            "tier": "",
-            "subTier": ""
-          },
-          "squad": {
-            "rounds": 351,
-            "wins": 12,
-            "top10s": 184,
-            "kills": 219,
-            "assists": 84,
-            "damage": 32085,
-            "avgDamage": 91,
-            "kd": 0.65,
-            "winRate": 3.4,
-            "top10Rate": 52.4,
-            "rankPoints": 0,
-            "tier": "",
-            "subTier": ""
-          }
-        },
-        "rankedSeasons": []
-      }
+      ]
     },
     {
       "id": "account.697ff771fb804577bc3167c2db33233b",
@@ -2465,72 +2290,7 @@
           "longestKill": 0,
           "survivedMinutes": 15.7
         }
-      ],
-      "history": {
-        "lifetime": {
-          "duo": {
-            "rounds": 98,
-            "wins": 0,
-            "top10s": 26,
-            "kills": 48,
-            "assists": 8,
-            "damage": 7255,
-            "avgDamage": 74,
-            "kd": 0.49,
-            "winRate": 0,
-            "top10Rate": 26.5,
-            "rankPoints": 0,
-            "tier": "",
-            "subTier": ""
-          },
-          "duo-fpp": {
-            "rounds": 1,
-            "wins": 0,
-            "top10s": 0,
-            "kills": 0,
-            "assists": 1,
-            "damage": 43,
-            "avgDamage": 43,
-            "kd": 0,
-            "winRate": 0,
-            "top10Rate": 0,
-            "rankPoints": 0,
-            "tier": "",
-            "subTier": ""
-          },
-          "solo": {
-            "rounds": 33,
-            "wins": 0,
-            "top10s": 8,
-            "kills": 29,
-            "assists": 0,
-            "damage": 3332,
-            "avgDamage": 101,
-            "kd": 0.88,
-            "winRate": 0,
-            "top10Rate": 24.2,
-            "rankPoints": 0,
-            "tier": "",
-            "subTier": ""
-          },
-          "squad": {
-            "rounds": 271,
-            "wins": 8,
-            "top10s": 157,
-            "kills": 130,
-            "assists": 66,
-            "damage": 20324,
-            "avgDamage": 75,
-            "kd": 0.49,
-            "winRate": 3,
-            "top10Rate": 57.9,
-            "rankPoints": 0,
-            "tier": "",
-            "subTier": ""
-          }
-        },
-        "rankedSeasons": []
-      }
+      ]
     }
   ],
   "highlights": {
