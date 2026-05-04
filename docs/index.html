@@ -11,37 +11,93 @@
       <div>
         <img class="brandMark" src="https://wstatic-prod.pubg.com/web/live/main_c473c91/img/1de035e.webp" alt="PUBG BATTLEGROUNDS" />
         <h1>PUBG Squad Tracker</h1>
-        <p id="updatedAt">전적 데이터를 불러오는 중</p>
+        <p id="updatedAt">Loading stats data</p>
       </div>
       <a class="refreshLink" href="./data/pubg-stats.json">JSON</a>
     </header>
 
     <main>
+      <section class="notice">
+        Recent match details come from PUBG match data, which is limited to the latest 14 days. Older records are shown as lifetime totals and ranked season summaries when the API returns them.
+      </section>
+
       <section class="summary" id="summary"></section>
       <section class="players" id="players"></section>
+
       <section class="matches">
         <div class="sectionTitle">
-          <h2>최근 경기</h2>
-          <select id="playerFilter" aria-label="플레이어 필터">
-            <option value="all">전체</option>
+          <h2>Recent Matches By Player</h2>
+          <select id="playerFilter" aria-label="Player filter">
+            <option value="all">All players</option>
           </select>
         </div>
         <div class="tableWrap">
           <table>
             <thead>
               <tr>
-                <th>시간</th>
-                <th>플레이어</th>
-                <th>맵</th>
-                <th>모드</th>
-                <th>순위</th>
-                <th>킬</th>
-                <th>딜량</th>
+                <th>Time</th>
+                <th>Player</th>
+                <th>Map</th>
+                <th>Mode</th>
+                <th>Rank</th>
+                <th>Kills</th>
+                <th>Damage</th>
                 <th>DBNO</th>
-                <th>생존</th>
+                <th>Survived</th>
               </tr>
             </thead>
             <tbody id="matchRows"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="matches">
+        <div class="sectionTitle">
+          <h2>Shared Matches</h2>
+        </div>
+        <div class="tableWrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Time</th>
+                <th>Map</th>
+                <th>Mode</th>
+                <th>Tracked</th>
+                <th>Players</th>
+                <th>Total Kills</th>
+                <th>Total Damage</th>
+                <th>Duration</th>
+              </tr>
+            </thead>
+            <tbody id="groupRows"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="matches">
+        <div class="sectionTitle">
+          <h2>Lifetime And Ranked Seasons</h2>
+          <select id="historyFilter" aria-label="History player filter">
+            <option value="all">All players</option>
+          </select>
+        </div>
+        <div class="tableWrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Player</th>
+                <th>Season</th>
+                <th>Mode</th>
+                <th>Rounds</th>
+                <th>Wins</th>
+                <th>Kills</th>
+                <th>Avg Damage</th>
+                <th>K/D</th>
+                <th>Win Rate</th>
+                <th>Tier</th>
+              </tr>
+            </thead>
+            <tbody id="seasonRows"></tbody>
           </table>
         </div>
       </section>

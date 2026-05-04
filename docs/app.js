@@ -1,8 +1,12 @@
 const dataUrl = "./data/pubg-stats.json";
+
 const summary = document.querySelector("#summary");
 const players = document.querySelector("#players");
 const matchRows = document.querySelector("#matchRows");
+const groupRows = document.querySelector("#groupRows");
+const seasonRows = document.querySelector("#seasonRows");
 const playerFilter = document.querySelector("#playerFilter");
+const historyFilter = document.querySelector("#historyFilter");
 const updatedAt = document.querySelector("#updatedAt");
 
 const numberFormat = new Intl.NumberFormat("ko-KR");
@@ -23,23 +27,36 @@ function rankClass(rank) {
   return "";
 }
 
+function tierText(stats) {
+  return [stats.tier, stats.subTier].filter(Boolean).join(" ") || "-";
+}
+
+function allRecentMatches(data) {
+  return data.players.flatMap((player) => player.matches.map((match) => ({ ...match, playerName: player.name })));
+}
+
 function renderSummary(data) {
-  const { bestDamage, bestKills, latestWin } = data.highlights;
+  const { bestDamage, bestKills, latestWin } = data.highlights ?? {};
   const cards = [
     {
-      label: "최고 딜량",
+      label: "Best damage",
       value: bestDamage ? `${asNumber(bestDamage.damage)} dmg` : "-",
-      sub: bestDamage ? `${bestDamage.playerName} · ${bestDamage.mapName}` : "기록 없음",
+      sub: bestDamage ? `${bestDamage.playerName} / ${bestDamage.mapName}` : "No record yet",
     },
     {
-      label: "최다 킬",
+      label: "Most kills",
       value: bestKills ? `${bestKills.kills} kills` : "-",
-      sub: bestKills ? `${bestKills.playerName} · ${bestKills.gameModeLabel}` : "기록 없음",
+      sub: bestKills ? `${bestKills.playerName} / ${bestKills.gameModeLabel}` : "No record yet",
     },
     {
-      label: "최근 치킨",
+      label: "Latest chicken",
       value: latestWin ? latestWin.playerName : "-",
-      sub: latestWin ? `${latestWin.mapName} · ${dateFormat.format(new Date(latestWin.createdAt))}` : "아직 없음",
+      sub: latestWin ? `${latestWin.mapName} / ${dateFormat.format(new Date(latestWin.createdAt))}` : "No win yet",
+    },
+    {
+      label: "Shared matches",
+      value: asNumber(data.groupedMatches?.length ?? 0),
+      sub: "Tracked players in the same match",
     },
   ];
 
@@ -57,14 +74,17 @@ function renderSummary(data) {
 function renderPlayers(data) {
   players.innerHTML = data.players
     .map((player) => {
+      const lifetimeModes = Object.values(player.history?.lifetime ?? {});
+      const lifetimeRounds = lifetimeModes.reduce((sum, mode) => sum + mode.rounds, 0);
+      const lifetimeKills = lifetimeModes.reduce((sum, mode) => sum + mode.kills, 0);
       return `<article class="playerCard">
         <h3>${player.name}</h3>
-        <p class="sub">최근 ${player.stats.matches}경기 분석</p>
+        <p class="sub">Recent ${player.stats.matches} matches / Lifetime ${asNumber(lifetimeRounds)} rounds</p>
         <div class="metrics">
-          <div class="metric"><strong>${player.stats.avgDamage}</strong><span>평균 딜량</span></div>
-          <div class="metric"><strong>${player.stats.avgKills}</strong><span>평균 킬</span></div>
-          <div class="metric"><strong>${player.stats.top10Rate}%</strong><span>TOP 10</span></div>
-          <div class="metric"><strong>${player.stats.wins}</strong><span>치킨</span></div>
+          <div class="metric"><strong>${player.stats.avgDamage}</strong><span>recent avg dmg</span></div>
+          <div class="metric"><strong>${player.stats.avgKills}</strong><span>recent avg kills</span></div>
+          <div class="metric"><strong>${player.stats.top10Rate}%</strong><span>recent top 10</span></div>
+          <div class="metric"><strong>${asNumber(lifetimeKills)}</strong><span>lifetime kills</span></div>
         </div>
       </article>`;
     })
@@ -73,13 +93,12 @@ function renderPlayers(data) {
 
 function renderMatches(data) {
   const selected = playerFilter.value;
-  const matches = data.players
-    .flatMap((player) => player.matches.map((match) => ({ ...match, playerName: player.name })))
+  const matches = allRecentMatches(data)
     .filter((match) => selected === "all" || match.playerName === selected)
     .sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
 
   if (!matches.length) {
-    matchRows.innerHTML = `<tr><td class="empty" colspan="9">표시할 경기가 없습니다.</td></tr>`;
+    matchRows.innerHTML = `<tr><td class="empty" colspan="9">No recent matches to display.</td></tr>`;
     return;
   }
 
@@ -95,16 +114,91 @@ function renderMatches(data) {
         <td>${match.kills}</td>
         <td>${asNumber(match.damage)}</td>
         <td>${match.dbnos}</td>
-        <td>${match.survivedMinutes}분</td>
+        <td>${match.survivedMinutes}m</td>
       </tr>`;
     })
     .join("");
 }
 
-function populateFilter(data) {
-  playerFilter.innerHTML = `<option value="all">전체</option>${data.players
-    .map((player) => `<option value="${player.name}">${player.name}</option>`)
-    .join("")}`;
+function renderGroupedMatches(data) {
+  const groupedMatches = data.groupedMatches ?? [];
+
+  if (!groupedMatches.length) {
+    groupRows.innerHTML = `<tr><td class="empty" colspan="8">No shared matches found in the recent API window.</td></tr>`;
+    return;
+  }
+
+  groupRows.innerHTML = groupedMatches
+    .map((match) => {
+      const participants = match.participants
+        .map((player) => `${player.playerName}: #${player.rank ?? "-"} / ${player.kills}K / ${asNumber(player.damage)} dmg`)
+        .join("<br>");
+      const totalKills = match.participants.reduce((sum, player) => sum + player.kills, 0);
+      const totalDamage = match.participants.reduce((sum, player) => sum + player.damage, 0);
+
+      return `<tr>
+        <td>${dateFormat.format(new Date(match.createdAt))}</td>
+        <td>${match.mapName}</td>
+        <td>${match.gameModeLabel}</td>
+        <td>${match.participants.length}</td>
+        <td>${participants}</td>
+        <td>${totalKills}</td>
+        <td>${asNumber(totalDamage)}</td>
+        <td>${match.duration}m</td>
+      </tr>`;
+    })
+    .join("");
+}
+
+function renderSeasonHistory(data) {
+  const selected = historyFilter.value;
+  const targetPlayers = data.players.filter((player) => selected === "all" || player.name === selected);
+  const rows = [];
+
+  for (const player of targetPlayers) {
+    for (const [mode, stats] of Object.entries(player.history?.lifetime ?? {})) {
+      rows.push({ player: player.name, season: "Lifetime", mode, stats });
+    }
+
+    for (const season of player.history?.rankedSeasons ?? []) {
+      for (const [mode, stats] of Object.entries(season.modes ?? {})) {
+        rows.push({
+          player: player.name,
+          season: `${season.label}${season.isCurrentSeason ? " (current)" : ""}`,
+          mode,
+          stats,
+        });
+      }
+    }
+  }
+
+  if (!rows.length) {
+    seasonRows.innerHTML = `<tr><td class="empty" colspan="10">No lifetime or ranked season stats returned by the API.</td></tr>`;
+    return;
+  }
+
+  seasonRows.innerHTML = rows
+    .map((row) => {
+      return `<tr>
+        <td>${row.player}</td>
+        <td>${row.season}</td>
+        <td>${row.mode}</td>
+        <td>${asNumber(row.stats.rounds)}</td>
+        <td>${asNumber(row.stats.wins)}</td>
+        <td>${asNumber(row.stats.kills)}</td>
+        <td>${asNumber(row.stats.avgDamage)}</td>
+        <td>${row.stats.kd}</td>
+        <td>${row.stats.winRate}%</td>
+        <td>${tierText(row.stats)}</td>
+      </tr>`;
+    })
+    .join("");
+}
+
+function populateFilters(data) {
+  const options = data.players.map((player) => `<option value="${player.name}">${player.name}</option>`).join("");
+  playerFilter.innerHTML = `<option value="all">All players</option>${options}`;
+  historyFilter.innerHTML = `<option value="all">All players</option>${options}`;
 }
 
 async function load() {
@@ -112,21 +206,27 @@ async function load() {
     const response = await fetch(dataUrl, { cache: "no-store" });
     if (!response.ok) throw new Error("data file not found");
     const data = await response.json();
+    const limits = data.limits ?? {};
 
-    updatedAt.textContent = `마지막 갱신: ${dateFormat.format(new Date(data.generatedAt))} · ${data.shard}`;
-    populateFilter(data);
+    updatedAt.textContent = `Updated ${dateFormat.format(new Date(data.generatedAt))} / ${data.shard} / recent matches are limited to ${limits.recentMatchDays ?? 14} days by PUBG API`;
+    populateFilters(data);
     renderSummary(data);
     renderPlayers(data);
     renderMatches(data);
+    renderGroupedMatches(data);
+    renderSeasonHistory(data);
+
     playerFilter.addEventListener("change", () => renderMatches(data));
+    historyFilter.addEventListener("change", () => renderSeasonHistory(data));
   } catch (error) {
-    updatedAt.textContent = "전적 데이터가 아직 생성되지 않았습니다.";
-    summary.innerHTML = `<div class="error">GitHub Actions에서 PUBG_API_KEY를 설정하고 워크플로를 한 번 실행하세요.</div>`;
+    updatedAt.textContent = "Stats data has not been generated yet.";
+    summary.innerHTML = `<div class="error">Set PUBG_API_KEY in GitHub Actions and run the workflow once.</div>`;
     players.innerHTML = "";
-    matchRows.innerHTML = `<tr><td class="empty" colspan="9">docs/data/pubg-stats.json 파일이 필요합니다.</td></tr>`;
+    matchRows.innerHTML = `<tr><td class="empty" colspan="9">docs/data/pubg-stats.json is required.</td></tr>`;
+    groupRows.innerHTML = `<tr><td class="empty" colspan="8">No data.</td></tr>`;
+    seasonRows.innerHTML = `<tr><td class="empty" colspan="10">No data.</td></tr>`;
     console.error(error);
   }
 }
 
 load();
-

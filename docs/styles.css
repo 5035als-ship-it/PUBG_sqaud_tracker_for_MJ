@@ -76,9 +76,20 @@ h1 {
 
 .summary {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 12px;
   margin-bottom: 16px;
+}
+
+.notice {
+  margin-bottom: 16px;
+  padding: 14px 18px;
+  border: 1px solid rgba(242, 193, 78, 0.35);
+  border-radius: 8px;
+  background: rgba(44, 40, 27, 0.82);
+  color: #f8df9c;
+  font-size: 14px;
+  line-height: 1.5;
 }
 
 .statCard,
@@ -116,6 +127,10 @@ h1 {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 12px;
+  margin-bottom: 16px;
+}
+
+.matches {
   margin-bottom: 16px;
 }
 
@@ -189,6 +204,7 @@ th {
 
 td {
   font-size: 14px;
+  vertical-align: top;
 }
 
 .rankWin {

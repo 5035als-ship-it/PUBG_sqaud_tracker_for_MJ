@@ -8,7 +8,10 @@ const SHARD = "steam";
 const CONFIG_FILE = path.resolve("config/tracked-players.json");
 const DATA_FILE = path.resolve("docs/data/pubg-stats.json");
 const BASE_URL = `https://api.pubg.com/shards/${SHARD}`;
-const MAX_MATCHES_PER_PLAYER = 12;
+const MAX_MATCHES_PER_PLAYER = 32;
+const MAX_SEASONS_PER_PLAYER = 8;
+const RATE_LIMITED_REQUEST_SPACING_MS = 6500;
+let lastRateLimitedRequestAt = 0;
 
 if (!API_KEY) {
   throw new Error("PUBG_API_KEY is required.");
@@ -19,10 +22,26 @@ const headers = {
   Accept: "application/vnd.api+json",
 };
 
+async function waitForRateLimitWindow() {
+  const now = Date.now();
+  const elapsed = now - lastRateLimitedRequestAt;
+
+  if (elapsed < RATE_LIMITED_REQUEST_SPACING_MS) {
+    await new Promise((resolve) => setTimeout(resolve, RATE_LIMITED_REQUEST_SPACING_MS - elapsed));
+  }
+
+  lastRateLimitedRequestAt = Date.now();
+}
+
 async function pubgFetch(url, options = {}) {
+  if (options.rateLimited) {
+    await waitForRateLimitWindow();
+  }
+
+  const { rateLimited, ...fetchOptions } = options;
   const response = await fetch(url, {
-    ...options,
-    headers: { ...headers, ...(options.headers ?? {}) },
+    ...fetchOptions,
+    headers: { ...headers, ...(fetchOptions.headers ?? {}) },
   });
 
   if (!response.ok) {
@@ -86,6 +105,11 @@ function modeLabel(mode) {
   }[mode] ?? mode ?? "Unknown";
 }
 
+function seasonLabel(seasonId) {
+  if (seasonId === "lifetime") return "Lifetime";
+  return seasonId.replace("division.bro.official.", "").replace("pc-", "PC ");
+}
+
 function getParticipantForAccount(match, accountId) {
   return (match.included ?? []).find((item) => {
     return item.type === "participant" && item.attributes?.stats?.playerId === accountId;
@@ -125,6 +149,50 @@ function summarizeMatch(match, player) {
   };
 }
 
+function summarizeModeStats(stats = {}) {
+  const rounds = Number(stats.roundsPlayed ?? 0);
+  const losses = Number(stats.losses ?? 0);
+  const deaths = Math.max(1, rounds - Number(stats.wins ?? 0));
+  const kills = Number(stats.kills ?? 0);
+  const damage = Number(stats.damageDealt ?? 0);
+
+  return {
+    rounds,
+    wins: Number(stats.wins ?? 0),
+    top10s: Number(stats.top10s ?? 0),
+    kills,
+    assists: Number(stats.assists ?? 0),
+    damage: Math.round(damage),
+    avgDamage: rounds ? Math.round(damage / rounds) : 0,
+    kd: Math.round((kills / deaths) * 100) / 100,
+    winRate: rounds ? Math.round((Number(stats.wins ?? 0) / rounds) * 1000) / 10 : 0,
+    top10Rate: rounds ? Math.round((Number(stats.top10s ?? 0) / rounds) * 1000) / 10 : 0,
+    rankPoints: Math.round(Number(stats.rankPoints ?? stats.currentRankPoint ?? stats.bestRankPoint ?? 0)),
+    tier: stats.currentTier?.tier ?? stats.bestTier?.tier ?? stats.tier ?? "",
+    subTier: stats.currentTier?.subTier ?? stats.bestTier?.subTier ?? stats.subTier ?? "",
+  };
+}
+
+function summarizeStatsResponse(response) {
+  const attrs = response?.data?.attributes ?? {};
+  const modeStats = attrs.rankedGameModeStats ?? attrs.gameModeStats ?? {};
+
+  return Object.fromEntries(
+    Object.entries(modeStats)
+      .map(([mode, stats]) => [mode, summarizeModeStats(stats)])
+      .filter(([, stats]) => stats.rounds > 0),
+  );
+}
+
+async function safePubgFetch(url, fallback = null, options = {}) {
+  try {
+    return await pubgFetch(url, options);
+  } catch (error) {
+    console.warn(`Skipping optional PUBG request: ${error.message}`);
+    return fallback;
+  }
+}
+
 function aggregate(matches) {
   const count = matches.length || 1;
   const wins = matches.filter((match) => match.rank === 1).length;
@@ -162,6 +230,82 @@ function buildHighlights(players) {
     .sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt))[0] ?? null;
 
   return { bestDamage, bestKills, latestWin };
+}
+
+function buildGroupedMatches(players) {
+  const matchMap = new Map();
+
+  for (const player of players) {
+    for (const match of player.matches) {
+      const current = matchMap.get(match.id) ?? {
+        id: match.id,
+        createdAt: match.createdAt,
+        gameMode: match.gameMode,
+        gameModeLabel: match.gameModeLabel,
+        mapName: match.mapName,
+        duration: match.duration,
+        participants: [],
+      };
+
+      current.participants.push({
+        playerName: player.name,
+        rank: match.rank,
+        kills: match.kills,
+        assists: match.assists,
+        damage: match.damage,
+        dbnos: match.dbnos,
+        survivedMinutes: match.survivedMinutes,
+      });
+
+      matchMap.set(match.id, current);
+    }
+  }
+
+  return [...matchMap.values()]
+    .filter((match) => match.participants.length >= 2)
+    .sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
+}
+
+async function getSeasons() {
+  const seasonsResponse = await safePubgFetch(`${BASE_URL}/seasons`, { data: [] }, { rateLimited: true });
+  const seasons = seasonsResponse.data ?? [];
+  const officialSeasons = seasons
+    .filter((season) => season.id?.startsWith("division.bro.official.pc-"))
+    .sort((a, b) => a.id.localeCompare(b.id));
+
+  return {
+    current: officialSeasons.find((season) => season.attributes?.isCurrentSeason) ?? officialSeasons.at(-1) ?? null,
+    recent: officialSeasons.slice(-MAX_SEASONS_PER_PLAYER).reverse(),
+  };
+}
+
+async function getPlayerHistoricalStats(player, seasons) {
+  const lifetimeResponse = await safePubgFetch(`${BASE_URL}/players/${player.id}/seasons/lifetime`, null, {
+    rateLimited: true,
+  });
+  const rankedSeasonIds = seasons.recent.map((season) => season.id);
+  const rankedSeasons = [];
+
+  for (const seasonId of rankedSeasonIds) {
+    const rankedResponse = await safePubgFetch(`${BASE_URL}/players/${player.id}/seasons/${seasonId}/ranked`, null, {
+      rateLimited: true,
+    });
+    const modes = summarizeStatsResponse(rankedResponse);
+
+    if (Object.keys(modes).length) {
+      rankedSeasons.push({
+        id: seasonId,
+        label: seasonLabel(seasonId),
+        isCurrentSeason: seasons.current?.id === seasonId,
+        modes,
+      });
+    }
+  }
+
+  return {
+    lifetime: summarizeStatsResponse(lifetimeResponse),
+    rankedSeasons,
+  };
 }
 
 function buildDiscordMessage(data, previous) {
@@ -204,7 +348,7 @@ async function main() {
   const playerNames = await getTrackedPlayers();
   const previous = await getPreviousData();
   const playerUrl = `${BASE_URL}/players?filter[playerNames]=${encodeURIComponent(playerNames.join(","))}`;
-  const playerResponse = await pubgFetch(playerUrl);
+  const playerResponse = await pubgFetch(playerUrl, { rateLimited: true });
   const players = playerResponse.data.map((player) => ({
     id: player.id,
     name: player.attributes.name,
@@ -222,28 +366,49 @@ async function main() {
     matchResponses.set(matchId, match);
   }
 
-  const enrichedPlayers = players.map((player) => {
+  const seasons = await getSeasons();
+  const enrichedPlayers = [];
+
+  for (const player of players) {
     const matches = player.matchIds
       .map((matchId) => matchResponses.get(matchId))
       .filter(Boolean)
       .map((match) => summarizeMatch(match, player))
       .sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
 
-    return {
+    const history = await getPlayerHistoricalStats(player, seasons);
+
+    enrichedPlayers.push({
       id: player.id,
       name: player.name,
       shardId: player.shardId,
       stats: aggregate(matches),
       matches,
-    };
-  });
+      history,
+    });
+  }
 
   const data = {
     generatedAt: new Date().toISOString(),
     shard: SHARD,
     trackedPlayers: playerNames,
+    limits: {
+      recentMatchDays: 14,
+      maxMatchesPerPlayer: MAX_MATCHES_PER_PLAYER,
+      maxRankedSeasonsPerPlayer: MAX_SEASONS_PER_PLAYER,
+    },
+    seasons: {
+      current: seasons.current
+        ? {
+            id: seasons.current.id,
+            label: seasonLabel(seasons.current.id),
+            isOffseason: Boolean(seasons.current.attributes?.isOffseason),
+          }
+        : null,
+    },
     players: enrichedPlayers,
     highlights: buildHighlights(enrichedPlayers),
+    groupedMatches: buildGroupedMatches(enrichedPlayers),
   };
 
   await mkdir(path.dirname(DATA_FILE), { recursive: true });

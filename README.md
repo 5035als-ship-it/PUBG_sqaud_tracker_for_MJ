@@ -1,6 +1,6 @@
 # PUBG Squad Tracker
 
-Steam PUBG users `ClassMusic`, `MJPantyThief`, `Machine_Jun`, and `coca_cola_bear_` are refreshed by GitHub Actions and displayed through GitHub Pages.
+Steam PUBG users in `config/tracked-players.json` are refreshed by GitHub Actions and displayed through GitHub Pages.
 
 ## Setup
 
@@ -25,7 +25,7 @@ Edit `config/tracked-players.json`.
 {
   "players": [
     "ClassMusic",
-    "MJPantyThief",
+    "MJpantythief",
     "Machine_Jun",
     "coca_cola_bear_"
   ]
