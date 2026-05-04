@@ -18,7 +18,7 @@
     </header>
 
     <main>
-      <section class="notice">최근 경기 상세는 PUBG API 정책상 14일까지만 조회됩니다. 오래된 기록은 라이프타임과 경쟁전 시즌 요약으로 보여줍니다.</section>
+      <section class="notice">최근 경기 상세는 PUBG API 정책상 14일까지만 조회됩니다. 빠른 갱신을 위해 현재 화면은 최근 매치 기반 통계만 보여줍니다.</section>
 
       <section class="summary" id="summary" aria-label="핵심 통계"></section>
       <section class="players" id="players" aria-label="플레이어 카드"></section>
@@ -69,34 +69,6 @@
               </tr>
             </thead>
             <tbody id="groupRows"></tbody>
-          </table>
-        </div>
-      </section>
-
-      <section class="matches compactSection">
-        <div class="sectionTitle">
-          <h2>누적 / 경쟁전</h2>
-          <select id="historyFilter" aria-label="시즌 기록 플레이어 필터">
-            <option value="all">전체 플레이어</option>
-          </select>
-        </div>
-        <div class="tableWrap">
-          <table>
-            <thead>
-              <tr>
-                <th>플레이어</th>
-                <th>시즌</th>
-                <th>모드</th>
-                <th>경기</th>
-                <th>승리</th>
-                <th>킬</th>
-                <th>평딜</th>
-                <th>K/D</th>
-                <th>승률</th>
-                <th>티어</th>
-              </tr>
-            </thead>
-            <tbody id="seasonRows"></tbody>
           </table>
         </div>
       </section>

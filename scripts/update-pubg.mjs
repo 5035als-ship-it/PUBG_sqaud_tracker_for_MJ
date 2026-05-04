@@ -9,8 +9,6 @@ const CONFIG_FILE = path.resolve("config/tracked-players.json");
 const DATA_FILE = path.resolve("docs/data/pubg-stats.json");
 const BASE_URL = `https://api.pubg.com/shards/${SHARD}`;
 const MAX_MATCHES_PER_PLAYER = 32;
-const MAX_SEASONS_PER_PLAYER = 8;
-const HISTORY_REFRESH_HOURS = Number(process.env.HISTORY_REFRESH_HOURS ?? 6);
 const RATE_LIMITED_REQUEST_SPACING_MS = 6500;
 let lastRateLimitedRequestAt = 0;
 
@@ -85,11 +83,6 @@ async function getPreviousData() {
   }
 }
 
-function isOlderThanHours(isoDate, hours) {
-  if (!isoDate) return true;
-  return Date.now() - new Date(isoDate).getTime() > hours * 60 * 60 * 1000;
-}
-
 async function getTrackedPlayers() {
   const config = JSON.parse(await readFile(CONFIG_FILE, "utf8"));
   const names = Array.isArray(config.players) ? config.players : [];
@@ -144,11 +137,6 @@ function modeLabel(mode) {
   }[mode] ?? mode ?? "알 수 없음";
 }
 
-function seasonLabel(seasonId) {
-  if (seasonId === "lifetime") return "Lifetime";
-  return seasonId.replace("division.bro.official.", "").replace("pc-", "PC ");
-}
-
 function getParticipantForAccount(match, accountId) {
   return (match.included ?? []).find((item) => {
     return item.type === "participant" && item.attributes?.stats?.playerId === accountId;
@@ -188,50 +176,6 @@ function summarizeMatch(match, player) {
     longestKill: Math.round(Number(stats.longestKill ?? 0)),
     survivedMinutes: minutes(stats.timeSurvived),
   };
-}
-
-function summarizeModeStats(stats = {}) {
-  const rounds = Number(stats.roundsPlayed ?? 0);
-  const losses = Number(stats.losses ?? 0);
-  const deaths = Math.max(1, rounds - Number(stats.wins ?? 0));
-  const kills = Number(stats.kills ?? 0);
-  const damage = Number(stats.damageDealt ?? 0);
-
-  return {
-    rounds,
-    wins: Number(stats.wins ?? 0),
-    top10s: Number(stats.top10s ?? 0),
-    kills,
-    assists: Number(stats.assists ?? 0),
-    damage: Math.round(damage),
-    avgDamage: rounds ? Math.round(damage / rounds) : 0,
-    kd: Math.round((kills / deaths) * 100) / 100,
-    winRate: rounds ? Math.round((Number(stats.wins ?? 0) / rounds) * 1000) / 10 : 0,
-    top10Rate: rounds ? Math.round((Number(stats.top10s ?? 0) / rounds) * 1000) / 10 : 0,
-    rankPoints: Math.round(Number(stats.rankPoints ?? stats.currentRankPoint ?? stats.bestRankPoint ?? 0)),
-    tier: stats.currentTier?.tier ?? stats.bestTier?.tier ?? stats.tier ?? "",
-    subTier: stats.currentTier?.subTier ?? stats.bestTier?.subTier ?? stats.subTier ?? "",
-  };
-}
-
-function summarizeStatsResponse(response) {
-  const attrs = response?.data?.attributes ?? {};
-  const modeStats = attrs.rankedGameModeStats ?? attrs.gameModeStats ?? {};
-
-  return Object.fromEntries(
-    Object.entries(modeStats)
-      .map(([mode, stats]) => [mode, summarizeModeStats(stats)])
-      .filter(([, stats]) => stats.rounds > 0),
-  );
-}
-
-async function safePubgFetch(url, fallback = null, options = {}) {
-  try {
-    return await pubgFetch(url, options);
-  } catch (error) {
-    console.warn(`Skipping optional PUBG request: ${error.message}`);
-    return fallback;
-  }
 }
 
 function aggregate(matches) {
@@ -309,62 +253,6 @@ function buildGroupedMatches(players) {
     .sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
 }
 
-async function getSeasons() {
-  const seasonsResponse = await safePubgFetch(`${BASE_URL}/seasons`, { data: [] }, { rateLimited: true });
-  const seasons = seasonsResponse.data ?? [];
-  const officialSeasons = seasons
-    .filter((season) => season.id?.startsWith("division.bro.official.pc-"))
-    .sort((a, b) => a.id.localeCompare(b.id));
-
-  return {
-    current: officialSeasons.find((season) => season.attributes?.isCurrentSeason) ?? officialSeasons.at(-1) ?? null,
-    recent: officialSeasons.slice(-MAX_SEASONS_PER_PLAYER).reverse(),
-  };
-}
-
-async function getPlayerHistoricalStats(player, seasons) {
-  const lifetimeResponse = await safePubgFetch(`${BASE_URL}/players/${player.id}/seasons/lifetime`, null, {
-    rateLimited: true,
-  });
-  const rankedSeasonIds = seasons.recent.map((season) => season.id);
-  const rankedSeasons = [];
-
-  for (const seasonId of rankedSeasonIds) {
-    const rankedResponse = await safePubgFetch(`${BASE_URL}/players/${player.id}/seasons/${seasonId}/ranked`, null, {
-      rateLimited: true,
-    });
-    const modes = summarizeStatsResponse(rankedResponse);
-
-    if (Object.keys(modes).length) {
-      rankedSeasons.push({
-        id: seasonId,
-        label: seasonLabel(seasonId),
-        isCurrentSeason: seasons.current?.id === seasonId,
-        modes,
-      });
-    }
-  }
-
-  return {
-    lifetime: summarizeStatsResponse(lifetimeResponse),
-    rankedSeasons,
-  };
-}
-
-function serializeSeason(season) {
-  if (!season) return null;
-
-  if (season.attributes) {
-    return {
-      id: season.id,
-      label: seasonLabel(season.id),
-      isOffseason: Boolean(season.attributes?.isOffseason),
-    };
-  }
-
-  return season;
-}
-
 function comparableData(data) {
   const { generatedAt, ...rest } = data;
   return rest;
@@ -409,8 +297,6 @@ async function notifyDiscord(message) {
 async function main() {
   const playerNames = await getTrackedPlayers();
   const previous = await getPreviousData();
-  const previousPlayersById = new Map((previous?.players ?? []).map((player) => [player.id, player]));
-  const shouldRefreshHistory = isOlderThanHours(previous?.historyGeneratedAt, HISTORY_REFRESH_HOURS);
   const playerUrl = `${BASE_URL}/players?filter[playerNames]=${encodeURIComponent(playerNames.join(","))}`;
   const playerResponse = await pubgFetch(playerUrl, { rateLimited: true });
   const players = playerResponse.data.map((player) => ({
@@ -432,9 +318,7 @@ async function main() {
     matchResponses.set(matchId, match);
   }
 
-  let seasons = null;
   const enrichedPlayers = [];
-  let refreshedAnyHistory = false;
 
   for (const player of players) {
     const matches = player.matchIds
@@ -442,15 +326,6 @@ async function main() {
       .filter(Boolean)
       .map((match) => summarizeMatch(match, player))
       .sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
-
-    const previousPlayer = previousPlayersById.get(player.id);
-    let history = previousPlayer?.history ?? { lifetime: {}, rankedSeasons: [] };
-
-    if (shouldRefreshHistory || !previousPlayer?.history) {
-      seasons ??= await getSeasons();
-      history = await getPlayerHistoricalStats(player, seasons);
-      refreshedAnyHistory = true;
-    }
 
     enrichedPlayers.push({
       id: player.id,
@@ -460,23 +335,16 @@ async function main() {
       shardId: player.shardId,
       stats: aggregate(matches),
       matches,
-      history,
     });
   }
 
   const data = {
     generatedAt: new Date().toISOString(),
-    historyGeneratedAt: refreshedAnyHistory ? new Date().toISOString() : (previous?.historyGeneratedAt ?? null),
     shard: SHARD,
     trackedPlayers: playerNames,
     limits: {
       recentMatchDays: 14,
       maxMatchesPerPlayer: MAX_MATCHES_PER_PLAYER,
-      maxRankedSeasonsPerPlayer: MAX_SEASONS_PER_PLAYER,
-      historyRefreshHours: HISTORY_REFRESH_HOURS,
-    },
-    seasons: {
-      current: seasons ? serializeSeason(seasons.current) : (previous?.seasons?.current ?? null),
     },
     players: enrichedPlayers,
     highlights: buildHighlights(enrichedPlayers),
