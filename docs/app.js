@@ -21,6 +21,18 @@ const displayNames = new Map(
   ].map(([id, name]) => [id.toLowerCase(), name]),
 );
 
+const displayEmojis = new Map(
+  [
+    ["ClassMusic", "☕"],
+    ["Classmuisc", "☕"],
+    ["Machine_Jun", "✈️"],
+    ["Machine_jun", "✈️"],
+    ["MJPantyThief", "🥜"],
+    ["MJpantythief", "🥜"],
+    ["coca_cola_bear_", "🥤"],
+  ].map(([id, emoji]) => [id.toLowerCase(), emoji]),
+);
+
 const mapNames = new Map(
   Object.entries({
     Erangel: "에란겔",
@@ -70,6 +82,15 @@ function playerName(player) {
   const raw = typeof player === "string" ? player : player.displayName ?? player.playerName ?? player.name;
   const lookup = typeof player === "string" ? player : player.playerName ?? player.name ?? raw;
   return displayNames.get(String(lookup).toLowerCase()) ?? raw;
+}
+
+function playerEmoji(player) {
+  const lookup = typeof player === "string" ? player : player.playerName ?? player.name ?? "";
+  return (typeof player === "object" && player.displayEmoji) || displayEmojis.get(String(lookup).toLowerCase()) || "🎮";
+}
+
+function playerLabel(player) {
+  return `${playerEmoji(player)} ${playerName(player)}`;
 }
 
 function originalName(player) {
@@ -141,31 +162,31 @@ function buildInsightCards(data) {
       icon: "🔥",
       label: "한 판 최고 딜",
       value: bestDamageMatch ? `${asNumber(bestDamageMatch.damage)}딜` : "-",
-      sub: bestDamageMatch ? `${playerName(bestDamageMatch)} / ${mapText(bestDamageMatch.mapName)}` : "기록 없음",
+      sub: bestDamageMatch ? `${playerLabel(bestDamageMatch)} / ${mapText(bestDamageMatch.mapName)}` : "기록 없음",
     },
     {
       icon: "🎯",
       label: "한 판 최다 킬",
       value: bestKillsMatch ? `${bestKillsMatch.kills}킬` : "-",
-      sub: bestKillsMatch ? playerName(bestKillsMatch) : "기록 없음",
+      sub: bestKillsMatch ? playerLabel(bestKillsMatch) : "기록 없음",
     },
     {
       icon: "⚡",
       label: "평딜 에이스",
       value: ace ? `${ace.stats.avgDamage}` : "-",
-      sub: ace ? playerName(ace) : "기록 없음",
+      sub: ace ? playerLabel(ace) : "기록 없음",
     },
     {
       icon: "🧨",
       label: "킬 템포",
       value: finisher ? `${finisher.stats.avgKills}` : "-",
-      sub: finisher ? `${playerName(finisher)} 평균 킬` : "기록 없음",
+      sub: finisher ? `${playerLabel(finisher)} 평균 킬` : "기록 없음",
     },
     {
       icon: "🛡️",
       label: "생존 감각",
       value: survivor ? `${survivor.stats.top10Rate}%` : "-",
-      sub: survivor ? `${playerName(survivor)} TOP 10` : "기록 없음",
+      sub: survivor ? `${playerLabel(survivor)} TOP 10` : "기록 없음",
     },
     {
       icon: "🤝",
@@ -204,7 +225,7 @@ function renderPlayers(data) {
 
       return `<article class="playerCard">
         <div class="playerHead">
-          <div class="avatar">${name.slice(0, 1)}</div>
+          <div class="avatar">${playerEmoji(player)}</div>
           <div>
             <h3>${name}</h3>
             <p class="sub">${originalName(player)}</p>
@@ -238,7 +259,7 @@ function renderMatches(data) {
       const rank = match.rank ? `#${match.rank}` : "-";
       return `<tr>
         <td data-label="시간">${dateFormat.format(new Date(match.createdAt))}</td>
-        <td data-label="플레이어"><strong>${playerName(match)}</strong></td>
+        <td data-label="플레이어"><strong>${playerLabel(match)}</strong></td>
         <td data-label="맵">${mapText(match.mapName)}</td>
         <td data-label="모드">${modeText(match.gameMode, match.gameModeLabel)}</td>
         <td data-label="순위" class="${rankClass(match.rank)}">${rank}</td>
@@ -262,7 +283,7 @@ function renderGroupedMatches(data) {
   groupRows.innerHTML = groupedMatches
     .map((match) => {
       const participants = match.participants
-        .map((participant) => `<span class="playerLine">${playerName(participant)} <b>#${participant.rank ?? "-"}</b> · ${participant.kills}킬 · ${asNumber(participant.damage)}딜</span>`)
+        .map((participant) => `<span class="playerLine">${playerLabel(participant)} <b>#${participant.rank ?? "-"}</b> · ${participant.kills}킬 · ${asNumber(participant.damage)}딜</span>`)
         .join("");
       const totalKills = match.participants.reduce((sum, participant) => sum + participant.kills, 0);
       const totalDamage = match.participants.reduce((sum, participant) => sum + participant.damage, 0);
@@ -311,7 +332,7 @@ function renderSeasonHistory(data) {
   seasonRows.innerHTML = rows
     .map((row) => {
       return `<tr>
-        <td data-label="플레이어"><strong>${playerName(row.player)}</strong></td>
+        <td data-label="플레이어"><strong>${playerLabel(row.player)}</strong></td>
         <td data-label="시즌">${seasonText(row.season)}</td>
         <td data-label="모드">${modeText(row.mode, row.mode)}</td>
         <td data-label="경기">${asNumber(row.stats.rounds)}</td>
@@ -327,7 +348,7 @@ function renderSeasonHistory(data) {
 }
 
 function populateFilters(data) {
-  const options = data.players.map((player) => `<option value="${player.name}">${playerName(player)}</option>`).join("");
+  const options = data.players.map((player) => `<option value="${player.name}">${playerLabel(player)}</option>`).join("");
   playerFilter.innerHTML = `<option value="all">전체 플레이어</option>${options}`;
   historyFilter.innerHTML = `<option value="all">전체 플레이어</option>${options}`;
 }

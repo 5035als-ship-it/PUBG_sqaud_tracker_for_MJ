@@ -25,6 +25,18 @@ const PLAYER_DISPLAY_NAMES = new Map(
   ].map(([id, name]) => [id.toLowerCase(), name]),
 );
 
+const PLAYER_DISPLAY_EMOJIS = new Map(
+  [
+    ["ClassMusic", "☕"],
+    ["Classmuisc", "☕"],
+    ["Machine_Jun", "✈️"],
+    ["Machine_jun", "✈️"],
+    ["MJPantyThief", "🥜"],
+    ["MJpantythief", "🥜"],
+    ["coca_cola_bear_", "🥤"],
+  ].map(([id, emoji]) => [id.toLowerCase(), emoji]),
+);
+
 if (!API_KEY) {
   throw new Error("PUBG_API_KEY is required.");
 }
@@ -92,6 +104,10 @@ function displayName(playerName) {
   return PLAYER_DISPLAY_NAMES.get(String(playerName).toLowerCase()) ?? playerName;
 }
 
+function displayEmoji(playerName) {
+  return PLAYER_DISPLAY_EMOJIS.get(String(playerName).toLowerCase()) ?? "🎮";
+}
+
 function pickMapName(rawName) {
   const maps = {
     Baltic_Main: "에란겔",
@@ -150,6 +166,7 @@ function summarizeMatch(match, player) {
     id: match.data.id,
     playerName: player.name,
     displayName: displayName(player.name),
+    displayEmoji: displayEmoji(player.name),
     accountId: player.id,
     createdAt: match.data.attributes?.createdAt,
     gameMode: match.data.attributes?.gameMode,
@@ -268,6 +285,7 @@ function buildGroupedMatches(players) {
       current.participants.push({
         playerName: player.name,
         displayName: player.displayName,
+        displayEmoji: player.displayEmoji,
         rank: match.rank,
         kills: match.kills,
         assists: match.assists,
@@ -372,6 +390,7 @@ async function main() {
     id: player.id,
     name: player.attributes.name,
     displayName: displayName(player.attributes.name),
+    displayEmoji: displayEmoji(player.attributes.name),
     shardId: player.attributes.shardId,
     matchIds: (player.relationships?.matches?.data ?? []).slice(0, MAX_MATCHES_PER_PLAYER).map((match) => match.id),
   }));
@@ -402,6 +421,7 @@ async function main() {
       id: player.id,
       name: player.name,
       displayName: player.displayName,
+      displayEmoji: player.displayEmoji,
       shardId: player.shardId,
       stats: aggregate(matches),
       matches,
