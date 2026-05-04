@@ -3,7 +3,7 @@ name: Update PUBG stats
 on:
   workflow_dispatch:
   schedule:
-    - cron: "17 * * * *"
+    - cron: "*/5 * * * *"
 
 concurrency:
   group: update-pubg-stats
@@ -30,6 +30,7 @@ jobs:
         env:
           PUBG_API_KEY: ${{ secrets.PUBG_API_KEY }}
           DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+          HISTORY_REFRESH_HOURS: "6"
         run: node scripts/update-pubg.mjs
 
       - name: Commit refreshed data

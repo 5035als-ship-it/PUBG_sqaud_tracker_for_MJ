@@ -10,6 +10,7 @@ const DATA_FILE = path.resolve("docs/data/pubg-stats.json");
 const BASE_URL = `https://api.pubg.com/shards/${SHARD}`;
 const MAX_MATCHES_PER_PLAYER = 32;
 const MAX_SEASONS_PER_PLAYER = 8;
+const HISTORY_REFRESH_HOURS = Number(process.env.HISTORY_REFRESH_HOURS ?? 6);
 const RATE_LIMITED_REQUEST_SPACING_MS = 6500;
 let lastRateLimitedRequestAt = 0;
 
@@ -82,6 +83,11 @@ async function getPreviousData() {
   } catch {
     return null;
   }
+}
+
+function isOlderThanHours(isoDate, hours) {
+  if (!isoDate) return true;
+  return Date.now() - new Date(isoDate).getTime() > hours * 60 * 60 * 1000;
 }
 
 async function getTrackedPlayers() {
@@ -345,6 +351,25 @@ async function getPlayerHistoricalStats(player, seasons) {
   };
 }
 
+function serializeSeason(season) {
+  if (!season) return null;
+
+  if (season.attributes) {
+    return {
+      id: season.id,
+      label: seasonLabel(season.id),
+      isOffseason: Boolean(season.attributes?.isOffseason),
+    };
+  }
+
+  return season;
+}
+
+function comparableData(data) {
+  const { generatedAt, ...rest } = data;
+  return rest;
+}
+
 function buildDiscordMessage(data, previous) {
   const latestIds = new Set(previous?.players?.flatMap((player) => player.matches.map((match) => match.id)) ?? []);
   const freshMatches = data.players.flatMap((player) => {
@@ -384,6 +409,8 @@ async function notifyDiscord(message) {
 async function main() {
   const playerNames = await getTrackedPlayers();
   const previous = await getPreviousData();
+  const previousPlayersById = new Map((previous?.players ?? []).map((player) => [player.id, player]));
+  const shouldRefreshHistory = isOlderThanHours(previous?.historyGeneratedAt, HISTORY_REFRESH_HOURS);
   const playerUrl = `${BASE_URL}/players?filter[playerNames]=${encodeURIComponent(playerNames.join(","))}`;
   const playerResponse = await pubgFetch(playerUrl, { rateLimited: true });
   const players = playerResponse.data.map((player) => ({
@@ -405,8 +432,9 @@ async function main() {
     matchResponses.set(matchId, match);
   }
 
-  const seasons = await getSeasons();
+  let seasons = null;
   const enrichedPlayers = [];
+  let refreshedAnyHistory = false;
 
   for (const player of players) {
     const matches = player.matchIds
@@ -415,7 +443,14 @@ async function main() {
       .map((match) => summarizeMatch(match, player))
       .sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
 
-    const history = await getPlayerHistoricalStats(player, seasons);
+    const previousPlayer = previousPlayersById.get(player.id);
+    let history = previousPlayer?.history ?? { lifetime: {}, rankedSeasons: [] };
+
+    if (shouldRefreshHistory || !previousPlayer?.history) {
+      seasons ??= await getSeasons();
+      history = await getPlayerHistoricalStats(player, seasons);
+      refreshedAnyHistory = true;
+    }
 
     enrichedPlayers.push({
       id: player.id,
@@ -431,26 +466,27 @@ async function main() {
 
   const data = {
     generatedAt: new Date().toISOString(),
+    historyGeneratedAt: refreshedAnyHistory ? new Date().toISOString() : (previous?.historyGeneratedAt ?? null),
     shard: SHARD,
     trackedPlayers: playerNames,
     limits: {
       recentMatchDays: 14,
       maxMatchesPerPlayer: MAX_MATCHES_PER_PLAYER,
       maxRankedSeasonsPerPlayer: MAX_SEASONS_PER_PLAYER,
+      historyRefreshHours: HISTORY_REFRESH_HOURS,
     },
     seasons: {
-      current: seasons.current
-        ? {
-            id: seasons.current.id,
-            label: seasonLabel(seasons.current.id),
-            isOffseason: Boolean(seasons.current.attributes?.isOffseason),
-          }
-        : null,
+      current: seasons ? serializeSeason(seasons.current) : (previous?.seasons?.current ?? null),
     },
     players: enrichedPlayers,
     highlights: buildHighlights(enrichedPlayers),
     groupedMatches: buildGroupedMatches(enrichedPlayers),
   };
+
+  if (previous && JSON.stringify(comparableData(previous)) === JSON.stringify(comparableData(data))) {
+    console.log("No PUBG stat changes detected.");
+    return;
+  }
 
   await mkdir(path.dirname(DATA_FILE), { recursive: true });
   await writeFile(DATA_FILE, `${JSON.stringify(data, null, 2)}\n`, "utf8");
