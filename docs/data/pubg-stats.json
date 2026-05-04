@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-04T05:53:57.738Z",
+  "generatedAt": "2026-05-04T06:49:10.097Z",
   "shard": "steam",
   "trackedPlayers": [
     "ClassMusic",
@@ -1017,22 +1017,40 @@
       "name": "Machine_Jun",
       "shardId": "steam",
       "stats": {
-        "matches": 28,
+        "matches": 29,
         "wins": 1,
         "top10": 18,
-        "winRate": 3.6,
-        "top10Rate": 64.3,
-        "avgKills": 1.2,
-        "avgDamage": 164,
-        "kd": 1.21,
+        "winRate": 3.4,
+        "top10Rate": 62.1,
+        "avgKills": 1.4,
+        "avgDamage": 182,
+        "kd": 1.38,
         "totals": {
-          "kills": 34,
+          "kills": 40,
           "assists": 9,
-          "damage": 4599,
+          "damage": 5283,
           "dbnos": 26
         }
       },
       "matches": [
+        {
+          "id": "65ba7d86-c9ee-4c8b-a079-46901f06778c",
+          "playerName": "Machine_Jun",
+          "accountId": "account.07898eaabddf4b93861abc7622f9056b",
+          "createdAt": "2026-05-04T06:10:07Z",
+          "gameMode": "solo",
+          "gameModeLabel": "Solo TPP",
+          "mapName": "Erangel",
+          "duration": 32.2,
+          "rank": 31,
+          "kills": 6,
+          "assists": 0,
+          "damage": 684,
+          "dbnos": 0,
+          "headshotKills": 1,
+          "longestKill": 271,
+          "survivedMinutes": 17.6
+        },
         {
           "id": "ee55dd04-9e5e-4a09-b9ab-6df3cdc0cf00",
           "playerName": "Machine_Jun",
@@ -1571,16 +1589,16 @@
             "subTier": ""
           },
           "solo": {
-            "rounds": 10,
+            "rounds": 11,
             "wins": 0,
             "top10s": 4,
-            "kills": 52,
+            "kills": 58,
             "assists": 0,
-            "damage": 4970,
-            "avgDamage": 497,
-            "kd": 5.2,
+            "damage": 5654,
+            "avgDamage": 514,
+            "kd": 5.27,
             "winRate": 0,
-            "top10Rate": 40,
+            "top10Rate": 36.4,
             "rankPoints": 0,
             "tier": "",
             "subTier": ""
