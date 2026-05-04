@@ -171,6 +171,7 @@ h1 {
 
 select {
   min-height: 36px;
+  max-width: 100%;
   border: 1px solid var(--line);
   border-radius: 6px;
   background: var(--panel-soft);
@@ -234,17 +235,120 @@ td {
   }
 }
 
-@media (max-width: 620px) {
+@media (max-width: 720px) {
   .topbar {
-    min-height: 142px;
+    min-height: auto;
     align-items: flex-start;
     justify-content: center;
     flex-direction: column;
     padding: 26px 0;
+    gap: 14px;
+  }
+
+  h1 {
+    font-size: 36px;
+  }
+
+  .brandMark {
+    width: min(260px, 82vw);
+    margin-bottom: 16px;
+  }
+
+  .notice {
+    font-size: 13px;
   }
 
   .summary,
   .players {
     grid-template-columns: 1fr;
+  }
+
+  .statCard,
+  .playerCard,
+  .matches {
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.22);
+  }
+
+  .sectionTitle {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .sectionTitle h2 {
+    font-size: 20px;
+  }
+
+  select {
+    width: 100%;
+  }
+
+  .tableWrap {
+    overflow: visible;
+  }
+
+  table,
+  thead,
+  tbody,
+  tr,
+  th,
+  td {
+    display: block;
+    width: 100%;
+  }
+
+  table {
+    min-width: 0;
+  }
+
+  thead {
+    display: none;
+  }
+
+  tbody {
+    padding: 10px;
+  }
+
+  tr {
+    margin-bottom: 10px;
+    padding: 12px;
+    border: 1px solid rgba(52, 60, 69, 0.9);
+    border-radius: 8px;
+    background: rgba(34, 40, 47, 0.82);
+  }
+
+  tr:last-child {
+    margin-bottom: 0;
+  }
+
+  td {
+    display: grid;
+    grid-template-columns: minmax(82px, 34%) 1fr;
+    gap: 12px;
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(52, 60, 69, 0.55);
+    white-space: normal;
+    overflow-wrap: anywhere;
+  }
+
+  td:last-child {
+    border-bottom: 0;
+  }
+
+  td::before {
+    content: attr(data-label);
+    color: var(--muted);
+    font-size: 12px;
+    font-weight: 700;
+  }
+
+  .empty,
+  .error {
+    display: block;
+    padding: 8px 0;
+  }
+
+  .empty::before,
+  .error::before {
+    content: "";
   }
 }

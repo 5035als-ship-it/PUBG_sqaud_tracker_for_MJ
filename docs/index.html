@@ -11,14 +11,14 @@
       <div>
         <img class="brandMark" src="https://wstatic-prod.pubg.com/web/live/main_c473c91/img/1de035e.webp" alt="PUBG BATTLEGROUNDS" />
         <h1>PUBG Squad Tracker</h1>
-        <p id="updatedAt">Loading stats data</p>
+        <p id="updatedAt">전적 데이터를 불러오는 중</p>
       </div>
       <a class="refreshLink" href="./data/pubg-stats.json">JSON</a>
     </header>
 
     <main>
       <section class="notice">
-        Recent match details come from PUBG match data, which is limited to the latest 14 days. Older records are shown as lifetime totals and ranked season summaries when the API returns them.
+        최근 경기 상세 기록은 PUBG API 정책상 최근 14일 데이터까지만 표시됩니다. 이전 기록은 API에서 제공되는 라이프타임 누적 전적과 경쟁전 시즌 요약으로 보여줍니다.
       </section>
 
       <section class="summary" id="summary"></section>
@@ -26,24 +26,24 @@
 
       <section class="matches">
         <div class="sectionTitle">
-          <h2>Recent Matches By Player</h2>
-          <select id="playerFilter" aria-label="Player filter">
-            <option value="all">All players</option>
+          <h2>플레이어별 최근 경기</h2>
+          <select id="playerFilter" aria-label="플레이어 필터">
+            <option value="all">전체 플레이어</option>
           </select>
         </div>
         <div class="tableWrap">
           <table>
             <thead>
               <tr>
-                <th>Time</th>
-                <th>Player</th>
-                <th>Map</th>
-                <th>Mode</th>
-                <th>Rank</th>
-                <th>Kills</th>
-                <th>Damage</th>
+                <th>시간</th>
+                <th>플레이어</th>
+                <th>맵</th>
+                <th>모드</th>
+                <th>순위</th>
+                <th>킬</th>
+                <th>딜량</th>
                 <th>DBNO</th>
-                <th>Survived</th>
+                <th>생존</th>
               </tr>
             </thead>
             <tbody id="matchRows"></tbody>
@@ -53,20 +53,20 @@
 
       <section class="matches">
         <div class="sectionTitle">
-          <h2>Shared Matches</h2>
+          <h2>함께 플레이한 경기</h2>
         </div>
         <div class="tableWrap">
           <table>
             <thead>
               <tr>
-                <th>Time</th>
-                <th>Map</th>
-                <th>Mode</th>
-                <th>Tracked</th>
-                <th>Players</th>
-                <th>Total Kills</th>
-                <th>Total Damage</th>
-                <th>Duration</th>
+                <th>시간</th>
+                <th>맵</th>
+                <th>모드</th>
+                <th>인원</th>
+                <th>플레이어 기록</th>
+                <th>합산 킬</th>
+                <th>합산 딜량</th>
+                <th>경기 시간</th>
               </tr>
             </thead>
             <tbody id="groupRows"></tbody>
@@ -76,25 +76,25 @@
 
       <section class="matches">
         <div class="sectionTitle">
-          <h2>Lifetime And Ranked Seasons</h2>
-          <select id="historyFilter" aria-label="History player filter">
-            <option value="all">All players</option>
+          <h2>라이프타임 및 경쟁전 시즌</h2>
+          <select id="historyFilter" aria-label="시즌 기록 플레이어 필터">
+            <option value="all">전체 플레이어</option>
           </select>
         </div>
         <div class="tableWrap">
           <table>
             <thead>
               <tr>
-                <th>Player</th>
-                <th>Season</th>
-                <th>Mode</th>
-                <th>Rounds</th>
-                <th>Wins</th>
-                <th>Kills</th>
-                <th>Avg Damage</th>
+                <th>플레이어</th>
+                <th>시즌</th>
+                <th>모드</th>
+                <th>경기 수</th>
+                <th>승리</th>
+                <th>킬</th>
+                <th>평균 딜량</th>
                 <th>K/D</th>
-                <th>Win Rate</th>
-                <th>Tier</th>
+                <th>승률</th>
+                <th>티어</th>
               </tr>
             </thead>
             <tbody id="seasonRows"></tbody>
