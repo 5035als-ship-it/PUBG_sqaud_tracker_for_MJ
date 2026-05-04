@@ -33,6 +33,8 @@ const displayEmojis = new Map(
   ].map(([id, emoji]) => [id.toLowerCase(), emoji]),
 );
 
+const anyaIconPath = "./assets/anya-peace.png";
+
 const mapNames = new Map(
   Object.entries({
     Erangel: "에란겔",
@@ -89,8 +91,29 @@ function playerEmoji(player) {
   return (typeof player === "object" && player.displayEmoji) || displayEmojis.get(String(lookup).toLowerCase()) || "🎮";
 }
 
+function usesAnyaIcon(player) {
+  const lookup = typeof player === "string" ? player : player.playerName ?? player.name ?? "";
+  return ["mjpantythief"].includes(String(lookup).toLowerCase());
+}
+
 function playerLabel(player) {
-  return `${playerEmoji(player)} ${playerName(player)}`;
+  if (usesAnyaIcon(player)) {
+    return `<span class="playerBadge"><img class="miniAvatar" src="${anyaIconPath}" alt="" /> <span>${playerName(player)}</span></span>`;
+  }
+
+  return `<span class="playerBadge"><span class="emojiIcon">${playerEmoji(player)}</span> <span>${playerName(player)}</span></span>`;
+}
+
+function playerOptionLabel(player) {
+  return `${usesAnyaIcon(player) ? "🌸" : playerEmoji(player)} ${playerName(player)}`;
+}
+
+function playerAvatar(player) {
+  if (usesAnyaIcon(player)) {
+    return `<img class="avatarImage" src="${anyaIconPath}" alt="" />`;
+  }
+
+  return playerEmoji(player);
 }
 
 function originalName(player) {
@@ -225,7 +248,7 @@ function renderPlayers(data) {
 
       return `<article class="playerCard">
         <div class="playerHead">
-          <div class="avatar">${playerEmoji(player)}</div>
+          <div class="avatar">${playerAvatar(player)}</div>
           <div>
             <h3>${name}</h3>
             <p class="sub">${originalName(player)}</p>
@@ -348,7 +371,7 @@ function renderSeasonHistory(data) {
 }
 
 function populateFilters(data) {
-  const options = data.players.map((player) => `<option value="${player.name}">${playerLabel(player)}</option>`).join("");
+  const options = data.players.map((player) => `<option value="${player.name}">${playerOptionLabel(player)}</option>`).join("");
   playerFilter.innerHTML = `<option value="all">전체 플레이어</option>${options}`;
   historyFilter.innerHTML = `<option value="all">전체 플레이어</option>${options}`;
 }
