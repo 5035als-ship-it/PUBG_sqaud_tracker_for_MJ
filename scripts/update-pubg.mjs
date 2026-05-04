@@ -5,7 +5,7 @@ import process from "node:process";
 const API_KEY = process.env.PUBG_API_KEY;
 const DISCORD_WEBHOOK_URL = process.env.DISCORD_WEBHOOK_URL;
 const SHARD = "steam";
-const PLAYER_NAMES = ["ClassMusic", "MJPantyThief", "Machine_Jun", "coca_cola_bear_"];
+const CONFIG_FILE = path.resolve("config/tracked-players.json");
 const DATA_FILE = path.resolve("docs/data/pubg-stats.json");
 const BASE_URL = `https://api.pubg.com/shards/${SHARD}`;
 const MAX_MATCHES_PER_PLAYER = 12;
@@ -39,6 +39,18 @@ async function getPreviousData() {
   } catch {
     return null;
   }
+}
+
+async function getTrackedPlayers() {
+  const config = JSON.parse(await readFile(CONFIG_FILE, "utf8"));
+  const names = Array.isArray(config.players) ? config.players : [];
+  const cleaned = names.map((name) => String(name).trim()).filter(Boolean);
+
+  if (!cleaned.length) {
+    throw new Error("config/tracked-players.json must contain at least one player name.");
+  }
+
+  return [...new Set(cleaned)];
 }
 
 function minutes(seconds) {
@@ -189,8 +201,9 @@ async function notifyDiscord(message) {
 }
 
 async function main() {
+  const playerNames = await getTrackedPlayers();
   const previous = await getPreviousData();
-  const playerUrl = `${BASE_URL}/players?filter[playerNames]=${encodeURIComponent(PLAYER_NAMES.join(","))}`;
+  const playerUrl = `${BASE_URL}/players?filter[playerNames]=${encodeURIComponent(playerNames.join(","))}`;
   const playerResponse = await pubgFetch(playerUrl);
   const players = playerResponse.data.map((player) => ({
     id: player.id,
@@ -228,7 +241,7 @@ async function main() {
   const data = {
     generatedAt: new Date().toISOString(),
     shard: SHARD,
-    trackedPlayers: PLAYER_NAMES,
+    trackedPlayers: playerNames,
     players: enrichedPlayers,
     highlights: buildHighlights(enrichedPlayers),
   };
@@ -242,4 +255,3 @@ main().catch((error) => {
   console.error(error);
   process.exitCode = 1;
 });
-

@@ -17,6 +17,23 @@ Steam PUBG users `ClassMusic`, `MJPantyThief`, `Machine_Jun`, and `coca_cola_bea
 
 The workflow updates `docs/data/pubg-stats.json` every hour and commits changes back to the repository.
 
+## Change Tracked Players
+
+Edit `config/tracked-players.json`.
+
+```json
+{
+  "players": [
+    "ClassMusic",
+    "MJPantyThief",
+    "Machine_Jun",
+    "coca_cola_bear_"
+  ]
+}
+```
+
+After changing the file on GitHub, run `Actions > Update PUBG stats > Run workflow`, or wait for the hourly refresh.
+
 ## Local Refresh
 
 ```powershell
@@ -25,4 +42,3 @@ node scripts/update-pubg.mjs
 ```
 
 Then open `docs/index.html`.
-
