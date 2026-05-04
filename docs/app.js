@@ -9,6 +9,51 @@ const playerFilter = document.querySelector("#playerFilter");
 const historyFilter = document.querySelector("#historyFilter");
 const updatedAt = document.querySelector("#updatedAt");
 
+const displayNames = new Map(
+  [
+    ["ClassMusic", "이성용"],
+    ["Classmuisc", "이성용"],
+    ["Machine_Jun", "김민준"],
+    ["Machine_jun", "김민준"],
+    ["MJPantyThief", "최낙범"],
+    ["MJpantythief", "최낙범"],
+    ["coca_cola_bear_", "이명준"],
+  ].map(([id, name]) => [id.toLowerCase(), name]),
+);
+
+const mapNames = new Map(
+  Object.entries({
+    Erangel: "에란겔",
+    Miramar: "미라마",
+    Vikendi: "비켄디",
+    Taego: "태이고",
+    Rondo: "론도",
+    Deston: "데스턴",
+    Sanhok: "사녹",
+    Karakin: "카라킨",
+    Haven: "헤이븐",
+    "Chimera_Main": "파라모",
+    "Camp Jackal": "훈련장",
+  }),
+);
+
+const modeNames = new Map(
+  Object.entries({
+    "Solo TPP": "솔로 3인칭",
+    "Solo FPP": "솔로 1인칭",
+    "Duo TPP": "듀오 3인칭",
+    "Duo FPP": "듀오 1인칭",
+    "Squad TPP": "스쿼드 3인칭",
+    "Squad FPP": "스쿼드 1인칭",
+    solo: "솔로 3인칭",
+    "solo-fpp": "솔로 1인칭",
+    duo: "듀오 3인칭",
+    "duo-fpp": "듀오 1인칭",
+    squad: "스쿼드 3인칭",
+    "squad-fpp": "스쿼드 1인칭",
+  }),
+);
+
 const numberFormat = new Intl.NumberFormat("ko-KR");
 const dateFormat = new Intl.DateTimeFormat("ko-KR", {
   month: "2-digit",
@@ -21,54 +66,127 @@ function asNumber(value) {
   return numberFormat.format(Number(value || 0));
 }
 
+function playerName(player) {
+  const raw = typeof player === "string" ? player : player.displayName ?? player.playerName ?? player.name;
+  const lookup = typeof player === "string" ? player : player.playerName ?? player.name ?? raw;
+  return displayNames.get(String(lookup).toLowerCase()) ?? raw;
+}
+
+function originalName(player) {
+  return typeof player === "string" ? player : player.playerName ?? player.name ?? "";
+}
+
+function mapText(name) {
+  return mapNames.get(name) ?? name ?? "-";
+}
+
+function modeText(mode, label) {
+  return modeNames.get(label) ?? modeNames.get(mode) ?? label ?? mode ?? "-";
+}
+
 function rankClass(rank) {
   if (rank === 1) return "rankWin";
   if (Number(rank) <= 10) return "rankTop";
   return "";
 }
 
+function seasonText(season) {
+  if (season === "Lifetime") return "라이프타임";
+  return season.replace(" (current)", " (현재)").replace("PC ", "PC 시즌 ");
+}
+
 function tierText(stats) {
   return [stats.tier, stats.subTier].filter(Boolean).join(" ") || "-";
 }
 
-function seasonText(season) {
-  if (season === "Lifetime") return "라이프타임";
-  return season.replace(" (current)", " (현재 시즌)").replace("PC ", "PC 시즌 ");
+function allRecentMatches(data) {
+  return data.players.flatMap((player) => {
+    return player.matches.map((match) => ({
+      ...match,
+      playerName: player.name,
+      displayName: player.displayName ?? playerName(player),
+    }));
+  });
 }
 
-function allRecentMatches(data) {
-  return data.players.flatMap((player) => player.matches.map((match) => ({ ...match, playerName: player.name })));
+function bestBy(players, getter) {
+  return [...players].sort((a, b) => getter(b) - getter(a))[0] ?? null;
+}
+
+function favoriteMap(matches) {
+  const counts = new Map();
+  for (const match of matches) counts.set(mapText(match.mapName), (counts.get(mapText(match.mapName)) ?? 0) + 1);
+  return [...counts.entries()].sort((a, b) => b[1] - a[1])[0] ?? null;
+}
+
+function buildInsightCards(data) {
+  const recentMatches = allRecentMatches(data);
+  const bestDamageMatch = [...recentMatches].sort((a, b) => b.damage - a.damage)[0] ?? null;
+  const bestKillsMatch = [...recentMatches].sort((a, b) => b.kills - a.kills)[0] ?? null;
+  const ace = bestBy(data.players, (player) => player.stats.avgDamage);
+  const finisher = bestBy(data.players, (player) => player.stats.avgKills);
+  const survivor = bestBy(data.players, (player) => player.stats.top10Rate);
+  const favorite = favoriteMap(recentMatches);
+  const totalWins = data.players.reduce((sum, player) => sum + player.stats.wins, 0);
+  const sharedCount = data.groupedMatches?.length ?? 0;
+
+  return [
+    {
+      icon: "🏆",
+      label: "최근 치킨",
+      value: `${totalWins}회`,
+      sub: "등록 멤버 합산",
+    },
+    {
+      icon: "🔥",
+      label: "한 판 최고 딜",
+      value: bestDamageMatch ? `${asNumber(bestDamageMatch.damage)}딜` : "-",
+      sub: bestDamageMatch ? `${playerName(bestDamageMatch)} / ${mapText(bestDamageMatch.mapName)}` : "기록 없음",
+    },
+    {
+      icon: "🎯",
+      label: "한 판 최다 킬",
+      value: bestKillsMatch ? `${bestKillsMatch.kills}킬` : "-",
+      sub: bestKillsMatch ? playerName(bestKillsMatch) : "기록 없음",
+    },
+    {
+      icon: "⚡",
+      label: "평딜 에이스",
+      value: ace ? `${ace.stats.avgDamage}` : "-",
+      sub: ace ? playerName(ace) : "기록 없음",
+    },
+    {
+      icon: "🧨",
+      label: "킬 템포",
+      value: finisher ? `${finisher.stats.avgKills}` : "-",
+      sub: finisher ? `${playerName(finisher)} 평균 킬` : "기록 없음",
+    },
+    {
+      icon: "🛡️",
+      label: "생존 감각",
+      value: survivor ? `${survivor.stats.top10Rate}%` : "-",
+      sub: survivor ? `${playerName(survivor)} TOP 10` : "기록 없음",
+    },
+    {
+      icon: "🤝",
+      label: "같이 잡힌 판",
+      value: `${sharedCount}판`,
+      sub: "2명 이상 같은 매치",
+    },
+    {
+      icon: "🗺️",
+      label: "주요 전장",
+      value: favorite ? favorite[0] : "-",
+      sub: favorite ? `${favorite[1]}회 등장` : "기록 없음",
+    },
+  ];
 }
 
 function renderSummary(data) {
-  const { bestDamage, bestKills, latestWin } = data.highlights ?? {};
-  const cards = [
-    {
-      label: "최고 딜량",
-      value: bestDamage ? `${asNumber(bestDamage.damage)} dmg` : "-",
-      sub: bestDamage ? `${bestDamage.playerName} / ${bestDamage.mapName}` : "기록 없음",
-    },
-    {
-      label: "최다 킬",
-      value: bestKills ? `${bestKills.kills} kills` : "-",
-      sub: bestKills ? `${bestKills.playerName} / ${bestKills.gameModeLabel}` : "기록 없음",
-    },
-    {
-      label: "최근 치킨",
-      value: latestWin ? latestWin.playerName : "-",
-      sub: latestWin ? `${latestWin.mapName} / ${dateFormat.format(new Date(latestWin.createdAt))}` : "아직 없음",
-    },
-    {
-      label: "함께한 경기",
-      value: asNumber(data.groupedMatches?.length ?? 0),
-      sub: "등록 플레이어가 같은 매치에 잡힌 기록",
-    },
-  ];
-
-  summary.innerHTML = cards
+  summary.innerHTML = buildInsightCards(data)
     .map((card) => {
       return `<article class="statCard">
-        <p class="label">${card.label}</p>
+        <div class="cardTop"><span class="cardIcon">${card.icon}</span><p class="label">${card.label}</p></div>
         <p class="value">${card.value}</p>
         <p class="sub">${card.sub}</p>
       </article>`;
@@ -82,15 +200,23 @@ function renderPlayers(data) {
       const lifetimeModes = Object.values(player.history?.lifetime ?? {});
       const lifetimeRounds = lifetimeModes.reduce((sum, mode) => sum + mode.rounds, 0);
       const lifetimeKills = lifetimeModes.reduce((sum, mode) => sum + mode.kills, 0);
+      const name = playerName(player);
+
       return `<article class="playerCard">
-        <h3>${player.name}</h3>
-        <p class="sub">최근 ${player.stats.matches}경기 / 라이프타임 ${asNumber(lifetimeRounds)}경기</p>
-        <div class="metrics">
-          <div class="metric"><strong>${player.stats.avgDamage}</strong><span>최근 평균 딜량</span></div>
-          <div class="metric"><strong>${player.stats.avgKills}</strong><span>최근 평균 킬</span></div>
-          <div class="metric"><strong>${player.stats.top10Rate}%</strong><span>최근 TOP 10</span></div>
-          <div class="metric"><strong>${asNumber(lifetimeKills)}</strong><span>라이프타임 킬</span></div>
+        <div class="playerHead">
+          <div class="avatar">${name.slice(0, 1)}</div>
+          <div>
+            <h3>${name}</h3>
+            <p class="sub">${originalName(player)}</p>
+          </div>
         </div>
+        <div class="metrics">
+          <div class="metric"><strong>${player.stats.avgDamage}</strong><span>평딜</span></div>
+          <div class="metric"><strong>${player.stats.avgKills}</strong><span>평균 킬</span></div>
+          <div class="metric"><strong>${player.stats.top10Rate}%</strong><span>TOP 10</span></div>
+          <div class="metric"><strong>${asNumber(lifetimeKills)}</strong><span>누적 킬</span></div>
+        </div>
+        <p class="tinyNote">최근 ${player.stats.matches}경기 / 누적 ${asNumber(lifetimeRounds)}경기</p>
       </article>`;
     })
     .join("");
@@ -112,9 +238,9 @@ function renderMatches(data) {
       const rank = match.rank ? `#${match.rank}` : "-";
       return `<tr>
         <td data-label="시간">${dateFormat.format(new Date(match.createdAt))}</td>
-        <td data-label="플레이어">${match.playerName}</td>
-        <td data-label="맵">${match.mapName}</td>
-        <td data-label="모드">${match.gameModeLabel}</td>
+        <td data-label="플레이어"><strong>${playerName(match)}</strong></td>
+        <td data-label="맵">${mapText(match.mapName)}</td>
+        <td data-label="모드">${modeText(match.gameMode, match.gameModeLabel)}</td>
         <td data-label="순위" class="${rankClass(match.rank)}">${rank}</td>
         <td data-label="킬">${match.kills}</td>
         <td data-label="딜량">${asNumber(match.damage)}</td>
@@ -129,27 +255,27 @@ function renderGroupedMatches(data) {
   const groupedMatches = data.groupedMatches ?? [];
 
   if (!groupedMatches.length) {
-    groupRows.innerHTML = `<tr><td class="empty" colspan="8">최근 API 조회 범위에서 함께 플레이한 경기가 없습니다.</td></tr>`;
+    groupRows.innerHTML = `<tr><td class="empty" colspan="8">최근 조회 범위에서 함께 플레이한 경기가 없습니다.</td></tr>`;
     return;
   }
 
   groupRows.innerHTML = groupedMatches
     .map((match) => {
       const participants = match.participants
-        .map((player) => `${player.playerName}: #${player.rank ?? "-"} / ${player.kills}킬 / ${asNumber(player.damage)}딜`)
-        .join("<br>");
-      const totalKills = match.participants.reduce((sum, player) => sum + player.kills, 0);
-      const totalDamage = match.participants.reduce((sum, player) => sum + player.damage, 0);
+        .map((participant) => `<span class="playerLine">${playerName(participant)} <b>#${participant.rank ?? "-"}</b> · ${participant.kills}킬 · ${asNumber(participant.damage)}딜</span>`)
+        .join("");
+      const totalKills = match.participants.reduce((sum, participant) => sum + participant.kills, 0);
+      const totalDamage = match.participants.reduce((sum, participant) => sum + participant.damage, 0);
 
       return `<tr>
         <td data-label="시간">${dateFormat.format(new Date(match.createdAt))}</td>
-        <td data-label="맵">${match.mapName}</td>
-        <td data-label="모드">${match.gameModeLabel}</td>
+        <td data-label="맵">${mapText(match.mapName)}</td>
+        <td data-label="모드">${modeText(match.gameMode, match.gameModeLabel)}</td>
         <td data-label="인원">${match.participants.length}명</td>
-        <td data-label="플레이어 기록">${participants}</td>
+        <td data-label="기록">${participants}</td>
         <td data-label="합산 킬">${totalKills}</td>
         <td data-label="합산 딜량">${asNumber(totalDamage)}</td>
-        <td data-label="경기 시간">${match.duration}분</td>
+        <td data-label="시간">${match.duration}분</td>
       </tr>`;
     })
     .join("");
@@ -162,13 +288,13 @@ function renderSeasonHistory(data) {
 
   for (const player of targetPlayers) {
     for (const [mode, stats] of Object.entries(player.history?.lifetime ?? {})) {
-      rows.push({ player: player.name, season: "Lifetime", mode, stats });
+      rows.push({ player, season: "Lifetime", mode, stats });
     }
 
     for (const season of player.history?.rankedSeasons ?? []) {
       for (const [mode, stats] of Object.entries(season.modes ?? {})) {
         rows.push({
-          player: player.name,
+          player,
           season: `${season.label}${season.isCurrentSeason ? " (current)" : ""}`,
           mode,
           stats,
@@ -178,20 +304,20 @@ function renderSeasonHistory(data) {
   }
 
   if (!rows.length) {
-    seasonRows.innerHTML = `<tr><td class="empty" colspan="10">API에서 라이프타임 또는 경쟁전 시즌 기록을 반환하지 않았습니다.</td></tr>`;
+    seasonRows.innerHTML = `<tr><td class="empty" colspan="10">라이프타임 또는 경쟁전 시즌 기록이 없습니다.</td></tr>`;
     return;
   }
 
   seasonRows.innerHTML = rows
     .map((row) => {
       return `<tr>
-        <td data-label="플레이어">${row.player}</td>
+        <td data-label="플레이어"><strong>${playerName(row.player)}</strong></td>
         <td data-label="시즌">${seasonText(row.season)}</td>
-        <td data-label="모드">${row.mode}</td>
-        <td data-label="경기 수">${asNumber(row.stats.rounds)}</td>
+        <td data-label="모드">${modeText(row.mode, row.mode)}</td>
+        <td data-label="경기">${asNumber(row.stats.rounds)}</td>
         <td data-label="승리">${asNumber(row.stats.wins)}</td>
         <td data-label="킬">${asNumber(row.stats.kills)}</td>
-        <td data-label="평균 딜량">${asNumber(row.stats.avgDamage)}</td>
+        <td data-label="평딜">${asNumber(row.stats.avgDamage)}</td>
         <td data-label="K/D">${row.stats.kd}</td>
         <td data-label="승률">${row.stats.winRate}%</td>
         <td data-label="티어">${tierText(row.stats)}</td>
@@ -201,7 +327,7 @@ function renderSeasonHistory(data) {
 }
 
 function populateFilters(data) {
-  const options = data.players.map((player) => `<option value="${player.name}">${player.name}</option>`).join("");
+  const options = data.players.map((player) => `<option value="${player.name}">${playerName(player)}</option>`).join("");
   playerFilter.innerHTML = `<option value="all">전체 플레이어</option>${options}`;
   historyFilter.innerHTML = `<option value="all">전체 플레이어</option>${options}`;
 }
@@ -213,7 +339,7 @@ async function load() {
     const data = await response.json();
     const limits = data.limits ?? {};
 
-    updatedAt.textContent = `마지막 갱신: ${dateFormat.format(new Date(data.generatedAt))} / ${data.shard} / 최근 경기 상세는 PUBG API 정책상 ${limits.recentMatchDays ?? 14}일까지만 조회됩니다`;
+    updatedAt.textContent = `마지막 갱신 ${dateFormat.format(new Date(data.generatedAt))} · 최근 상세 ${limits.recentMatchDays ?? 14}일`;
     populateFilters(data);
     renderSummary(data);
     renderPlayers(data);

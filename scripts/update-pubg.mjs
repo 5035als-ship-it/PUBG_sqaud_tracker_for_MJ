@@ -13,6 +13,18 @@ const MAX_SEASONS_PER_PLAYER = 8;
 const RATE_LIMITED_REQUEST_SPACING_MS = 6500;
 let lastRateLimitedRequestAt = 0;
 
+const PLAYER_DISPLAY_NAMES = new Map(
+  [
+    ["ClassMusic", "이성용"],
+    ["Classmuisc", "이성용"],
+    ["Machine_Jun", "김민준"],
+    ["Machine_jun", "김민준"],
+    ["MJPantyThief", "최낙범"],
+    ["MJpantythief", "최낙범"],
+    ["coca_cola_bear_", "이명준"],
+  ].map(([id, name]) => [id.toLowerCase(), name]),
+);
+
 if (!API_KEY) {
   throw new Error("PUBG_API_KEY is required.");
 }
@@ -76,33 +88,38 @@ function minutes(seconds) {
   return Math.round((Number(seconds || 0) / 60) * 10) / 10;
 }
 
+function displayName(playerName) {
+  return PLAYER_DISPLAY_NAMES.get(String(playerName).toLowerCase()) ?? playerName;
+}
+
 function pickMapName(rawName) {
   const maps = {
-    Baltic_Main: "Erangel",
-    Desert_Main: "Miramar",
-    DihorOtok_Main: "Vikendi",
-    Erangel_Main: "Erangel",
-    Heaven_Main: "Haven",
-    Kiki_Main: "Deston",
-    Range_Main: "Camp Jackal",
-    Savage_Main: "Sanhok",
-    Summerland_Main: "Karakin",
-    Tiger_Main: "Taego",
-    Neon_Main: "Rondo",
+    Baltic_Main: "에란겔",
+    Desert_Main: "미라마",
+    DihorOtok_Main: "비켄디",
+    Erangel_Main: "에란겔",
+    Heaven_Main: "헤이븐",
+    Kiki_Main: "데스턴",
+    Range_Main: "훈련장",
+    Savage_Main: "사녹",
+    Summerland_Main: "카라킨",
+    Tiger_Main: "태이고",
+    Neon_Main: "론도",
+    Chimera_Main: "파라모",
   };
 
-  return maps[rawName] ?? rawName ?? "Unknown";
+  return maps[rawName] ?? rawName ?? "알 수 없음";
 }
 
 function modeLabel(mode) {
   return {
-    solo: "Solo TPP",
-    "solo-fpp": "Solo FPP",
-    duo: "Duo TPP",
-    "duo-fpp": "Duo FPP",
-    squad: "Squad TPP",
-    "squad-fpp": "Squad FPP",
-  }[mode] ?? mode ?? "Unknown";
+    solo: "솔로 3인칭",
+    "solo-fpp": "솔로 1인칭",
+    duo: "듀오 3인칭",
+    "duo-fpp": "듀오 1인칭",
+    squad: "스쿼드 3인칭",
+    "squad-fpp": "스쿼드 1인칭",
+  }[mode] ?? mode ?? "알 수 없음";
 }
 
 function seasonLabel(seasonId) {
@@ -132,6 +149,7 @@ function summarizeMatch(match, player) {
   return {
     id: match.data.id,
     playerName: player.name,
+    displayName: displayName(player.name),
     accountId: player.id,
     createdAt: match.data.attributes?.createdAt,
     gameMode: match.data.attributes?.gameMode,
@@ -249,6 +267,7 @@ function buildGroupedMatches(players) {
 
       current.participants.push({
         playerName: player.name,
+        displayName: player.displayName,
         rank: match.rank,
         kills: match.kills,
         assists: match.assists,
@@ -321,7 +340,7 @@ function buildDiscordMessage(data, previous) {
     .slice(0, 8)
     .map((match) => {
       const rank = match.rank ? `#${match.rank}` : "rank ?";
-      return `- ${match.playerName}: ${rank}, ${match.kills}K, ${match.damage} dmg, ${match.mapName} ${match.gameModeLabel}`;
+      return `- ${match.displayName ?? match.playerName}: ${rank}, ${match.kills}킬, ${match.damage}딜, ${match.mapName} ${match.gameModeLabel}`;
     })
     .join("\n");
 
@@ -352,6 +371,7 @@ async function main() {
   const players = playerResponse.data.map((player) => ({
     id: player.id,
     name: player.attributes.name,
+    displayName: displayName(player.attributes.name),
     shardId: player.attributes.shardId,
     matchIds: (player.relationships?.matches?.data ?? []).slice(0, MAX_MATCHES_PER_PLAYER).map((match) => match.id),
   }));
@@ -381,6 +401,7 @@ async function main() {
     enrichedPlayers.push({
       id: player.id,
       name: player.name,
+      displayName: player.displayName,
       shardId: player.shardId,
       stats: aggregate(matches),
       matches,

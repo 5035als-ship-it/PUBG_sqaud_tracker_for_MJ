@@ -3,30 +3,29 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>PUBG Squad Tracker</title>
+    <title>MJ 스쿼드 전적실</title>
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
     <header class="topbar">
       <div>
         <img class="brandMark" src="https://wstatic-prod.pubg.com/web/live/main_c473c91/img/1de035e.webp" alt="PUBG BATTLEGROUNDS" />
-        <h1>PUBG Squad Tracker</h1>
+        <p class="eyebrow">Steam PUBG Squad Tracker</p>
+        <h1>MJ 스쿼드 전적실</h1>
         <p id="updatedAt">전적 데이터를 불러오는 중</p>
       </div>
       <a class="refreshLink" href="./data/pubg-stats.json">JSON</a>
     </header>
 
     <main>
-      <section class="notice">
-        최근 경기 상세 기록은 PUBG API 정책상 최근 14일 데이터까지만 표시됩니다. 이전 기록은 API에서 제공되는 라이프타임 누적 전적과 경쟁전 시즌 요약으로 보여줍니다.
-      </section>
+      <section class="notice">최근 경기 상세는 PUBG API 정책상 14일까지만 조회됩니다. 오래된 기록은 라이프타임과 경쟁전 시즌 요약으로 보여줍니다.</section>
 
-      <section class="summary" id="summary"></section>
-      <section class="players" id="players"></section>
+      <section class="summary" id="summary" aria-label="핵심 통계"></section>
+      <section class="players" id="players" aria-label="플레이어 카드"></section>
 
       <section class="matches">
         <div class="sectionTitle">
-          <h2>플레이어별 최근 경기</h2>
+          <h2>최근 경기</h2>
           <select id="playerFilter" aria-label="플레이어 필터">
             <option value="all">전체 플레이어</option>
           </select>
@@ -53,7 +52,7 @@
 
       <section class="matches">
         <div class="sectionTitle">
-          <h2>함께 플레이한 경기</h2>
+          <h2>같이 한 판</h2>
         </div>
         <div class="tableWrap">
           <table>
@@ -63,10 +62,10 @@
                 <th>맵</th>
                 <th>모드</th>
                 <th>인원</th>
-                <th>플레이어 기록</th>
+                <th>기록</th>
                 <th>합산 킬</th>
                 <th>합산 딜량</th>
-                <th>경기 시간</th>
+                <th>시간</th>
               </tr>
             </thead>
             <tbody id="groupRows"></tbody>
@@ -74,9 +73,9 @@
         </div>
       </section>
 
-      <section class="matches">
+      <section class="matches compactSection">
         <div class="sectionTitle">
-          <h2>라이프타임 및 경쟁전 시즌</h2>
+          <h2>누적 / 경쟁전</h2>
           <select id="historyFilter" aria-label="시즌 기록 플레이어 필터">
             <option value="all">전체 플레이어</option>
           </select>
@@ -88,10 +87,10 @@
                 <th>플레이어</th>
                 <th>시즌</th>
                 <th>모드</th>
-                <th>경기 수</th>
+                <th>경기</th>
                 <th>승리</th>
                 <th>킬</th>
-                <th>평균 딜량</th>
+                <th>평딜</th>
                 <th>K/D</th>
                 <th>승률</th>
                 <th>티어</th>
