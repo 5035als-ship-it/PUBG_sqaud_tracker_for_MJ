@@ -1,0 +1,16 @@
+{
+  "generatedAt": "2026-05-04T00:00:00.000Z",
+  "shard": "steam",
+  "trackedPlayers": [
+    "ClassMusic",
+    "MJPantyThief",
+    "Machine_Jun",
+    "coca_cola_bear_"
+  ],
+  "players": [],
+  "highlights": {
+    "bestDamage": null,
+    "bestKills": null,
+    "latestWin": null
+  }
+}

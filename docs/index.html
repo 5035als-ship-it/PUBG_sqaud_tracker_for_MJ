@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>PUBG Squad Tracker</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div>
+        <img class="brandMark" src="https://wstatic-prod.pubg.com/web/live/main_c473c91/img/1de035e.webp" alt="PUBG BATTLEGROUNDS" />
+        <h1>PUBG Squad Tracker</h1>
+        <p id="updatedAt">전적 데이터를 불러오는 중</p>
+      </div>
+      <a class="refreshLink" href="./data/pubg-stats.json">JSON</a>
+    </header>
+
+    <main>
+      <section class="summary" id="summary"></section>
+      <section class="players" id="players"></section>
+      <section class="matches">
+        <div class="sectionTitle">
+          <h2>최근 경기</h2>
+          <select id="playerFilter" aria-label="플레이어 필터">
+            <option value="all">전체</option>
+          </select>
+        </div>
+        <div class="tableWrap">
+          <table>
+            <thead>
+              <tr>
+                <th>시간</th>
+                <th>플레이어</th>
+                <th>맵</th>
+                <th>모드</th>
+                <th>순위</th>
+                <th>킬</th>
+                <th>딜량</th>
+                <th>DBNO</th>
+                <th>생존</th>
+              </tr>
+            </thead>
+            <tbody id="matchRows"></tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+
+    <script src="./app.js" type="module"></script>
+  </body>
+</html>
