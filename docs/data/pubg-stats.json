@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-06T04:44:15.044Z",
+  "generatedAt": "2026-05-06T07:24:14.411Z",
   "shard": "steam",
   "trackedPlayers": [
     "ClassMusic",
@@ -1009,18 +1009,18 @@
       "displayEmoji": "✈️",
       "shardId": "steam",
       "stats": {
-        "matches": 32,
+        "matches": 31,
         "wins": 1,
         "top10": 18,
-        "winRate": 3.1,
-        "top10Rate": 56.3,
+        "winRate": 3.2,
+        "top10Rate": 58.1,
         "avgKills": 1.3,
-        "avgDamage": 174,
-        "kd": 1.31,
+        "avgDamage": 176,
+        "kd": 1.32,
         "totals": {
-          "kills": 42,
+          "kills": 41,
           "assists": 9,
-          "damage": 5571,
+          "damage": 5471,
           "dbnos": 26
         }
       },
@@ -1644,26 +1644,6 @@
           "headshotKills": 0,
           "longestKill": 0,
           "survivedMinutes": 19.8
-        },
-        {
-          "id": "06e039f1-e31e-4f5f-8964-dc259125fe32",
-          "playerName": "Machine_Jun",
-          "displayName": "김민준",
-          "displayEmoji": "✈️",
-          "accountId": "account.07898eaabddf4b93861abc7622f9056b",
-          "createdAt": "2026-04-22T04:32:28Z",
-          "gameMode": "solo",
-          "gameModeLabel": "솔로 3인칭",
-          "mapName": "에란겔",
-          "duration": 27,
-          "rank": 49,
-          "kills": 1,
-          "assists": 0,
-          "damage": 100,
-          "dbnos": 0,
-          "headshotKills": 0,
-          "longestKill": 76,
-          "survivedMinutes": 11.7
         }
       ]
     },
