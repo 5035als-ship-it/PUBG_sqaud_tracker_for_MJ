@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-08T14:15:21.137Z",
+  "generatedAt": "2026-05-08T15:53:40.451Z",
   "shard": "steam",
   "trackedPlayers": [
     "ClassMusic",
@@ -21,20 +21,40 @@
       "stats": {
         "matches": 32,
         "wins": 1,
-        "top10": 15,
+        "top10": 16,
         "winRate": 3.1,
-        "top10Rate": 46.9,
+        "top10Rate": 50,
         "avgKills": 0.4,
-        "avgDamage": 100,
+        "avgDamage": 94,
         "kd": 0.44,
         "totals": {
           "kills": 14,
           "assists": 6,
-          "damage": 3184,
+          "damage": 2996,
           "dbnos": 18
         }
       },
       "matches": [
+        {
+          "id": "dffb09bc-76e5-433f-af57-bf8bfe3618e2",
+          "playerName": "ClassMusic",
+          "displayName": "이성용",
+          "displayEmoji": "☕",
+          "accountId": "account.bb94cc7fcb704866b99dccbcdcc64547",
+          "createdAt": "2026-05-08T15:26:22Z",
+          "gameMode": "squad",
+          "gameModeLabel": "스쿼드 3인칭",
+          "mapName": "사녹",
+          "duration": 21.2,
+          "rank": 4,
+          "kills": 0,
+          "assists": 0,
+          "damage": 0,
+          "dbnos": 0,
+          "headshotKills": 0,
+          "longestKill": 0,
+          "survivedMinutes": 15.8
+        },
         {
           "id": "d9e6d49b-fbec-40ec-acd6-babc02a82cb0",
           "playerName": "ClassMusic",
@@ -654,26 +674,6 @@
           "headshotKills": 0,
           "longestKill": 0,
           "survivedMinutes": 8.5
-        },
-        {
-          "id": "1321aa6d-2746-4a44-b803-8cb609d71179",
-          "playerName": "ClassMusic",
-          "displayName": "이성용",
-          "displayEmoji": "☕",
-          "accountId": "account.bb94cc7fcb704866b99dccbcdcc64547",
-          "createdAt": "2026-05-06T13:40:11Z",
-          "gameMode": "squad",
-          "gameModeLabel": "스쿼드 3인칭",
-          "mapName": "태이고",
-          "duration": 26.5,
-          "rank": 13,
-          "kills": 0,
-          "assists": 0,
-          "damage": 188,
-          "dbnos": 0,
-          "headshotKills": 0,
-          "longestKill": 0,
-          "survivedMinutes": 19.2
         }
       ]
     },
@@ -2722,17 +2722,6 @@
       "mapName": "태이고",
       "duration": 26.5,
       "participants": [
-        {
-          "playerName": "ClassMusic",
-          "displayName": "이성용",
-          "displayEmoji": "☕",
-          "rank": 13,
-          "kills": 0,
-          "assists": 0,
-          "damage": 188,
-          "dbnos": 0,
-          "survivedMinutes": 19.2
-        },
         {
           "playerName": "MJpantythief",
           "displayName": "최낙범",
