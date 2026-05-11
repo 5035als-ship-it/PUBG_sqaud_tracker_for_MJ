@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-11T08:45:11.696Z",
+  "generatedAt": "2026-05-11T11:49:13.426Z",
   "shard": "steam",
   "trackedPlayers": [
     "ClassMusic",
@@ -684,19 +684,19 @@
       "displayEmoji": "🥜",
       "shardId": "steam",
       "stats": {
-        "matches": 20,
+        "matches": 19,
         "wins": 1,
-        "top10": 11,
-        "winRate": 5,
-        "top10Rate": 55,
+        "top10": 10,
+        "winRate": 5.3,
+        "top10Rate": 52.6,
         "avgKills": 1.6,
-        "avgDamage": 257,
-        "kd": 1.6,
+        "avgDamage": 253,
+        "kd": 1.58,
         "totals": {
-          "kills": 32,
+          "kills": 30,
           "assists": 8,
-          "damage": 5138,
-          "dbnos": 33
+          "damage": 4798,
+          "dbnos": 31
         }
       },
       "matches": [
@@ -1079,26 +1079,6 @@
           "headshotKills": 0,
           "longestKill": 7,
           "survivedMinutes": 15.7
-        },
-        {
-          "id": "8dd2a2ec-bbe2-4e85-b5a6-f04fb46ec993",
-          "playerName": "MJpantythief",
-          "displayName": "최낙범",
-          "displayEmoji": "🥜",
-          "accountId": "account.e2d2618e382d4e03b7313e696fa8492b",
-          "createdAt": "2026-04-27T10:43:29Z",
-          "gameMode": "duo",
-          "gameModeLabel": "듀오 3인칭",
-          "mapName": "에란겔",
-          "duration": 26.3,
-          "rank": 3,
-          "kills": 2,
-          "assists": 0,
-          "damage": 340,
-          "dbnos": 2,
-          "headshotKills": 0,
-          "longestKill": 43,
-          "survivedMinutes": 23.7
         }
       ]
     },
