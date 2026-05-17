@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-17T14:11:25.215Z",
+  "generatedAt": "2026-05-17T15:16:50.292Z",
   "shard": "steam",
   "trackedPlayers": [
     "ClassMusic",
@@ -21,20 +21,40 @@
       "stats": {
         "matches": 32,
         "wins": 0,
-        "top10": 19,
+        "top10": 18,
         "winRate": 0,
-        "top10Rate": 59.4,
+        "top10Rate": 56.3,
         "avgKills": 0.9,
-        "avgDamage": 141,
-        "kd": 0.88,
+        "avgDamage": 154,
+        "kd": 0.94,
         "totals": {
-          "kills": 28,
+          "kills": 30,
           "assists": 9,
-          "damage": 4500,
+          "damage": 4926,
           "dbnos": 22
         }
       },
       "matches": [
+        {
+          "id": "c5d67e26-45d9-4824-9d8d-23b80b56ff22",
+          "playerName": "ClassMusic",
+          "displayName": "이성용",
+          "displayEmoji": "☕",
+          "accountId": "account.bb94cc7fcb704866b99dccbcdcc64547",
+          "createdAt": "2026-05-17T13:51:17Z",
+          "gameMode": "squad",
+          "gameModeLabel": "스쿼드 3인칭",
+          "mapName": "태이고",
+          "duration": 29,
+          "rank": 16,
+          "kills": 2,
+          "assists": 1,
+          "damage": 460,
+          "dbnos": 1,
+          "headshotKills": 0,
+          "longestKill": 42,
+          "survivedMinutes": 16.5
+        },
         {
           "id": "99b7474c-7f76-4e2e-9d40-fc263eb453b4",
           "playerName": "ClassMusic",
@@ -654,26 +674,6 @@
           "headshotKills": 0,
           "longestKill": 0,
           "survivedMinutes": 19.3
-        },
-        {
-          "id": "1e6a0282-f092-4b45-8186-00537bab03f1",
-          "playerName": "ClassMusic",
-          "displayName": "이성용",
-          "displayEmoji": "☕",
-          "accountId": "account.bb94cc7fcb704866b99dccbcdcc64547",
-          "createdAt": "2026-05-14T13:18:33Z",
-          "gameMode": "squad",
-          "gameModeLabel": "스쿼드 3인칭",
-          "mapName": "미라마",
-          "duration": 26.4,
-          "rank": 2,
-          "kills": 0,
-          "assists": 1,
-          "damage": 34,
-          "dbnos": 1,
-          "headshotKills": 0,
-          "longestKill": 0,
-          "survivedMinutes": 26
         }
       ]
     },
@@ -2020,16 +2020,36 @@
         "winRate": 6.3,
         "top10Rate": 65.6,
         "avgKills": 0.9,
-        "avgDamage": 106,
-        "kd": 0.91,
+        "avgDamage": 107,
+        "kd": 0.94,
         "totals": {
-          "kills": 29,
+          "kills": 30,
           "assists": 9,
-          "damage": 3391,
+          "damage": 3435,
           "dbnos": 20
         }
       },
       "matches": [
+        {
+          "id": "c5d67e26-45d9-4824-9d8d-23b80b56ff22",
+          "playerName": "coca_cola_bear_",
+          "displayName": "이명준",
+          "displayEmoji": "🥤",
+          "accountId": "account.697ff771fb804577bc3167c2db33233b",
+          "createdAt": "2026-05-17T13:51:17Z",
+          "gameMode": "squad",
+          "gameModeLabel": "스쿼드 3인칭",
+          "mapName": "태이고",
+          "duration": 29,
+          "rank": 16,
+          "kills": 1,
+          "assists": 0,
+          "damage": 118,
+          "dbnos": 1,
+          "headshotKills": 0,
+          "longestKill": 15,
+          "survivedMinutes": 15.1
+        },
         {
           "id": "99b7474c-7f76-4e2e-9d40-fc263eb453b4",
           "playerName": "coca_cola_bear_",
@@ -2649,26 +2669,6 @@
           "headshotKills": 1,
           "longestKill": 5,
           "survivedMinutes": 20.4
-        },
-        {
-          "id": "6fa28eb8-eab1-4287-acb3-b2aaccd5fbdb",
-          "playerName": "coca_cola_bear_",
-          "displayName": "이명준",
-          "displayEmoji": "🥤",
-          "accountId": "account.697ff771fb804577bc3167c2db33233b",
-          "createdAt": "2026-05-12T14:03:49Z",
-          "gameMode": "squad",
-          "gameModeLabel": "스쿼드 3인칭",
-          "mapName": "사녹",
-          "duration": 22.9,
-          "rank": 11,
-          "kills": 0,
-          "assists": 0,
-          "damage": 74,
-          "dbnos": 1,
-          "headshotKills": 0,
-          "longestKill": 0,
-          "survivedMinutes": 12.2
         }
       ]
     }
@@ -2736,6 +2736,38 @@
     }
   },
   "groupedMatches": [
+    {
+      "id": "c5d67e26-45d9-4824-9d8d-23b80b56ff22",
+      "createdAt": "2026-05-17T13:51:17Z",
+      "gameMode": "squad",
+      "gameModeLabel": "스쿼드 3인칭",
+      "mapName": "태이고",
+      "duration": 29,
+      "participants": [
+        {
+          "playerName": "ClassMusic",
+          "displayName": "이성용",
+          "displayEmoji": "☕",
+          "rank": 16,
+          "kills": 2,
+          "assists": 1,
+          "damage": 460,
+          "dbnos": 1,
+          "survivedMinutes": 16.5
+        },
+        {
+          "playerName": "coca_cola_bear_",
+          "displayName": "이명준",
+          "displayEmoji": "🥤",
+          "rank": 16,
+          "kills": 1,
+          "assists": 0,
+          "damage": 118,
+          "dbnos": 1,
+          "survivedMinutes": 15.1
+        }
+      ]
+    },
     {
       "id": "99b7474c-7f76-4e2e-9d40-fc263eb453b4",
       "createdAt": "2026-05-17T13:22:27Z",
@@ -3741,38 +3773,6 @@
           "damage": 100,
           "dbnos": 1,
           "survivedMinutes": 20.4
-        }
-      ]
-    },
-    {
-      "id": "6fa28eb8-eab1-4287-acb3-b2aaccd5fbdb",
-      "createdAt": "2026-05-12T14:03:49Z",
-      "gameMode": "squad",
-      "gameModeLabel": "스쿼드 3인칭",
-      "mapName": "사녹",
-      "duration": 22.9,
-      "participants": [
-        {
-          "playerName": "MJpantythief",
-          "displayName": "최낙범",
-          "displayEmoji": "🥜",
-          "rank": 11,
-          "kills": 0,
-          "assists": 0,
-          "damage": 0,
-          "dbnos": 0,
-          "survivedMinutes": 1.3
-        },
-        {
-          "playerName": "coca_cola_bear_",
-          "displayName": "이명준",
-          "displayEmoji": "🥤",
-          "rank": 11,
-          "kills": 0,
-          "assists": 0,
-          "damage": 74,
-          "dbnos": 1,
-          "survivedMinutes": 12.2
         }
       ]
     },
