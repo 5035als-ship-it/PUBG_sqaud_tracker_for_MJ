@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-20T17:29:13.807Z",
+  "generatedAt": "2026-05-21T13:50:57.340Z",
   "shard": "steam",
   "trackedPlayers": [
     "ClassMusic",
@@ -684,22 +684,82 @@
       "displayEmoji": "🥜",
       "shardId": "steam",
       "stats": {
-        "matches": 28,
+        "matches": 31,
         "wins": 3,
         "top10": 17,
-        "winRate": 10.7,
-        "top10Rate": 60.7,
-        "avgKills": 1.9,
-        "avgDamage": 243,
-        "kd": 1.93,
+        "winRate": 9.7,
+        "top10Rate": 54.8,
+        "avgKills": 1.8,
+        "avgDamage": 232,
+        "kd": 1.81,
         "totals": {
-          "kills": 54,
+          "kills": 56,
           "assists": 8,
-          "damage": 6809,
-          "dbnos": 53
+          "damage": 7196,
+          "dbnos": 54
         }
       },
       "matches": [
+        {
+          "id": "5f204697-cc53-4bfb-8bdd-1dfc9e7a4cb0",
+          "playerName": "MJpantythief",
+          "displayName": "최낙범",
+          "displayEmoji": "🥜",
+          "accountId": "account.e2d2618e382d4e03b7313e696fa8492b",
+          "createdAt": "2026-05-21T13:22:02Z",
+          "gameMode": "duo",
+          "gameModeLabel": "듀오 3인칭",
+          "mapName": "태이고",
+          "duration": 25.9,
+          "rank": 34,
+          "kills": 2,
+          "assists": 0,
+          "damage": 288,
+          "dbnos": 1,
+          "headshotKills": 0,
+          "longestKill": 107,
+          "survivedMinutes": 8.1
+        },
+        {
+          "id": "b35ed08d-5d96-4bdc-bbe4-7484485e8c7c",
+          "playerName": "MJpantythief",
+          "displayName": "최낙범",
+          "displayEmoji": "🥜",
+          "accountId": "account.e2d2618e382d4e03b7313e696fa8492b",
+          "createdAt": "2026-05-21T13:15:27Z",
+          "gameMode": "duo",
+          "gameModeLabel": "듀오 3인칭",
+          "mapName": "태이고",
+          "duration": 27.4,
+          "rank": 38,
+          "kills": 0,
+          "assists": 0,
+          "damage": 0,
+          "dbnos": 0,
+          "headshotKills": 0,
+          "longestKill": 0,
+          "survivedMinutes": 4.4
+        },
+        {
+          "id": "580e2adc-7c75-4c52-9892-394944e65560",
+          "playerName": "MJpantythief",
+          "displayName": "최낙범",
+          "displayEmoji": "🥜",
+          "accountId": "account.e2d2618e382d4e03b7313e696fa8492b",
+          "createdAt": "2026-05-21T13:09:58Z",
+          "gameMode": "duo",
+          "gameModeLabel": "듀오 3인칭",
+          "mapName": "태이고",
+          "duration": 27.1,
+          "rank": 43,
+          "kills": 0,
+          "assists": 0,
+          "damage": 99,
+          "dbnos": 0,
+          "headshotKills": 0,
+          "longestKill": 0,
+          "survivedMinutes": 2.6
+        },
         {
           "id": "017228a4-1f7d-4989-b9db-21622df440b0",
           "playerName": "MJpantythief",
@@ -1936,20 +1996,80 @@
       "stats": {
         "matches": 32,
         "wins": 1,
-        "top10": 19,
+        "top10": 18,
         "winRate": 3.1,
-        "top10Rate": 59.4,
+        "top10Rate": 56.3,
         "avgKills": 0.9,
-        "avgDamage": 108,
-        "kd": 0.94,
+        "avgDamage": 105,
+        "kd": 0.88,
         "totals": {
-          "kills": 30,
+          "kills": 28,
           "assists": 9,
-          "damage": 3452,
-          "dbnos": 19
+          "damage": 3347,
+          "dbnos": 18
         }
       },
       "matches": [
+        {
+          "id": "5f204697-cc53-4bfb-8bdd-1dfc9e7a4cb0",
+          "playerName": "coca_cola_bear_",
+          "displayName": "이명준",
+          "displayEmoji": "🥤",
+          "accountId": "account.697ff771fb804577bc3167c2db33233b",
+          "createdAt": "2026-05-21T13:22:02Z",
+          "gameMode": "duo",
+          "gameModeLabel": "듀오 3인칭",
+          "mapName": "태이고",
+          "duration": 25.9,
+          "rank": 34,
+          "kills": 0,
+          "assists": 1,
+          "damage": 45,
+          "dbnos": 0,
+          "headshotKills": 0,
+          "longestKill": 0,
+          "survivedMinutes": 8.1
+        },
+        {
+          "id": "b35ed08d-5d96-4bdc-bbe4-7484485e8c7c",
+          "playerName": "coca_cola_bear_",
+          "displayName": "이명준",
+          "displayEmoji": "🥤",
+          "accountId": "account.697ff771fb804577bc3167c2db33233b",
+          "createdAt": "2026-05-21T13:15:27Z",
+          "gameMode": "duo",
+          "gameModeLabel": "듀오 3인칭",
+          "mapName": "태이고",
+          "duration": 27.4,
+          "rank": 38,
+          "kills": 0,
+          "assists": 0,
+          "damage": 0,
+          "dbnos": 0,
+          "headshotKills": 0,
+          "longestKill": 0,
+          "survivedMinutes": 4.4
+        },
+        {
+          "id": "580e2adc-7c75-4c52-9892-394944e65560",
+          "playerName": "coca_cola_bear_",
+          "displayName": "이명준",
+          "displayEmoji": "🥤",
+          "accountId": "account.697ff771fb804577bc3167c2db33233b",
+          "createdAt": "2026-05-21T13:09:58Z",
+          "gameMode": "duo",
+          "gameModeLabel": "듀오 3인칭",
+          "mapName": "태이고",
+          "duration": 27.1,
+          "rank": 43,
+          "kills": 0,
+          "assists": 0,
+          "damage": 0,
+          "dbnos": 0,
+          "headshotKills": 0,
+          "longestKill": 0,
+          "survivedMinutes": 2.9
+        },
         {
           "id": "7b336d9f-44a2-4214-9fd2-2a535e28f689",
           "playerName": "coca_cola_bear_",
@@ -2529,66 +2649,6 @@
           "headshotKills": 0,
           "longestKill": 11,
           "survivedMinutes": 5.3
-        },
-        {
-          "id": "83e9e8a8-b44d-4d68-9f59-47c7455cc59a",
-          "playerName": "coca_cola_bear_",
-          "displayName": "이명준",
-          "displayEmoji": "🥤",
-          "accountId": "account.697ff771fb804577bc3167c2db33233b",
-          "createdAt": "2026-05-13T12:41:14Z",
-          "gameMode": "squad",
-          "gameModeLabel": "스쿼드 3인칭",
-          "mapName": "미라마",
-          "duration": 28,
-          "rank": 11,
-          "kills": 1,
-          "assists": 0,
-          "damage": 65,
-          "dbnos": 0,
-          "headshotKills": 0,
-          "longestKill": 26,
-          "survivedMinutes": 19.8
-        },
-        {
-          "id": "c914ce8a-1ff6-4ecf-ae3c-5d5655208892",
-          "playerName": "coca_cola_bear_",
-          "displayName": "이명준",
-          "displayEmoji": "🥤",
-          "accountId": "account.697ff771fb804577bc3167c2db33233b",
-          "createdAt": "2026-05-13T12:13:31Z",
-          "gameMode": "squad",
-          "gameModeLabel": "스쿼드 3인칭",
-          "mapName": "미라마",
-          "duration": 27,
-          "rank": 3,
-          "kills": 0,
-          "assists": 1,
-          "damage": 26,
-          "dbnos": 0,
-          "headshotKills": 0,
-          "longestKill": 0,
-          "survivedMinutes": 15.9
-        },
-        {
-          "id": "66692794-95a4-40ae-b907-b5dbfc9d0015",
-          "playerName": "coca_cola_bear_",
-          "displayName": "이명준",
-          "displayEmoji": "🥤",
-          "accountId": "account.697ff771fb804577bc3167c2db33233b",
-          "createdAt": "2026-05-13T12:08:03Z",
-          "gameMode": "squad",
-          "gameModeLabel": "스쿼드 3인칭",
-          "mapName": "미라마",
-          "duration": 25.6,
-          "rank": 25,
-          "kills": 1,
-          "assists": 0,
-          "damage": 59,
-          "dbnos": 1,
-          "headshotKills": 0,
-          "longestKill": 3,
-          "survivedMinutes": 2.5
         }
       ]
     }
@@ -2656,6 +2716,102 @@
     }
   },
   "groupedMatches": [
+    {
+      "id": "5f204697-cc53-4bfb-8bdd-1dfc9e7a4cb0",
+      "createdAt": "2026-05-21T13:22:02Z",
+      "gameMode": "duo",
+      "gameModeLabel": "듀오 3인칭",
+      "mapName": "태이고",
+      "duration": 25.9,
+      "participants": [
+        {
+          "playerName": "MJpantythief",
+          "displayName": "최낙범",
+          "displayEmoji": "🥜",
+          "rank": 34,
+          "kills": 2,
+          "assists": 0,
+          "damage": 288,
+          "dbnos": 1,
+          "survivedMinutes": 8.1
+        },
+        {
+          "playerName": "coca_cola_bear_",
+          "displayName": "이명준",
+          "displayEmoji": "🥤",
+          "rank": 34,
+          "kills": 0,
+          "assists": 1,
+          "damage": 45,
+          "dbnos": 0,
+          "survivedMinutes": 8.1
+        }
+      ]
+    },
+    {
+      "id": "b35ed08d-5d96-4bdc-bbe4-7484485e8c7c",
+      "createdAt": "2026-05-21T13:15:27Z",
+      "gameMode": "duo",
+      "gameModeLabel": "듀오 3인칭",
+      "mapName": "태이고",
+      "duration": 27.4,
+      "participants": [
+        {
+          "playerName": "MJpantythief",
+          "displayName": "최낙범",
+          "displayEmoji": "🥜",
+          "rank": 38,
+          "kills": 0,
+          "assists": 0,
+          "damage": 0,
+          "dbnos": 0,
+          "survivedMinutes": 4.4
+        },
+        {
+          "playerName": "coca_cola_bear_",
+          "displayName": "이명준",
+          "displayEmoji": "🥤",
+          "rank": 38,
+          "kills": 0,
+          "assists": 0,
+          "damage": 0,
+          "dbnos": 0,
+          "survivedMinutes": 4.4
+        }
+      ]
+    },
+    {
+      "id": "580e2adc-7c75-4c52-9892-394944e65560",
+      "createdAt": "2026-05-21T13:09:58Z",
+      "gameMode": "duo",
+      "gameModeLabel": "듀오 3인칭",
+      "mapName": "태이고",
+      "duration": 27.1,
+      "participants": [
+        {
+          "playerName": "MJpantythief",
+          "displayName": "최낙범",
+          "displayEmoji": "🥜",
+          "rank": 43,
+          "kills": 0,
+          "assists": 0,
+          "damage": 99,
+          "dbnos": 0,
+          "survivedMinutes": 2.6
+        },
+        {
+          "playerName": "coca_cola_bear_",
+          "displayName": "이명준",
+          "displayEmoji": "🥤",
+          "rank": 43,
+          "kills": 0,
+          "assists": 0,
+          "damage": 0,
+          "dbnos": 0,
+          "survivedMinutes": 2.9
+        }
+      ]
+    },
     {
       "id": "c5d67e26-45d9-4824-9d8d-23b80b56ff22",
       "createdAt": "2026-05-17T13:51:17Z",
@@ -3532,17 +3688,6 @@
           "damage": 242,
           "dbnos": 1,
           "survivedMinutes": 19.7
-        },
-        {
-          "playerName": "coca_cola_bear_",
-          "displayName": "이명준",
-          "displayEmoji": "🥤",
-          "rank": 11,
-          "kills": 1,
-          "assists": 0,
-          "damage": 65,
-          "dbnos": 0,
-          "survivedMinutes": 19.8
         }
       ]
     },
@@ -3575,17 +3720,6 @@
           "damage": 80,
           "dbnos": 0,
           "survivedMinutes": 19.7
-        },
-        {
-          "playerName": "coca_cola_bear_",
-          "displayName": "이명준",
-          "displayEmoji": "🥤",
-          "rank": 3,
-          "kills": 0,
-          "assists": 1,
-          "damage": 26,
-          "dbnos": 0,
-          "survivedMinutes": 15.9
         }
       ]
     },
@@ -3618,17 +3752,6 @@
           "damage": 0,
           "dbnos": 0,
           "survivedMinutes": 2.9
-        },
-        {
-          "playerName": "coca_cola_bear_",
-          "displayName": "이명준",
-          "displayEmoji": "🥤",
-          "rank": 25,
-          "kills": 1,
-          "assists": 0,
-          "damage": 59,
-          "dbnos": 1,
-          "survivedMinutes": 2.5
         }
       ]
     },
