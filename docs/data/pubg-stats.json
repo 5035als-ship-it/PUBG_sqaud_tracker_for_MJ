@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-25T16:12:18.872Z",
+  "generatedAt": "2026-05-25T17:57:32.815Z",
   "shard": "steam",
   "trackedPlayers": [
     "ClassMusic",
@@ -1349,19 +1349,19 @@
       "displayEmoji": "✈️",
       "shardId": "steam",
       "stats": {
-        "matches": 29,
+        "matches": 27,
         "wins": 1,
-        "top10": 14,
-        "winRate": 3.4,
-        "top10Rate": 48.3,
-        "avgKills": 0.4,
-        "avgDamage": 114,
-        "kd": 0.41,
+        "top10": 13,
+        "winRate": 3.7,
+        "top10Rate": 48.1,
+        "avgKills": 0.3,
+        "avgDamage": 99,
+        "kd": 0.3,
         "totals": {
-          "kills": 12,
-          "assists": 15,
-          "damage": 3311,
-          "dbnos": 15
+          "kills": 8,
+          "assists": 11,
+          "damage": 2663,
+          "dbnos": 11
         }
       },
       "matches": [
@@ -1904,46 +1904,6 @@
           "headshotKills": 0,
           "longestKill": 0,
           "survivedMinutes": 3.9
-        },
-        {
-          "id": "a90e9daf-2f30-4597-9cfc-ce2e633c326d",
-          "playerName": "Machine_Jun",
-          "displayName": "김민준",
-          "displayEmoji": "✈️",
-          "accountId": "account.07898eaabddf4b93861abc7622f9056b",
-          "createdAt": "2026-05-11T15:57:49Z",
-          "gameMode": "squad",
-          "gameModeLabel": "스쿼드 3인칭",
-          "mapName": "태이고",
-          "duration": 28,
-          "rank": 12,
-          "kills": 2,
-          "assists": 2,
-          "damage": 258,
-          "dbnos": 1,
-          "headshotKills": 1,
-          "longestKill": 76,
-          "survivedMinutes": 16.5
-        },
-        {
-          "id": "8aa8e156-08ce-4771-8b86-bdd4ac02f696",
-          "playerName": "Machine_Jun",
-          "displayName": "김민준",
-          "displayEmoji": "✈️",
-          "accountId": "account.07898eaabddf4b93861abc7622f9056b",
-          "createdAt": "2026-05-11T15:36:07Z",
-          "gameMode": "squad",
-          "gameModeLabel": "스쿼드 3인칭",
-          "mapName": "태이고",
-          "duration": 27.7,
-          "rank": 8,
-          "kills": 2,
-          "assists": 2,
-          "damage": 390,
-          "dbnos": 3,
-          "headshotKills": 0,
-          "longestKill": 282,
-          "survivedMinutes": 18.7
         }
       ]
     },
