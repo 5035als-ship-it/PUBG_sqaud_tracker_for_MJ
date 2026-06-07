@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-07T14:57:29.717Z",
+  "generatedAt": "2026-06-07T16:16:48.317Z",
   "shard": "steam",
   "trackedPlayers": [
     "ClassMusic",
@@ -20,21 +20,41 @@
       "shardId": "steam",
       "stats": {
         "matches": 32,
-        "wins": 0,
+        "wins": 1,
         "top10": 15,
-        "winRate": 0,
+        "winRate": 3.1,
         "top10Rate": 46.9,
-        "avgKills": 0.8,
-        "avgDamage": 123,
-        "kd": 0.78,
+        "avgKills": 0.9,
+        "avgDamage": 132,
+        "kd": 0.91,
         "totals": {
-          "kills": 25,
-          "assists": 11,
-          "damage": 3921,
-          "dbnos": 25
+          "kills": 29,
+          "assists": 10,
+          "damage": 4212,
+          "dbnos": 29
         }
       },
       "matches": [
+        {
+          "id": "85760868-e8f0-417f-b1e0-6c78cce2054f",
+          "playerName": "ClassMusic",
+          "displayName": "이성용",
+          "displayEmoji": "☕",
+          "accountId": "account.bb94cc7fcb704866b99dccbcdcc64547",
+          "createdAt": "2026-06-07T14:39:16Z",
+          "gameMode": "squad",
+          "gameModeLabel": "스쿼드 3인칭",
+          "mapName": "미라마",
+          "duration": 25.1,
+          "rank": 1,
+          "kills": 6,
+          "assists": 1,
+          "damage": 514,
+          "dbnos": 5,
+          "headshotKills": 1,
+          "longestKill": 264,
+          "survivedMinutes": 25.1
+        },
         {
           "id": "4a649383-26df-41e4-85db-6cebbd2edcea",
           "playerName": "ClassMusic",
@@ -654,26 +674,6 @@
           "headshotKills": 0,
           "longestKill": 0,
           "survivedMinutes": 9.9
-        },
-        {
-          "id": "bf780906-5fef-4778-8f60-d22323d6c4d2",
-          "playerName": "ClassMusic",
-          "displayName": "이성용",
-          "displayEmoji": "☕",
-          "accountId": "account.bb94cc7fcb704866b99dccbcdcc64547",
-          "createdAt": "2026-05-30T16:55:17Z",
-          "gameMode": "squad",
-          "gameModeLabel": "스쿼드 3인칭",
-          "mapName": "에란겔",
-          "duration": 25.5,
-          "rank": 2,
-          "kills": 2,
-          "assists": 2,
-          "damage": 223,
-          "dbnos": 1,
-          "headshotKills": 0,
-          "longestKill": 61,
-          "survivedMinutes": 25.5
         }
       ]
     },
@@ -1155,26 +1155,45 @@
       "survivedMinutes": 19.5
     },
     "bestKills": {
-      "id": "5a4f157d-decb-4031-b680-3edeadc1ecec",
-      "playerName": "MJpantythief",
-      "displayName": "최낙범",
-      "displayEmoji": "🥜",
-      "accountId": "account.e2d2618e382d4e03b7313e696fa8492b",
-      "createdAt": "2026-05-31T13:28:18Z",
+      "id": "85760868-e8f0-417f-b1e0-6c78cce2054f",
+      "playerName": "ClassMusic",
+      "displayName": "이성용",
+      "displayEmoji": "☕",
+      "accountId": "account.bb94cc7fcb704866b99dccbcdcc64547",
+      "createdAt": "2026-06-07T14:39:16Z",
       "gameMode": "squad",
       "gameModeLabel": "스쿼드 3인칭",
-      "mapName": "태이고",
-      "duration": 26.7,
-      "rank": 13,
+      "mapName": "미라마",
+      "duration": 25.1,
+      "rank": 1,
       "kills": 6,
-      "assists": 2,
-      "damage": 578,
-      "dbnos": 6,
-      "headshotKills": 3,
-      "longestKill": 145,
-      "survivedMinutes": 17.6
+      "assists": 1,
+      "damage": 514,
+      "dbnos": 5,
+      "headshotKills": 1,
+      "longestKill": 264,
+      "survivedMinutes": 25.1
     },
-    "latestWin": null
+    "latestWin": {
+      "id": "85760868-e8f0-417f-b1e0-6c78cce2054f",
+      "playerName": "ClassMusic",
+      "displayName": "이성용",
+      "displayEmoji": "☕",
+      "accountId": "account.bb94cc7fcb704866b99dccbcdcc64547",
+      "createdAt": "2026-06-07T14:39:16Z",
+      "gameMode": "squad",
+      "gameModeLabel": "스쿼드 3인칭",
+      "mapName": "미라마",
+      "duration": 25.1,
+      "rank": 1,
+      "kills": 6,
+      "assists": 1,
+      "damage": 514,
+      "dbnos": 5,
+      "headshotKills": 1,
+      "longestKill": 264,
+      "survivedMinutes": 25.1
+    }
   },
   "groupedMatches": [
     {
