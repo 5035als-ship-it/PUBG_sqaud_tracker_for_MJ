@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-07T16:16:48.317Z",
+  "generatedAt": "2026-06-08T11:53:31.338Z",
   "shard": "steam",
   "trackedPlayers": [
     "ClassMusic",
@@ -21,20 +21,40 @@
       "stats": {
         "matches": 32,
         "wins": 1,
-        "top10": 15,
+        "top10": 16,
         "winRate": 3.1,
-        "top10Rate": 46.9,
+        "top10Rate": 50,
         "avgKills": 0.9,
-        "avgDamage": 132,
+        "avgDamage": 130,
         "kd": 0.91,
         "totals": {
           "kills": 29,
           "assists": 10,
-          "damage": 4212,
+          "damage": 4174,
           "dbnos": 29
         }
       },
       "matches": [
+        {
+          "id": "dc9492a3-180c-45f7-8bd5-7c608fa68bac",
+          "playerName": "ClassMusic",
+          "displayName": "이성용",
+          "displayEmoji": "☕",
+          "accountId": "account.bb94cc7fcb704866b99dccbcdcc64547",
+          "createdAt": "2026-06-08T11:25:16Z",
+          "gameMode": "squad",
+          "gameModeLabel": "스쿼드 3인칭",
+          "mapName": "태이고",
+          "duration": 25.9,
+          "rank": 3,
+          "kills": 0,
+          "assists": 0,
+          "damage": 0,
+          "dbnos": 0,
+          "headshotKills": 0,
+          "longestKill": 0,
+          "survivedMinutes": 22.4
+        },
         {
           "id": "85760868-e8f0-417f-b1e0-6c78cce2054f",
           "playerName": "ClassMusic",
@@ -654,26 +674,6 @@
           "headshotKills": 0,
           "longestKill": 0,
           "survivedMinutes": 14.9
-        },
-        {
-          "id": "6801f852-08a2-4b0d-9b66-be555976f806",
-          "playerName": "ClassMusic",
-          "displayName": "이성용",
-          "displayEmoji": "☕",
-          "accountId": "account.bb94cc7fcb704866b99dccbcdcc64547",
-          "createdAt": "2026-05-31T12:33:16Z",
-          "gameMode": "duo",
-          "gameModeLabel": "듀오 3인칭",
-          "mapName": "태이고",
-          "duration": 25.2,
-          "rank": 28,
-          "kills": 0,
-          "assists": 0,
-          "damage": 38,
-          "dbnos": 0,
-          "headshotKills": 0,
-          "longestKill": 0,
-          "survivedMinutes": 9.9
         }
       ]
     },
@@ -1526,38 +1526,6 @@
           "damage": 122,
           "dbnos": 0,
           "survivedMinutes": 18
-        }
-      ]
-    },
-    {
-      "id": "6801f852-08a2-4b0d-9b66-be555976f806",
-      "createdAt": "2026-05-31T12:33:16Z",
-      "gameMode": "duo",
-      "gameModeLabel": "듀오 3인칭",
-      "mapName": "태이고",
-      "duration": 25.2,
-      "participants": [
-        {
-          "playerName": "ClassMusic",
-          "displayName": "이성용",
-          "displayEmoji": "☕",
-          "rank": 28,
-          "kills": 0,
-          "assists": 0,
-          "damage": 38,
-          "dbnos": 0,
-          "survivedMinutes": 9.9
-        },
-        {
-          "playerName": "MJpantythief",
-          "displayName": "최낙범",
-          "displayEmoji": "🥜",
-          "rank": 28,
-          "kills": 1,
-          "assists": 0,
-          "damage": 161,
-          "dbnos": 1,
-          "survivedMinutes": 8.8
         }
       ]
     }
