@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-10T17:44:12.321Z",
+  "generatedAt": "2026-06-12T15:42:10.917Z",
   "shard": "steam",
   "trackedPlayers": [
     "ClassMusic",
@@ -1174,22 +1174,62 @@
       "displayEmoji": "🥤",
       "shardId": "steam",
       "stats": {
-        "matches": 11,
+        "matches": 13,
         "wins": 0,
-        "top10": 4,
+        "top10": 5,
         "winRate": 0,
-        "top10Rate": 36.4,
-        "avgKills": 0.4,
-        "avgDamage": 50,
-        "kd": 0.36,
+        "top10Rate": 38.5,
+        "avgKills": 0.5,
+        "avgDamage": 53,
+        "kd": 0.46,
         "totals": {
-          "kills": 4,
+          "kills": 6,
           "assists": 2,
-          "damage": 552,
-          "dbnos": 4
+          "damage": 683,
+          "dbnos": 5
         }
       },
       "matches": [
+        {
+          "id": "6941f438-d912-4960-bbf1-c63478f230a1",
+          "playerName": "coca_cola_bear_",
+          "displayName": "이명준",
+          "displayEmoji": "🥤",
+          "accountId": "account.697ff771fb804577bc3167c2db33233b",
+          "createdAt": "2026-06-12T12:56:17Z",
+          "gameMode": "solo",
+          "gameModeLabel": "솔로 3인칭",
+          "mapName": "사녹",
+          "duration": 52.1,
+          "rank": 9,
+          "kills": 2,
+          "assists": 0,
+          "damage": 131,
+          "dbnos": 1,
+          "headshotKills": 0,
+          "longestKill": 34,
+          "survivedMinutes": 19.5
+        },
+        {
+          "id": "3c0ebe23-54ca-4307-a621-08ce6fa72a01",
+          "playerName": "coca_cola_bear_",
+          "displayName": "이명준",
+          "displayEmoji": "🥤",
+          "accountId": "account.697ff771fb804577bc3167c2db33233b",
+          "createdAt": "2026-06-12T12:35:52Z",
+          "gameMode": "solo",
+          "gameModeLabel": "솔로 3인칭",
+          "mapName": "태이고",
+          "duration": 39.6,
+          "rank": 28,
+          "kills": 0,
+          "assists": 0,
+          "damage": 0,
+          "dbnos": 0,
+          "headshotKills": 0,
+          "longestKill": 0,
+          "survivedMinutes": 16.6
+        },
         {
           "id": "34806bf4-47e4-4e18-af64-089564b3d2b1",
           "playerName": "coca_cola_bear_",
