@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-19T06:51:26.674Z",
+  "generatedAt": "2026-06-19T16:42:44.419Z",
   "shard": "steam",
   "trackedPlayers": [
     "ClassMusic",
@@ -25,16 +25,36 @@
         "winRate": 6.3,
         "top10Rate": 56.3,
         "avgKills": 0.7,
-        "avgDamage": 94,
+        "avgDamage": 95,
         "kd": 0.66,
         "totals": {
           "kills": 21,
-          "assists": 7,
-          "damage": 2994,
-          "dbnos": 15
+          "assists": 6,
+          "damage": 3031,
+          "dbnos": 16
         }
       },
       "matches": [
+        {
+          "id": "26c81e64-4908-4f80-a64d-f95d54f64f84",
+          "playerName": "ClassMusic",
+          "displayName": "이성용",
+          "displayEmoji": "☕",
+          "accountId": "account.bb94cc7fcb704866b99dccbcdcc64547",
+          "createdAt": "2026-06-19T14:07:33Z",
+          "gameMode": "squad",
+          "gameModeLabel": "스쿼드 3인칭",
+          "mapName": "태이고",
+          "duration": 28.2,
+          "rank": 9,
+          "kills": 3,
+          "assists": 0,
+          "damage": 294,
+          "dbnos": 3,
+          "headshotKills": 1,
+          "longestKill": 28,
+          "survivedMinutes": 19.6
+        },
         {
           "id": "34806bf4-47e4-4e18-af64-089564b3d2b1",
           "playerName": "ClassMusic",
@@ -654,26 +674,6 @@
           "headshotKills": 0,
           "longestKill": 0,
           "survivedMinutes": 7.5
-        },
-        {
-          "id": "2f6e642e-c0d9-4c65-b022-1f2f5a2d7d50",
-          "playerName": "ClassMusic",
-          "displayName": "이성용",
-          "displayEmoji": "☕",
-          "accountId": "account.bb94cc7fcb704866b99dccbcdcc64547",
-          "createdAt": "2026-06-06T16:38:20Z",
-          "gameMode": "squad",
-          "gameModeLabel": "스쿼드 3인칭",
-          "mapName": "태이고",
-          "duration": 26.7,
-          "rank": 2,
-          "kills": 3,
-          "assists": 1,
-          "damage": 257,
-          "dbnos": 2,
-          "headshotKills": 1,
-          "longestKill": 34,
-          "survivedMinutes": 25.7
         }
       ]
     },
