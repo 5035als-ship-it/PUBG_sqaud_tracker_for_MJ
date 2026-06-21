@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-21T10:19:40.622Z",
+  "generatedAt": "2026-06-21T12:22:22.598Z",
   "shard": "steam",
   "trackedPlayers": [
     "ClassMusic",
@@ -20,10 +20,10 @@
       "shardId": "steam",
       "stats": {
         "matches": 32,
-        "wins": 2,
-        "top10": 19,
-        "winRate": 6.3,
-        "top10Rate": 59.4,
+        "wins": 3,
+        "top10": 20,
+        "winRate": 9.4,
+        "top10Rate": 62.5,
         "avgKills": 0.8,
         "avgDamage": 108,
         "kd": 0.81,
@@ -35,6 +35,26 @@
         }
       },
       "matches": [
+        {
+          "id": "27f23ed4-5e4f-4a21-9756-8e54069c2276",
+          "playerName": "ClassMusic",
+          "displayName": "이성용",
+          "displayEmoji": "☕",
+          "accountId": "account.bb94cc7fcb704866b99dccbcdcc64547",
+          "createdAt": "2026-06-21T11:38:36Z",
+          "gameMode": "solo",
+          "gameModeLabel": "솔로 3인칭",
+          "mapName": "훈련장",
+          "duration": 19,
+          "rank": 1,
+          "kills": 0,
+          "assists": 0,
+          "damage": 0,
+          "dbnos": 0,
+          "headshotKills": 0,
+          "longestKill": 0,
+          "survivedMinutes": 11.5
+        },
         {
           "id": "fd67b255-d432-442f-99aa-d839a6dfc023",
           "playerName": "ClassMusic",
@@ -654,26 +674,6 @@
           "headshotKills": 0,
           "longestKill": 0,
           "survivedMinutes": 2.6
-        },
-        {
-          "id": "054a6067-396b-421e-98c7-555f1df69e6a",
-          "playerName": "ClassMusic",
-          "displayName": "이성용",
-          "displayEmoji": "☕",
-          "accountId": "account.bb94cc7fcb704866b99dccbcdcc64547",
-          "createdAt": "2026-06-07T14:07:54Z",
-          "gameMode": "squad",
-          "gameModeLabel": "스쿼드 3인칭",
-          "mapName": "미라마",
-          "duration": 27.4,
-          "rank": 21,
-          "kills": 0,
-          "assists": 0,
-          "damage": 0,
-          "dbnos": 0,
-          "headshotKills": 0,
-          "longestKill": 0,
-          "survivedMinutes": 3
         }
       ]
     },
@@ -1214,24 +1214,24 @@
       "survivedMinutes": 25.1
     },
     "latestWin": {
-      "id": "7288c04f-0bd5-4304-ab2b-38cc3d5eeef1",
-      "playerName": "coca_cola_bear_",
-      "displayName": "이명준",
-      "displayEmoji": "🥤",
-      "accountId": "account.697ff771fb804577bc3167c2db33233b",
-      "createdAt": "2026-06-18T05:13:19Z",
-      "gameMode": "paagame",
-      "gameModeLabel": "paagame",
-      "mapName": "사녹",
-      "duration": 23.6,
+      "id": "27f23ed4-5e4f-4a21-9756-8e54069c2276",
+      "playerName": "ClassMusic",
+      "displayName": "이성용",
+      "displayEmoji": "☕",
+      "accountId": "account.bb94cc7fcb704866b99dccbcdcc64547",
+      "createdAt": "2026-06-21T11:38:36Z",
+      "gameMode": "solo",
+      "gameModeLabel": "솔로 3인칭",
+      "mapName": "훈련장",
+      "duration": 19,
       "rank": 1,
-      "kills": 4,
+      "kills": 0,
       "assists": 0,
-      "damage": 379,
-      "dbnos": 2,
-      "headshotKills": 1,
-      "longestKill": 114,
-      "survivedMinutes": 22.3
+      "damage": 0,
+      "dbnos": 0,
+      "headshotKills": 0,
+      "longestKill": 0,
+      "survivedMinutes": 11.5
     }
   },
   "groupedMatches": [
