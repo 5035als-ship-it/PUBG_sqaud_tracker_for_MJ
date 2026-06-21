@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-19T16:42:44.419Z",
+  "generatedAt": "2026-06-21T06:31:59.907Z",
   "shard": "steam",
   "trackedPlayers": [
     "ClassMusic",
@@ -25,16 +25,36 @@
         "winRate": 6.3,
         "top10Rate": 56.3,
         "avgKills": 0.7,
-        "avgDamage": 95,
+        "avgDamage": 94,
         "kd": 0.66,
         "totals": {
           "kills": 21,
           "assists": 6,
-          "damage": 3031,
-          "dbnos": 16
+          "damage": 3022,
+          "dbnos": 17
         }
       },
       "matches": [
+        {
+          "id": "e09919cd-c268-4e17-b0a0-d32182cc576c",
+          "playerName": "ClassMusic",
+          "displayName": "이성용",
+          "displayEmoji": "☕",
+          "accountId": "account.bb94cc7fcb704866b99dccbcdcc64547",
+          "createdAt": "2026-06-21T05:29:49Z",
+          "gameMode": "squad",
+          "gameModeLabel": "스쿼드 3인칭",
+          "mapName": "미라마",
+          "duration": 28.2,
+          "rank": 11,
+          "kills": 0,
+          "assists": 0,
+          "damage": 100,
+          "dbnos": 1,
+          "headshotKills": 0,
+          "longestKill": 0,
+          "survivedMinutes": 14.1
+        },
         {
           "id": "26c81e64-4908-4f80-a64d-f95d54f64f84",
           "playerName": "ClassMusic",
@@ -654,26 +674,6 @@
           "headshotKills": 0,
           "longestKill": 0,
           "survivedMinutes": 13.6
-        },
-        {
-          "id": "4b368e3c-463c-47ec-ab03-42b874445cd6",
-          "playerName": "ClassMusic",
-          "displayName": "이성용",
-          "displayEmoji": "☕",
-          "accountId": "account.bb94cc7fcb704866b99dccbcdcc64547",
-          "createdAt": "2026-06-07T13:43:06Z",
-          "gameMode": "squad",
-          "gameModeLabel": "스쿼드 3인칭",
-          "mapName": "론도",
-          "duration": 26.7,
-          "rank": 17,
-          "kills": 0,
-          "assists": 0,
-          "damage": 109,
-          "dbnos": 0,
-          "headshotKills": 0,
-          "longestKill": 0,
-          "survivedMinutes": 7.5
         }
       ]
     },
