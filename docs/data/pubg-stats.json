@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-21T16:18:46.011Z",
+  "generatedAt": "2026-06-22T07:39:07.314Z",
   "shard": "steam",
   "trackedPlayers": [
     "ClassMusic",
@@ -769,7 +769,7 @@
       "displayEmoji": "✈️",
       "shardId": "steam",
       "stats": {
-        "matches": 0,
+        "matches": 1,
         "wins": 0,
         "top10": 0,
         "winRate": 0,
@@ -784,7 +784,28 @@
           "dbnos": 0
         }
       },
-      "matches": []
+      "matches": [
+        {
+          "id": "765b0de9-0ac6-411f-94cb-efa20405f6a3",
+          "playerName": "Machine_Jun",
+          "displayName": "김민준",
+          "displayEmoji": "✈️",
+          "accountId": "account.07898eaabddf4b93861abc7622f9056b",
+          "createdAt": "2026-06-22T07:07:50Z",
+          "gameMode": "squad",
+          "gameModeLabel": "스쿼드 3인칭",
+          "mapName": "에란겔",
+          "duration": 27.5,
+          "rank": 17,
+          "kills": 0,
+          "assists": 0,
+          "damage": 0,
+          "dbnos": 0,
+          "headshotKills": 0,
+          "longestKill": 0,
+          "survivedMinutes": 4.5
+        }
+      ]
     },
     {
       "id": "account.697ff771fb804577bc3167c2db33233b",
