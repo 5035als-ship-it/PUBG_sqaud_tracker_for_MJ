@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-26T13:33:59.964Z",
+  "generatedAt": "2026-06-27T10:22:36.486Z",
   "shard": "steam",
   "trackedPlayers": [
     "ClassMusic",
@@ -734,18 +734,18 @@
       "displayEmoji": "🥤",
       "shardId": "steam",
       "stats": {
-        "matches": 12,
+        "matches": 11,
         "wins": 1,
         "top10": 9,
-        "winRate": 8.3,
-        "top10Rate": 75,
+        "winRate": 9.1,
+        "top10Rate": 81.8,
         "avgKills": 1.2,
-        "avgDamage": 167,
-        "kd": 1.17,
+        "avgDamage": 173,
+        "kd": 1.18,
         "totals": {
-          "kills": 14,
+          "kills": 13,
           "assists": 0,
-          "damage": 2007,
+          "damage": 1907,
           "dbnos": 11
         }
       },
@@ -969,26 +969,6 @@
           "headshotKills": 0,
           "longestKill": 119,
           "survivedMinutes": 19
-        },
-        {
-          "id": "155bcd56-cf76-4281-b269-d7b450575aaf",
-          "playerName": "coca_cola_bear_",
-          "displayName": "이명준",
-          "displayEmoji": "🥤",
-          "accountId": "account.697ff771fb804577bc3167c2db33233b",
-          "createdAt": "2026-06-13T08:22:18Z",
-          "gameMode": "solo",
-          "gameModeLabel": "솔로 3인칭",
-          "mapName": "사녹",
-          "duration": 56.6,
-          "rank": 15,
-          "kills": 1,
-          "assists": 0,
-          "damage": 100,
-          "dbnos": 0,
-          "headshotKills": 0,
-          "longestKill": 9,
-          "survivedMinutes": 17.6
         }
       ]
     }
