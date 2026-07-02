@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-01T16:19:18.095Z",
+  "generatedAt": "2026-07-02T07:46:03.152Z",
   "shard": "steam",
   "trackedPlayers": [
     "ClassMusic",
@@ -1094,19 +1094,19 @@
       "displayEmoji": "🥤",
       "shardId": "steam",
       "stats": {
-        "matches": 17,
-        "wins": 1,
-        "top10": 9,
-        "winRate": 5.9,
-        "top10Rate": 52.9,
-        "avgKills": 0.8,
-        "avgDamage": 123,
-        "kd": 0.76,
+        "matches": 15,
+        "wins": 0,
+        "top10": 7,
+        "winRate": 0,
+        "top10Rate": 46.7,
+        "avgKills": 0.4,
+        "avgDamage": 84,
+        "kd": 0.4,
         "totals": {
-          "kills": 13,
+          "kills": 6,
           "assists": 2,
-          "damage": 2096,
-          "dbnos": 11
+          "damage": 1260,
+          "dbnos": 7
         }
       },
       "matches": [
@@ -1409,46 +1409,6 @@
           "headshotKills": 0,
           "longestKill": 0,
           "survivedMinutes": 17.9
-        },
-        {
-          "id": "7288c04f-0bd5-4304-ab2b-38cc3d5eeef1",
-          "playerName": "coca_cola_bear_",
-          "displayName": "이명준",
-          "displayEmoji": "🥤",
-          "accountId": "account.697ff771fb804577bc3167c2db33233b",
-          "createdAt": "2026-06-18T05:13:19Z",
-          "gameMode": "paagame",
-          "gameModeLabel": "paagame",
-          "mapName": "사녹",
-          "duration": 23.6,
-          "rank": 1,
-          "kills": 4,
-          "assists": 0,
-          "damage": 379,
-          "dbnos": 2,
-          "headshotKills": 1,
-          "longestKill": 114,
-          "survivedMinutes": 22.3
-        },
-        {
-          "id": "060a519d-a902-4a31-b06c-8ee95379a341",
-          "playerName": "coca_cola_bear_",
-          "displayName": "이명준",
-          "displayEmoji": "🥤",
-          "accountId": "account.697ff771fb804577bc3167c2db33233b",
-          "createdAt": "2026-06-18T04:51:39Z",
-          "gameMode": "paagame",
-          "gameModeLabel": "paagame",
-          "mapName": "사녹",
-          "duration": 21.5,
-          "rank": 5,
-          "kills": 3,
-          "assists": 0,
-          "damage": 457,
-          "dbnos": 2,
-          "headshotKills": 0,
-          "longestKill": 119,
-          "survivedMinutes": 19
         }
       ]
     }
