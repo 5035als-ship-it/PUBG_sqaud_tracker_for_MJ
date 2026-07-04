@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-03T15:19:33.058Z",
+  "generatedAt": "2026-07-04T14:03:12.661Z",
   "shard": "steam",
   "trackedPlayers": [
     "ClassMusic",
@@ -1254,22 +1254,42 @@
       "displayEmoji": "🥤",
       "shardId": "steam",
       "stats": {
-        "matches": 18,
+        "matches": 19,
         "wins": 0,
-        "top10": 8,
+        "top10": 9,
         "winRate": 0,
-        "top10Rate": 44.4,
+        "top10Rate": 47.4,
         "avgKills": 0.4,
-        "avgDamage": 85,
-        "kd": 0.44,
+        "avgDamage": 81,
+        "kd": 0.42,
         "totals": {
           "kills": 8,
-          "assists": 3,
-          "damage": 1524,
+          "assists": 4,
+          "damage": 1541,
           "dbnos": 7
         }
       },
       "matches": [
+        {
+          "id": "5b3ee7fd-ab20-4fad-b015-fbf290e1cf71",
+          "playerName": "coca_cola_bear_",
+          "displayName": "이명준",
+          "displayEmoji": "🥤",
+          "accountId": "account.697ff771fb804577bc3167c2db33233b",
+          "createdAt": "2026-07-04T12:00:41Z",
+          "gameMode": "labsrondobluezone",
+          "gameModeLabel": "labsrondobluezone",
+          "mapName": "론도",
+          "duration": 22.1,
+          "rank": 6,
+          "kills": 0,
+          "assists": 1,
+          "damage": 17,
+          "dbnos": 0,
+          "headshotKills": 0,
+          "longestKill": 0,
+          "survivedMinutes": 19.2
+        },
         {
           "id": "b136bc58-6a74-448d-81a8-199d0f46ca75",
           "playerName": "coca_cola_bear_",
