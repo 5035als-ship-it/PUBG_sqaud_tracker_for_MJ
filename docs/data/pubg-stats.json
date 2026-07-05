@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-05T08:17:10.819Z",
+  "generatedAt": "2026-07-05T13:25:10.172Z",
   "shard": "steam",
   "trackedPlayers": [
     "ClassMusic",
@@ -19,14 +19,14 @@
       "displayEmoji": "☕",
       "shardId": "steam",
       "stats": {
-        "matches": 25,
-        "wins": 2,
-        "top10": 14,
-        "winRate": 8,
-        "top10Rate": 56,
-        "avgKills": 1.3,
-        "avgDamage": 177,
-        "kd": 1.32,
+        "matches": 24,
+        "wins": 1,
+        "top10": 13,
+        "winRate": 4.2,
+        "top10Rate": 54.2,
+        "avgKills": 1.4,
+        "avgDamage": 184,
+        "kd": 1.38,
         "totals": {
           "kills": 33,
           "assists": 13,
@@ -514,26 +514,6 @@
           "headshotKills": 0,
           "longestKill": 0,
           "survivedMinutes": 11.7
-        },
-        {
-          "id": "27f23ed4-5e4f-4a21-9756-8e54069c2276",
-          "playerName": "ClassMusic",
-          "displayName": "이성용",
-          "displayEmoji": "☕",
-          "accountId": "account.bb94cc7fcb704866b99dccbcdcc64547",
-          "createdAt": "2026-06-21T11:38:36Z",
-          "gameMode": "solo",
-          "gameModeLabel": "솔로 3인칭",
-          "mapName": "훈련장",
-          "duration": 19,
-          "rank": 1,
-          "kills": 0,
-          "assists": 0,
-          "damage": 0,
-          "dbnos": 0,
-          "headshotKills": 0,
-          "longestKill": 0,
-          "survivedMinutes": 11.5
         }
       ]
     },
