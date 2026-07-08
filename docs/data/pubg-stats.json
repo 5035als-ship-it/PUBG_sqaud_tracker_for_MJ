@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-07T15:48:43.860Z",
+  "generatedAt": "2026-07-08T06:39:08.929Z",
   "shard": "steam",
   "trackedPlayers": [
     "ClassMusic",
@@ -649,19 +649,19 @@
       "displayEmoji": "✈️",
       "shardId": "steam",
       "stats": {
-        "matches": 15,
+        "matches": 14,
         "wins": 1,
         "top10": 7,
-        "winRate": 6.7,
-        "top10Rate": 46.7,
-        "avgKills": 1.7,
-        "avgDamage": 156,
-        "kd": 1.67,
+        "winRate": 7.1,
+        "top10Rate": 50,
+        "avgKills": 1.5,
+        "avgDamage": 150,
+        "kd": 1.5,
         "totals": {
-          "kills": 25,
-          "assists": 3,
-          "damage": 2337,
-          "dbnos": 11
+          "kills": 21,
+          "assists": 1,
+          "damage": 2095,
+          "dbnos": 9
         }
       },
       "matches": [
@@ -944,26 +944,6 @@
           "headshotKills": 0,
           "longestKill": 109,
           "survivedMinutes": 21.6
-        },
-        {
-          "id": "389aa515-2aa3-4db1-9cc0-2ba584b53801",
-          "playerName": "Machine_Jun",
-          "displayName": "김민준",
-          "displayEmoji": "✈️",
-          "accountId": "account.07898eaabddf4b93861abc7622f9056b",
-          "createdAt": "2026-06-24T04:53:48Z",
-          "gameMode": "squad",
-          "gameModeLabel": "스쿼드 3인칭",
-          "mapName": "태이고",
-          "duration": 25.8,
-          "rank": 12,
-          "kills": 4,
-          "assists": 2,
-          "damage": 242,
-          "dbnos": 2,
-          "headshotKills": 1,
-          "longestKill": 152,
-          "survivedMinutes": 18.3
         }
       ]
     },
