@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-25T08:32:50.162Z",
+  "generatedAt": "2026-07-29T14:28:33.156Z",
   "shard": "steam",
   "trackedPlayers": [
     "ClassMusic",
@@ -132,103 +132,22 @@
       "displayEmoji": "🥤",
       "shardId": "steam",
       "stats": {
-        "matches": 4,
-        "wins": 1,
-        "top10": 3,
-        "winRate": 25,
-        "top10Rate": 75,
-        "avgKills": 5.8,
-        "avgDamage": 459,
-        "kd": 5.75,
+        "matches": 0,
+        "wins": 0,
+        "top10": 0,
+        "winRate": 0,
+        "top10Rate": 0,
+        "avgKills": 0,
+        "avgDamage": 0,
+        "kd": 0,
         "totals": {
-          "kills": 23,
+          "kills": 0,
           "assists": 0,
-          "damage": 1835,
+          "damage": 0,
           "dbnos": 0
         }
       },
-      "matches": [
-        {
-          "id": "72e619e8-b15c-42fb-a96a-6788d7239895",
-          "playerName": "coca_cola_bear_",
-          "displayName": "이명준",
-          "displayEmoji": "🥤",
-          "accountId": "account.697ff771fb804577bc3167c2db33233b",
-          "createdAt": "2026-07-15T13:05:47Z",
-          "gameMode": "solo",
-          "gameModeLabel": "솔로 3인칭",
-          "mapName": "에란겔",
-          "duration": 35.3,
-          "rank": 94,
-          "kills": 0,
-          "assists": 0,
-          "damage": 0,
-          "dbnos": 0,
-          "headshotKills": 0,
-          "longestKill": 0,
-          "survivedMinutes": 1.8
-        },
-        {
-          "id": "4edf88b6-0852-45bf-98af-232f5b04218d",
-          "playerName": "coca_cola_bear_",
-          "displayName": "이명준",
-          "displayEmoji": "🥤",
-          "accountId": "account.697ff771fb804577bc3167c2db33233b",
-          "createdAt": "2026-07-15T13:01:28Z",
-          "gameMode": "landmark",
-          "gameModeLabel": "landmark",
-          "mapName": "비켄디",
-          "duration": 3.3,
-          "rank": 1,
-          "kills": 0,
-          "assists": 0,
-          "damage": 0,
-          "dbnos": 0,
-          "headshotKills": 0,
-          "longestKill": 0,
-          "survivedMinutes": 1.4
-        },
-        {
-          "id": "0deb5f06-5816-48fd-abab-352dac896f42",
-          "playerName": "coca_cola_bear_",
-          "displayName": "이명준",
-          "displayEmoji": "🥤",
-          "accountId": "account.697ff771fb804577bc3167c2db33233b",
-          "createdAt": "2026-07-15T12:26:14Z",
-          "gameMode": "solo",
-          "gameModeLabel": "솔로 3인칭",
-          "mapName": "에란겔",
-          "duration": 28.6,
-          "rank": 2,
-          "kills": 5,
-          "assists": 0,
-          "damage": 425,
-          "dbnos": 0,
-          "headshotKills": 1,
-          "longestKill": 171,
-          "survivedMinutes": 27.7
-        },
-        {
-          "id": "2fb158be-3434-40ce-848e-22279d208b2e",
-          "playerName": "coca_cola_bear_",
-          "displayName": "이명준",
-          "displayEmoji": "🥤",
-          "accountId": "account.697ff771fb804577bc3167c2db33233b",
-          "createdAt": "2026-07-15T12:04:01Z",
-          "gameMode": "solo",
-          "gameModeLabel": "솔로 3인칭",
-          "mapName": "훈련장",
-          "duration": 17.7,
-          "rank": 0,
-          "kills": 18,
-          "assists": 0,
-          "damage": 1410,
-          "dbnos": 0,
-          "headshotKills": 10,
-          "longestKill": 54,
-          "survivedMinutes": 17.7
-        }
-      ]
+      "matches": []
     }
   ],
   "highlights": {
@@ -272,26 +191,7 @@
       "longestKill": 52,
       "survivedMinutes": 11.1
     },
-    "latestWin": {
-      "id": "4edf88b6-0852-45bf-98af-232f5b04218d",
-      "playerName": "coca_cola_bear_",
-      "displayName": "이명준",
-      "displayEmoji": "🥤",
-      "accountId": "account.697ff771fb804577bc3167c2db33233b",
-      "createdAt": "2026-07-15T13:01:28Z",
-      "gameMode": "landmark",
-      "gameModeLabel": "landmark",
-      "mapName": "비켄디",
-      "duration": 3.3,
-      "rank": 1,
-      "kills": 0,
-      "assists": 0,
-      "damage": 0,
-      "dbnos": 0,
-      "headshotKills": 0,
-      "longestKill": 0,
-      "survivedMinutes": 1.4
-    }
+    "latestWin": null
   },
   "groupedMatches": []
 }
