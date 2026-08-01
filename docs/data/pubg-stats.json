@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-30T15:10:07.199Z",
+  "generatedAt": "2026-08-01T11:51:57.107Z",
   "shard": "steam",
   "trackedPlayers": [
     "ClassMusic",
@@ -64,22 +64,43 @@
       "displayEmoji": "🥜",
       "shardId": "steam",
       "stats": {
-        "matches": 0,
+        "matches": 1,
         "wins": 0,
         "top10": 0,
         "winRate": 0,
         "top10Rate": 0,
-        "avgKills": 0,
-        "avgDamage": 0,
-        "kd": 0,
+        "avgKills": 1,
+        "avgDamage": 100,
+        "kd": 1,
         "totals": {
-          "kills": 0,
+          "kills": 1,
           "assists": 0,
-          "damage": 0,
-          "dbnos": 0
+          "damage": 100,
+          "dbnos": 1
         }
       },
-      "matches": []
+      "matches": [
+        {
+          "id": "a99cbdfb-96b8-4ab2-9e9d-ad88d0fc9c40",
+          "playerName": "MJpantythief",
+          "displayName": "최낙범",
+          "displayEmoji": "🥜",
+          "accountId": "account.e2d2618e382d4e03b7313e696fa8492b",
+          "createdAt": "2026-08-01T10:27:42Z",
+          "gameMode": "duo",
+          "gameModeLabel": "듀오 3인칭",
+          "mapName": "론도",
+          "duration": 28.4,
+          "rank": 33,
+          "kills": 1,
+          "assists": 0,
+          "damage": 100,
+          "dbnos": 1,
+          "headshotKills": 1,
+          "longestKill": 109,
+          "survivedMinutes": 9.5
+        }
+      ]
     },
     {
       "id": "account.07898eaabddf4b93861abc7622f9056b",
@@ -112,7 +133,7 @@
       "displayEmoji": "🥤",
       "shardId": "steam",
       "stats": {
-        "matches": 0,
+        "matches": 1,
         "wins": 0,
         "top10": 0,
         "winRate": 0,
@@ -127,51 +148,105 @@
           "dbnos": 0
         }
       },
-      "matches": []
+      "matches": [
+        {
+          "id": "a99cbdfb-96b8-4ab2-9e9d-ad88d0fc9c40",
+          "playerName": "coca_cola_bear_",
+          "displayName": "이명준",
+          "displayEmoji": "🥤",
+          "accountId": "account.697ff771fb804577bc3167c2db33233b",
+          "createdAt": "2026-08-01T10:27:42Z",
+          "gameMode": "duo",
+          "gameModeLabel": "듀오 3인칭",
+          "mapName": "론도",
+          "duration": 28.4,
+          "rank": 33,
+          "kills": 0,
+          "assists": 0,
+          "damage": 0,
+          "dbnos": 0,
+          "headshotKills": 0,
+          "longestKill": 0,
+          "survivedMinutes": 9.5
+        }
+      ]
     }
   ],
   "highlights": {
     "bestDamage": {
-      "id": "9a3aa523-85fc-4355-bb10-1961795623f8",
-      "playerName": "ClassMusic",
-      "displayName": "이성용",
-      "displayEmoji": "☕",
-      "accountId": "account.bb94cc7fcb704866b99dccbcdcc64547",
-      "createdAt": "2026-07-22T16:04:25Z",
-      "gameMode": "squad",
-      "gameModeLabel": "스쿼드 3인칭",
-      "mapName": "에란겔",
-      "duration": 28.9,
-      "rank": 4,
-      "kills": 0,
-      "assists": 1,
-      "damage": 48,
-      "dbnos": 0,
-      "headshotKills": 0,
-      "longestKill": 0,
-      "survivedMinutes": 15.9
+      "id": "a99cbdfb-96b8-4ab2-9e9d-ad88d0fc9c40",
+      "playerName": "MJpantythief",
+      "displayName": "최낙범",
+      "displayEmoji": "🥜",
+      "accountId": "account.e2d2618e382d4e03b7313e696fa8492b",
+      "createdAt": "2026-08-01T10:27:42Z",
+      "gameMode": "duo",
+      "gameModeLabel": "듀오 3인칭",
+      "mapName": "론도",
+      "duration": 28.4,
+      "rank": 33,
+      "kills": 1,
+      "assists": 0,
+      "damage": 100,
+      "dbnos": 1,
+      "headshotKills": 1,
+      "longestKill": 109,
+      "survivedMinutes": 9.5
     },
     "bestKills": {
-      "id": "9a3aa523-85fc-4355-bb10-1961795623f8",
-      "playerName": "ClassMusic",
-      "displayName": "이성용",
-      "displayEmoji": "☕",
-      "accountId": "account.bb94cc7fcb704866b99dccbcdcc64547",
-      "createdAt": "2026-07-22T16:04:25Z",
-      "gameMode": "squad",
-      "gameModeLabel": "스쿼드 3인칭",
-      "mapName": "에란겔",
-      "duration": 28.9,
-      "rank": 4,
-      "kills": 0,
-      "assists": 1,
-      "damage": 48,
-      "dbnos": 0,
-      "headshotKills": 0,
-      "longestKill": 0,
-      "survivedMinutes": 15.9
+      "id": "a99cbdfb-96b8-4ab2-9e9d-ad88d0fc9c40",
+      "playerName": "MJpantythief",
+      "displayName": "최낙범",
+      "displayEmoji": "🥜",
+      "accountId": "account.e2d2618e382d4e03b7313e696fa8492b",
+      "createdAt": "2026-08-01T10:27:42Z",
+      "gameMode": "duo",
+      "gameModeLabel": "듀오 3인칭",
+      "mapName": "론도",
+      "duration": 28.4,
+      "rank": 33,
+      "kills": 1,
+      "assists": 0,
+      "damage": 100,
+      "dbnos": 1,
+      "headshotKills": 1,
+      "longestKill": 109,
+      "survivedMinutes": 9.5
     },
     "latestWin": null
   },
-  "groupedMatches": []
+  "groupedMatches": [
+    {
+      "id": "a99cbdfb-96b8-4ab2-9e9d-ad88d0fc9c40",
+      "createdAt": "2026-08-01T10:27:42Z",
+      "gameMode": "duo",
+      "gameModeLabel": "듀오 3인칭",
+      "mapName": "론도",
+      "duration": 28.4,
+      "participants": [
+        {
+          "playerName": "MJpantythief",
+          "displayName": "최낙범",
+          "displayEmoji": "🥜",
+          "rank": 33,
+          "kills": 1,
+          "assists": 0,
+          "damage": 100,
+          "dbnos": 1,
+          "survivedMinutes": 9.5
+        },
+        {
+          "playerName": "coca_cola_bear_",
+          "displayName": "이명준",
+          "displayEmoji": "🥤",
+          "rank": 33,
+          "kills": 0,
+          "assists": 0,
+          "damage": 0,
+          "dbnos": 0,
+          "survivedMinutes": 9.5
+        }
+      ]
+    }
+  ]
 }
