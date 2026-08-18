@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-18T13:48:17.357Z",
+  "generatedAt": "2026-08-18T14:17:07.865Z",
   "shard": "steam",
   "trackedPlayers": [
     "ClassMusic",
@@ -19,22 +19,42 @@
       "displayEmoji": "☕",
       "shardId": "steam",
       "stats": {
-        "matches": 9,
+        "matches": 10,
         "wins": 1,
-        "top10": 7,
-        "winRate": 11.1,
-        "top10Rate": 77.8,
+        "top10": 8,
+        "winRate": 10,
+        "top10Rate": 80,
         "avgKills": 0.7,
-        "avgDamage": 193,
-        "kd": 0.67,
+        "avgDamage": 200,
+        "kd": 0.7,
         "totals": {
-          "kills": 6,
-          "assists": 4,
-          "damage": 1733,
-          "dbnos": 8
+          "kills": 7,
+          "assists": 5,
+          "damage": 1997,
+          "dbnos": 10
         }
       },
       "matches": [
+        {
+          "id": "899a1c21-a15b-45fd-bb15-0682a4dcd774",
+          "playerName": "ClassMusic",
+          "displayName": "이성용",
+          "displayEmoji": "☕",
+          "accountId": "account.bb94cc7fcb704866b99dccbcdcc64547",
+          "createdAt": "2026-08-18T13:32:30Z",
+          "gameMode": "squad",
+          "gameModeLabel": "스쿼드 3인칭",
+          "mapName": "에란겔",
+          "duration": 28.6,
+          "rank": 9,
+          "kills": 1,
+          "assists": 1,
+          "damage": 264,
+          "dbnos": 2,
+          "headshotKills": 0,
+          "longestKill": 55,
+          "survivedMinutes": 21.2
+        },
         {
           "id": "7a7f3b33-1de1-4de6-8f33-41ca690d840e",
           "playerName": "ClassMusic",
