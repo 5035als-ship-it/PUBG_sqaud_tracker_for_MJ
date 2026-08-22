@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-22T13:47:23.438Z",
+  "generatedAt": "2026-08-22T15:59:43.865Z",
   "shard": "steam",
   "trackedPlayers": [
     "ClassMusic",
@@ -584,22 +584,42 @@
       "displayEmoji": "🥜",
       "shardId": "steam",
       "stats": {
-        "matches": 3,
+        "matches": 4,
         "wins": 0,
         "top10": 3,
         "winRate": 0,
-        "top10Rate": 100,
-        "avgKills": 3.3,
-        "avgDamage": 434,
-        "kd": 3.33,
+        "top10Rate": 75,
+        "avgKills": 2.5,
+        "avgDamage": 375,
+        "kd": 2.5,
         "totals": {
           "kills": 10,
           "assists": 2,
-          "damage": 1301,
-          "dbnos": 11
+          "damage": 1498,
+          "dbnos": 12
         }
       },
       "matches": [
+        {
+          "id": "b5538556-8bb0-413d-ae1f-3c6749934eee",
+          "playerName": "MJpantythief",
+          "displayName": "최낙범",
+          "displayEmoji": "🥜",
+          "accountId": "account.e2d2618e382d4e03b7313e696fa8492b",
+          "createdAt": "2026-08-22T15:20:56Z",
+          "gameMode": "squad",
+          "gameModeLabel": "스쿼드 3인칭",
+          "mapName": "태이고",
+          "duration": 27,
+          "rank": 23,
+          "kills": 0,
+          "assists": 0,
+          "damage": 197,
+          "dbnos": 1,
+          "headshotKills": 0,
+          "longestKill": 0,
+          "survivedMinutes": 7.2
+        },
         {
           "id": "1bd067ab-154d-43ef-a92e-87321f53fa7f",
           "playerName": "MJpantythief",
