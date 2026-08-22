@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-22T15:59:43.865Z",
+  "generatedAt": "2026-08-22T16:30:25.408Z",
   "shard": "steam",
   "trackedPlayers": [
     "ClassMusic",
@@ -584,22 +584,62 @@
       "displayEmoji": "🥜",
       "shardId": "steam",
       "stats": {
-        "matches": 4,
+        "matches": 6,
         "wins": 0,
         "top10": 3,
         "winRate": 0,
-        "top10Rate": 75,
-        "avgKills": 2.5,
-        "avgDamage": 375,
-        "kd": 2.5,
+        "top10Rate": 50,
+        "avgKills": 2.2,
+        "avgDamage": 291,
+        "kd": 2.17,
         "totals": {
-          "kills": 10,
+          "kills": 13,
           "assists": 2,
-          "damage": 1498,
-          "dbnos": 12
+          "damage": 1748,
+          "dbnos": 13
         }
       },
       "matches": [
+        {
+          "id": "139fcc4b-b0f2-42cf-8b30-a8c244a44d20",
+          "playerName": "MJpantythief",
+          "displayName": "최낙범",
+          "displayEmoji": "🥜",
+          "accountId": "account.e2d2618e382d4e03b7313e696fa8492b",
+          "createdAt": "2026-08-22T15:46:52Z",
+          "gameMode": "duo",
+          "gameModeLabel": "듀오 3인칭",
+          "mapName": "에란겔",
+          "duration": 28.9,
+          "rank": 22,
+          "kills": 0,
+          "assists": 0,
+          "damage": 14,
+          "dbnos": 0,
+          "headshotKills": 0,
+          "longestKill": 0,
+          "survivedMinutes": 4.7
+        },
+        {
+          "id": "4294d144-ddb8-4d13-905f-d111f2a0253d",
+          "playerName": "MJpantythief",
+          "displayName": "최낙범",
+          "displayEmoji": "🥜",
+          "accountId": "account.e2d2618e382d4e03b7313e696fa8492b",
+          "createdAt": "2026-08-22T15:31:16Z",
+          "gameMode": "duo",
+          "gameModeLabel": "듀오 3인칭",
+          "mapName": "에란겔",
+          "duration": 27.8,
+          "rank": 24,
+          "kills": 3,
+          "assists": 0,
+          "damage": 236,
+          "dbnos": 1,
+          "headshotKills": 1,
+          "longestKill": 38,
+          "survivedMinutes": 13.7
+        },
         {
           "id": "b5538556-8bb0-413d-ae1f-3c6749934eee",
           "playerName": "MJpantythief",
