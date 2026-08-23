@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-23T11:44:36.700Z",
+  "generatedAt": "2026-08-23T11:58:57.440Z",
   "shard": "steam",
   "trackedPlayers": [
     "ClassMusic",
@@ -19,14 +19,14 @@
       "displayEmoji": "☕",
       "shardId": "steam",
       "stats": {
-        "matches": 29,
+        "matches": 30,
         "wins": 2,
         "top10": 14,
-        "winRate": 6.9,
-        "top10Rate": 48.3,
-        "avgKills": 0.7,
-        "avgDamage": 114,
-        "kd": 0.66,
+        "winRate": 6.7,
+        "top10Rate": 46.7,
+        "avgKills": 0.6,
+        "avgDamage": 111,
+        "kd": 0.63,
         "totals": {
           "kills": 19,
           "assists": 9,
@@ -35,6 +35,26 @@
         }
       },
       "matches": [
+        {
+          "id": "98a35500-6c3a-4cda-8d7f-429a5b7770c1",
+          "playerName": "ClassMusic",
+          "displayName": "이성용",
+          "displayEmoji": "☕",
+          "accountId": "account.bb94cc7fcb704866b99dccbcdcc64547",
+          "createdAt": "2026-08-23T11:28:05Z",
+          "gameMode": "squad",
+          "gameModeLabel": "스쿼드 3인칭",
+          "mapName": "태이고",
+          "duration": 27.5,
+          "rank": 23,
+          "kills": 0,
+          "assists": 0,
+          "damage": 0,
+          "dbnos": 0,
+          "headshotKills": 0,
+          "longestKill": 0,
+          "survivedMinutes": 5.2
+        },
         {
           "id": "a41b05a6-99b1-4a20-88d2-6c609e447efa",
           "playerName": "ClassMusic",
