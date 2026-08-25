@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-23T11:58:57.440Z",
+  "generatedAt": "2026-08-25T03:50:10.703Z",
   "shard": "steam",
   "trackedPlayers": [
     "ClassMusic",
@@ -809,19 +809,19 @@
       "displayEmoji": "✈️",
       "shardId": "steam",
       "stats": {
-        "matches": 16,
+        "matches": 15,
         "wins": 0,
         "top10": 8,
         "winRate": 0,
-        "top10Rate": 50,
+        "top10Rate": 53.3,
         "avgKills": 1.8,
-        "avgDamage": 209,
-        "kd": 1.75,
+        "avgDamage": 214,
+        "kd": 1.8,
         "totals": {
-          "kills": 28,
+          "kills": 27,
           "assists": 2,
-          "damage": 3342,
-          "dbnos": 16
+          "damage": 3213,
+          "dbnos": 14
         }
       },
       "matches": [
@@ -1124,26 +1124,6 @@
           "headshotKills": 1,
           "longestKill": 407,
           "survivedMinutes": 21.5
-        },
-        {
-          "id": "23efca44-d533-4b0c-8761-5e78dc9d3c19",
-          "playerName": "Machine_Jun",
-          "displayName": "김민준",
-          "displayEmoji": "✈️",
-          "accountId": "account.07898eaabddf4b93861abc7622f9056b",
-          "createdAt": "2026-08-11T03:04:29Z",
-          "gameMode": "duo",
-          "gameModeLabel": "듀오 3인칭",
-          "mapName": "카라킨",
-          "duration": 36.6,
-          "rank": 16,
-          "kills": 1,
-          "assists": 0,
-          "damage": 129,
-          "dbnos": 2,
-          "headshotKills": 0,
-          "longestKill": 5,
-          "survivedMinutes": 6.3
         }
       ]
     },
@@ -1154,18 +1134,18 @@
       "displayEmoji": "🥤",
       "shardId": "steam",
       "stats": {
-        "matches": 15,
+        "matches": 14,
         "wins": 0,
         "top10": 8,
         "winRate": 0,
-        "top10Rate": 53.3,
-        "avgKills": 0.3,
-        "avgDamage": 112,
-        "kd": 0.33,
+        "top10Rate": 57.1,
+        "avgKills": 0.4,
+        "avgDamage": 116,
+        "kd": 0.36,
         "totals": {
           "kills": 5,
-          "assists": 7,
-          "damage": 1673,
+          "assists": 6,
+          "damage": 1617,
           "dbnos": 7
         }
       },
@@ -1449,26 +1429,6 @@
           "headshotKills": 1,
           "longestKill": 105,
           "survivedMinutes": 21.6
-        },
-        {
-          "id": "23efca44-d533-4b0c-8761-5e78dc9d3c19",
-          "playerName": "coca_cola_bear_",
-          "displayName": "이명준",
-          "displayEmoji": "🥤",
-          "accountId": "account.697ff771fb804577bc3167c2db33233b",
-          "createdAt": "2026-08-11T03:04:29Z",
-          "gameMode": "duo",
-          "gameModeLabel": "듀오 3인칭",
-          "mapName": "카라킨",
-          "duration": 36.6,
-          "rank": 16,
-          "kills": 0,
-          "assists": 1,
-          "damage": 56,
-          "dbnos": 0,
-          "headshotKills": 0,
-          "longestKill": 0,
-          "survivedMinutes": 5.4
         }
       ]
     }
@@ -2036,38 +1996,6 @@
           "damage": 386,
           "dbnos": 3,
           "survivedMinutes": 21.6
-        }
-      ]
-    },
-    {
-      "id": "23efca44-d533-4b0c-8761-5e78dc9d3c19",
-      "createdAt": "2026-08-11T03:04:29Z",
-      "gameMode": "duo",
-      "gameModeLabel": "듀오 3인칭",
-      "mapName": "카라킨",
-      "duration": 36.6,
-      "participants": [
-        {
-          "playerName": "Machine_Jun",
-          "displayName": "김민준",
-          "displayEmoji": "✈️",
-          "rank": 16,
-          "kills": 1,
-          "assists": 0,
-          "damage": 129,
-          "dbnos": 2,
-          "survivedMinutes": 6.3
-        },
-        {
-          "playerName": "coca_cola_bear_",
-          "displayName": "이명준",
-          "displayEmoji": "🥤",
-          "rank": 16,
-          "kills": 0,
-          "assists": 1,
-          "damage": 56,
-          "dbnos": 0,
-          "survivedMinutes": 5.4
         }
       ]
     }
