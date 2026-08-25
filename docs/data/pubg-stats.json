@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-25T03:50:10.703Z",
+  "generatedAt": "2026-08-25T04:24:36.570Z",
   "shard": "steam",
   "trackedPlayers": [
     "ClassMusic",
@@ -809,19 +809,19 @@
       "displayEmoji": "✈️",
       "shardId": "steam",
       "stats": {
-        "matches": 15,
+        "matches": 13,
         "wins": 0,
-        "top10": 8,
+        "top10": 6,
         "winRate": 0,
-        "top10Rate": 53.3,
-        "avgKills": 1.8,
-        "avgDamage": 214,
-        "kd": 1.8,
+        "top10Rate": 46.2,
+        "avgKills": 1.7,
+        "avgDamage": 194,
+        "kd": 1.69,
         "totals": {
-          "kills": 27,
-          "assists": 2,
-          "damage": 3213,
-          "dbnos": 14
+          "kills": 22,
+          "assists": 1,
+          "damage": 2519,
+          "dbnos": 12
         }
       },
       "matches": [
@@ -1084,46 +1084,6 @@
           "headshotKills": 0,
           "longestKill": 0,
           "survivedMinutes": 17
-        },
-        {
-          "id": "993b4c2c-4e48-4330-93a7-ba6391e64247",
-          "playerName": "Machine_Jun",
-          "displayName": "김민준",
-          "displayEmoji": "✈️",
-          "accountId": "account.07898eaabddf4b93861abc7622f9056b",
-          "createdAt": "2026-08-11T03:42:35Z",
-          "gameMode": "duo",
-          "gameModeLabel": "듀오 3인칭",
-          "mapName": "미라마",
-          "duration": 49,
-          "rank": 9,
-          "kills": 1,
-          "assists": 0,
-          "damage": 184,
-          "dbnos": 1,
-          "headshotKills": 0,
-          "longestKill": 12,
-          "survivedMinutes": 21.9
-        },
-        {
-          "id": "eaa67883-25a1-4b66-a45f-17629a23765b",
-          "playerName": "Machine_Jun",
-          "displayName": "김민준",
-          "displayEmoji": "✈️",
-          "accountId": "account.07898eaabddf4b93861abc7622f9056b",
-          "createdAt": "2026-08-11T03:16:34Z",
-          "gameMode": "duo",
-          "gameModeLabel": "듀오 3인칭",
-          "mapName": "미라마",
-          "duration": 49.8,
-          "rank": 7,
-          "kills": 4,
-          "assists": 1,
-          "damage": 510,
-          "dbnos": 1,
-          "headshotKills": 1,
-          "longestKill": 407,
-          "survivedMinutes": 21.5
         }
       ]
     },
@@ -1134,19 +1094,19 @@
       "displayEmoji": "🥤",
       "shardId": "steam",
       "stats": {
-        "matches": 14,
+        "matches": 13,
         "wins": 0,
-        "top10": 8,
+        "top10": 7,
         "winRate": 0,
-        "top10Rate": 57.1,
-        "avgKills": 0.4,
-        "avgDamage": 116,
-        "kd": 0.36,
+        "top10Rate": 53.8,
+        "avgKills": 0.2,
+        "avgDamage": 95,
+        "kd": 0.23,
         "totals": {
-          "kills": 5,
+          "kills": 3,
           "assists": 6,
-          "damage": 1617,
-          "dbnos": 7
+          "damage": 1231,
+          "dbnos": 4
         }
       },
       "matches": [
@@ -1409,26 +1369,6 @@
           "headshotKills": 0,
           "longestKill": 0,
           "survivedMinutes": 19.7
-        },
-        {
-          "id": "eaa67883-25a1-4b66-a45f-17629a23765b",
-          "playerName": "coca_cola_bear_",
-          "displayName": "이명준",
-          "displayEmoji": "🥤",
-          "accountId": "account.697ff771fb804577bc3167c2db33233b",
-          "createdAt": "2026-08-11T03:16:34Z",
-          "gameMode": "duo",
-          "gameModeLabel": "듀오 3인칭",
-          "mapName": "미라마",
-          "duration": 49.8,
-          "rank": 7,
-          "kills": 2,
-          "assists": 0,
-          "damage": 386,
-          "dbnos": 3,
-          "headshotKills": 1,
-          "longestKill": 105,
-          "survivedMinutes": 21.6
         }
       ]
     }
@@ -1932,70 +1872,6 @@
           "damage": 97,
           "dbnos": 1,
           "survivedMinutes": 17
-        }
-      ]
-    },
-    {
-      "id": "993b4c2c-4e48-4330-93a7-ba6391e64247",
-      "createdAt": "2026-08-11T03:42:35Z",
-      "gameMode": "duo",
-      "gameModeLabel": "듀오 3인칭",
-      "mapName": "미라마",
-      "duration": 49,
-      "participants": [
-        {
-          "playerName": "Machine_Jun",
-          "displayName": "김민준",
-          "displayEmoji": "✈️",
-          "rank": 9,
-          "kills": 1,
-          "assists": 0,
-          "damage": 184,
-          "dbnos": 1,
-          "survivedMinutes": 21.9
-        },
-        {
-          "playerName": "coca_cola_bear_",
-          "displayName": "이명준",
-          "displayEmoji": "🥤",
-          "rank": 9,
-          "kills": 0,
-          "assists": 0,
-          "damage": 86,
-          "dbnos": 0,
-          "survivedMinutes": 19.7
-        }
-      ]
-    },
-    {
-      "id": "eaa67883-25a1-4b66-a45f-17629a23765b",
-      "createdAt": "2026-08-11T03:16:34Z",
-      "gameMode": "duo",
-      "gameModeLabel": "듀오 3인칭",
-      "mapName": "미라마",
-      "duration": 49.8,
-      "participants": [
-        {
-          "playerName": "Machine_Jun",
-          "displayName": "김민준",
-          "displayEmoji": "✈️",
-          "rank": 7,
-          "kills": 4,
-          "assists": 1,
-          "damage": 510,
-          "dbnos": 1,
-          "survivedMinutes": 21.5
-        },
-        {
-          "playerName": "coca_cola_bear_",
-          "displayName": "이명준",
-          "displayEmoji": "🥤",
-          "rank": 7,
-          "kills": 2,
-          "assists": 0,
-          "damage": 386,
-          "dbnos": 3,
-          "survivedMinutes": 21.6
         }
       ]
     }
