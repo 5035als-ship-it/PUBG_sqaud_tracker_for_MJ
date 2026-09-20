@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-19T16:42:12.808Z",
+  "generatedAt": "2026-09-20T06:08:33.496Z",
   "shard": "steam",
   "trackedPlayers": [
     "ClassMusic",
@@ -19,19 +19,19 @@
       "displayEmoji": "☕",
       "shardId": "steam",
       "stats": {
-        "matches": 7,
+        "matches": 5,
         "wins": 0,
-        "top10": 4,
+        "top10": 2,
         "winRate": 0,
-        "top10Rate": 57.1,
-        "avgKills": 1.7,
-        "avgDamage": 225,
-        "kd": 1.71,
+        "top10Rate": 40,
+        "avgKills": 2.2,
+        "avgDamage": 272,
+        "kd": 2.2,
         "totals": {
-          "kills": 12,
-          "assists": 3,
-          "damage": 1574,
-          "dbnos": 7
+          "kills": 11,
+          "assists": 1,
+          "damage": 1360,
+          "dbnos": 6
         }
       },
       "matches": [
@@ -134,46 +134,6 @@
           "headshotKills": 0,
           "longestKill": 115,
           "survivedMinutes": 10
-        },
-        {
-          "id": "a354d665-5c1c-4deb-9594-2f6582cb17fa",
-          "playerName": "ClassMusic",
-          "displayName": "이성용",
-          "displayEmoji": "☕",
-          "accountId": "account.bb94cc7fcb704866b99dccbcdcc64547",
-          "createdAt": "2026-09-06T04:28:14Z",
-          "gameMode": "squad",
-          "gameModeLabel": "스쿼드 3인칭",
-          "mapName": "태이고",
-          "duration": 28.2,
-          "rank": 6,
-          "kills": 0,
-          "assists": 0,
-          "damage": 60,
-          "dbnos": 0,
-          "headshotKills": 0,
-          "longestKill": 0,
-          "survivedMinutes": 21.7
-        },
-        {
-          "id": "9871a09a-e764-44ec-937e-c2ff4ca17cd6",
-          "playerName": "ClassMusic",
-          "displayName": "이성용",
-          "displayEmoji": "☕",
-          "accountId": "account.bb94cc7fcb704866b99dccbcdcc64547",
-          "createdAt": "2026-09-06T04:00:59Z",
-          "gameMode": "squad",
-          "gameModeLabel": "스쿼드 3인칭",
-          "mapName": "태이고",
-          "duration": 28.4,
-          "rank": 7,
-          "kills": 1,
-          "assists": 2,
-          "damage": 154,
-          "dbnos": 1,
-          "headshotKills": 1,
-          "longestKill": 158,
-          "survivedMinutes": 22.9
         }
       ]
     },
