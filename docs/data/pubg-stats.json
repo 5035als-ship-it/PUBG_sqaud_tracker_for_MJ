@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-23T14:23:45.464Z",
+  "generatedAt": "2026-09-23T18:28:17.280Z",
   "shard": "steam",
   "trackedPlayers": [
     "ClassMusic",
@@ -19,22 +19,62 @@
       "displayEmoji": "☕",
       "shardId": "steam",
       "stats": {
-        "matches": 6,
-        "wins": 0,
-        "top10": 2,
-        "winRate": 0,
-        "top10Rate": 33.3,
-        "avgKills": 1.8,
-        "avgDamage": 242,
-        "kd": 1.83,
+        "matches": 8,
+        "wins": 1,
+        "top10": 4,
+        "winRate": 12.5,
+        "top10Rate": 50,
+        "avgKills": 2.3,
+        "avgDamage": 275,
+        "kd": 2.25,
         "totals": {
-          "kills": 11,
-          "assists": 1,
-          "damage": 1451,
-          "dbnos": 6
+          "kills": 18,
+          "assists": 2,
+          "damage": 2203,
+          "dbnos": 9
         }
       },
       "matches": [
+        {
+          "id": "30c32c67-611d-4bdd-bdfa-3608d9939682",
+          "playerName": "ClassMusic",
+          "displayName": "이성용",
+          "displayEmoji": "☕",
+          "accountId": "account.bb94cc7fcb704866b99dccbcdcc64547",
+          "createdAt": "2026-09-23T14:37:42Z",
+          "gameMode": "duo",
+          "gameModeLabel": "듀오 3인칭",
+          "mapName": "태이고",
+          "duration": 28.1,
+          "rank": 1,
+          "kills": 4,
+          "assists": 1,
+          "damage": 432,
+          "dbnos": 1,
+          "headshotKills": 0,
+          "longestKill": 27,
+          "survivedMinutes": 28.1
+        },
+        {
+          "id": "b365eb01-f884-454f-b3ed-073ebcaad8a7",
+          "playerName": "ClassMusic",
+          "displayName": "이성용",
+          "displayEmoji": "☕",
+          "accountId": "account.bb94cc7fcb704866b99dccbcdcc64547",
+          "createdAt": "2026-09-23T14:09:11Z",
+          "gameMode": "duo",
+          "gameModeLabel": "듀오 3인칭",
+          "mapName": "에란겔",
+          "duration": 26.9,
+          "rank": 2,
+          "kills": 3,
+          "assists": 0,
+          "damage": 320,
+          "dbnos": 2,
+          "headshotKills": 1,
+          "longestKill": 107,
+          "survivedMinutes": 26.8
+        },
         {
           "id": "91809480-54cb-4bc7-90b5-82860ceec14e",
           "playerName": "ClassMusic",
@@ -313,7 +353,26 @@
       "longestKill": 22,
       "survivedMinutes": 25.2
     },
-    "latestWin": null
+    "latestWin": {
+      "id": "30c32c67-611d-4bdd-bdfa-3608d9939682",
+      "playerName": "ClassMusic",
+      "displayName": "이성용",
+      "displayEmoji": "☕",
+      "accountId": "account.bb94cc7fcb704866b99dccbcdcc64547",
+      "createdAt": "2026-09-23T14:37:42Z",
+      "gameMode": "duo",
+      "gameModeLabel": "듀오 3인칭",
+      "mapName": "태이고",
+      "duration": 28.1,
+      "rank": 1,
+      "kills": 4,
+      "assists": 1,
+      "damage": 432,
+      "dbnos": 1,
+      "headshotKills": 0,
+      "longestKill": 27,
+      "survivedMinutes": 28.1
+    }
   },
   "groupedMatches": [
     {
