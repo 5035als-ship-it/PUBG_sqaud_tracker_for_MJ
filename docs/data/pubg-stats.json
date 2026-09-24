@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-23T18:28:17.280Z",
+  "generatedAt": "2026-09-24T13:44:48.955Z",
   "shard": "steam",
   "trackedPlayers": [
     "ClassMusic",
@@ -204,51 +204,6 @@
       "displayEmoji": "🥜",
       "shardId": "steam",
       "stats": {
-        "matches": 1,
-        "wins": 0,
-        "top10": 1,
-        "winRate": 0,
-        "top10Rate": 100,
-        "avgKills": 0,
-        "avgDamage": 90,
-        "kd": 0,
-        "totals": {
-          "kills": 0,
-          "assists": 0,
-          "damage": 90,
-          "dbnos": 0
-        }
-      },
-      "matches": [
-        {
-          "id": "ef985fe0-7a6d-4011-bf97-173dff2c3971",
-          "playerName": "MJpantythief",
-          "displayName": "최낙범",
-          "displayEmoji": "🥜",
-          "accountId": "account.e2d2618e382d4e03b7313e696fa8492b",
-          "createdAt": "2026-09-10T13:02:06Z",
-          "gameMode": "duo",
-          "gameModeLabel": "듀오 3인칭",
-          "mapName": "에란겔",
-          "duration": 27.6,
-          "rank": 10,
-          "kills": 0,
-          "assists": 0,
-          "damage": 90,
-          "dbnos": 0,
-          "headshotKills": 0,
-          "longestKill": 0,
-          "survivedMinutes": 22.4
-        }
-      ]
-    },
-    {
-      "id": "account.07898eaabddf4b93861abc7622f9056b",
-      "name": "Machine_Jun",
-      "displayName": "김민준",
-      "displayEmoji": "✈️",
-      "shardId": "steam",
-      "stats": {
         "matches": 0,
         "wins": 0,
         "top10": 0,
@@ -267,17 +222,142 @@
       "matches": []
     },
     {
+      "id": "account.07898eaabddf4b93861abc7622f9056b",
+      "name": "Machine_Jun",
+      "displayName": "김민준",
+      "displayEmoji": "✈️",
+      "shardId": "steam",
+      "stats": {
+        "matches": 5,
+        "wins": 0,
+        "top10": 2,
+        "winRate": 0,
+        "top10Rate": 40,
+        "avgKills": 0.2,
+        "avgDamage": 68,
+        "kd": 0.2,
+        "totals": {
+          "kills": 1,
+          "assists": 0,
+          "damage": 341,
+          "dbnos": 0
+        }
+      },
+      "matches": [
+        {
+          "id": "aabe854f-4d9e-47a5-a96e-40e249153736",
+          "playerName": "Machine_Jun",
+          "displayName": "김민준",
+          "displayEmoji": "✈️",
+          "accountId": "account.07898eaabddf4b93861abc7622f9056b",
+          "createdAt": "2026-09-24T10:11:32Z",
+          "gameMode": "squad",
+          "gameModeLabel": "스쿼드 3인칭",
+          "mapName": "에란겔",
+          "duration": 28.1,
+          "rank": 16,
+          "kills": 0,
+          "assists": 0,
+          "damage": 58,
+          "dbnos": 0,
+          "headshotKills": 0,
+          "longestKill": 0,
+          "survivedMinutes": 12.4
+        },
+        {
+          "id": "3067cd8e-883b-4776-a426-1ecff01f9d36",
+          "playerName": "Machine_Jun",
+          "displayName": "김민준",
+          "displayEmoji": "✈️",
+          "accountId": "account.07898eaabddf4b93861abc7622f9056b",
+          "createdAt": "2026-09-24T10:01:35Z",
+          "gameMode": "squad",
+          "gameModeLabel": "스쿼드 3인칭",
+          "mapName": "에란겔",
+          "duration": 26.3,
+          "rank": 21,
+          "kills": 0,
+          "assists": 0,
+          "damage": 0,
+          "dbnos": 0,
+          "headshotKills": 0,
+          "longestKill": 0,
+          "survivedMinutes": 6.5
+        },
+        {
+          "id": "e3d0a3ad-78f6-4756-a797-b3dd573e17b2",
+          "playerName": "Machine_Jun",
+          "displayName": "김민준",
+          "displayEmoji": "✈️",
+          "accountId": "account.07898eaabddf4b93861abc7622f9056b",
+          "createdAt": "2026-09-24T09:40:46Z",
+          "gameMode": "squad",
+          "gameModeLabel": "스쿼드 3인칭",
+          "mapName": "에란겔",
+          "duration": 25.8,
+          "rank": 9,
+          "kills": 0,
+          "assists": 0,
+          "damage": 0,
+          "dbnos": 0,
+          "headshotKills": 0,
+          "longestKill": 0,
+          "survivedMinutes": 18.3
+        },
+        {
+          "id": "9488ee40-df11-4fe4-b193-7096a2931b6f",
+          "playerName": "Machine_Jun",
+          "displayName": "김민준",
+          "displayEmoji": "✈️",
+          "accountId": "account.07898eaabddf4b93861abc7622f9056b",
+          "createdAt": "2026-09-24T09:28:13Z",
+          "gameMode": "squad",
+          "gameModeLabel": "스쿼드 3인칭",
+          "mapName": "에란겔",
+          "duration": 27.5,
+          "rank": 15,
+          "kills": 0,
+          "assists": 0,
+          "damage": 78,
+          "dbnos": 0,
+          "headshotKills": 0,
+          "longestKill": 0,
+          "survivedMinutes": 9.9
+        },
+        {
+          "id": "a64975ef-edc6-479d-9a1d-b40e0bc1f460",
+          "playerName": "Machine_Jun",
+          "displayName": "김민준",
+          "displayEmoji": "✈️",
+          "accountId": "account.07898eaabddf4b93861abc7622f9056b",
+          "createdAt": "2026-09-24T09:08:26Z",
+          "gameMode": "squad",
+          "gameModeLabel": "스쿼드 3인칭",
+          "mapName": "에란겔",
+          "duration": 27.9,
+          "rank": 10,
+          "kills": 1,
+          "assists": 0,
+          "damage": 205,
+          "dbnos": 0,
+          "headshotKills": 0,
+          "longestKill": 18,
+          "survivedMinutes": 18.1
+        }
+      ]
+    },
+    {
       "id": "account.697ff771fb804577bc3167c2db33233b",
       "name": "coca_cola_bear_",
       "displayName": "이명준",
       "displayEmoji": "🥤",
       "shardId": "steam",
       "stats": {
-        "matches": 1,
+        "matches": 0,
         "wins": 0,
-        "top10": 1,
+        "top10": 0,
         "winRate": 0,
-        "top10Rate": 100,
+        "top10Rate": 0,
         "avgKills": 0,
         "avgDamage": 0,
         "kd": 0,
@@ -288,28 +368,7 @@
           "dbnos": 0
         }
       },
-      "matches": [
-        {
-          "id": "ef985fe0-7a6d-4011-bf97-173dff2c3971",
-          "playerName": "coca_cola_bear_",
-          "displayName": "이명준",
-          "displayEmoji": "🥤",
-          "accountId": "account.697ff771fb804577bc3167c2db33233b",
-          "createdAt": "2026-09-10T13:02:06Z",
-          "gameMode": "duo",
-          "gameModeLabel": "듀오 3인칭",
-          "mapName": "에란겔",
-          "duration": 27.6,
-          "rank": 10,
-          "kills": 0,
-          "assists": 0,
-          "damage": 0,
-          "dbnos": 0,
-          "headshotKills": 0,
-          "longestKill": 0,
-          "survivedMinutes": 20.8
-        }
-      ]
+      "matches": []
     }
   ],
   "highlights": {
@@ -374,38 +433,5 @@
       "survivedMinutes": 28.1
     }
   },
-  "groupedMatches": [
-    {
-      "id": "ef985fe0-7a6d-4011-bf97-173dff2c3971",
-      "createdAt": "2026-09-10T13:02:06Z",
-      "gameMode": "duo",
-      "gameModeLabel": "듀오 3인칭",
-      "mapName": "에란겔",
-      "duration": 27.6,
-      "participants": [
-        {
-          "playerName": "MJpantythief",
-          "displayName": "최낙범",
-          "displayEmoji": "🥜",
-          "rank": 10,
-          "kills": 0,
-          "assists": 0,
-          "damage": 90,
-          "dbnos": 0,
-          "survivedMinutes": 22.4
-        },
-        {
-          "playerName": "coca_cola_bear_",
-          "displayName": "이명준",
-          "displayEmoji": "🥤",
-          "rank": 10,
-          "kills": 0,
-          "assists": 0,
-          "damage": 0,
-          "dbnos": 0,
-          "survivedMinutes": 20.8
-        }
-      ]
-    }
-  ]
+  "groupedMatches": []
 }
