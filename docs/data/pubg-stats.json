@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-29T16:35:22.532Z",
+  "generatedAt": "2026-10-03T16:44:55.807Z",
   "shard": "steam",
   "trackedPlayers": [
     "ClassMusic",
@@ -19,22 +19,42 @@
       "displayEmoji": "☕",
       "shardId": "steam",
       "stats": {
-        "matches": 6,
-        "wins": 2,
-        "top10": 5,
-        "winRate": 33.3,
-        "top10Rate": 83.3,
-        "avgKills": 1.2,
-        "avgDamage": 169,
-        "kd": 1.17,
+        "matches": 7,
+        "wins": 3,
+        "top10": 6,
+        "winRate": 42.9,
+        "top10Rate": 85.7,
+        "avgKills": 1.3,
+        "avgDamage": 156,
+        "kd": 1.29,
         "totals": {
-          "kills": 7,
+          "kills": 9,
           "assists": 2,
-          "damage": 1016,
-          "dbnos": 3
+          "damage": 1095,
+          "dbnos": 5
         }
       },
       "matches": [
+        {
+          "id": "8483e25a-eb7b-4210-a0d3-c6d6ee307035",
+          "playerName": "ClassMusic",
+          "displayName": "이성용",
+          "displayEmoji": "☕",
+          "accountId": "account.bb94cc7fcb704866b99dccbcdcc64547",
+          "createdAt": "2026-10-03T16:01:05Z",
+          "gameMode": "squad",
+          "gameModeLabel": "스쿼드 3인칭",
+          "mapName": "사녹",
+          "duration": 24.4,
+          "rank": 1,
+          "kills": 2,
+          "assists": 0,
+          "damage": 79,
+          "dbnos": 2,
+          "headshotKills": 0,
+          "longestKill": 17,
+          "survivedMinutes": 22.3
+        },
         {
           "id": "e9368cee-2f7d-41d2-b8ee-25c55c9d91ac",
           "playerName": "ClassMusic",
@@ -373,24 +393,24 @@
       "survivedMinutes": 28.1
     },
     "latestWin": {
-      "id": "bcbb1b76-dedb-4265-9cae-7be3e24ead36",
+      "id": "8483e25a-eb7b-4210-a0d3-c6d6ee307035",
       "playerName": "ClassMusic",
       "displayName": "이성용",
       "displayEmoji": "☕",
       "accountId": "account.bb94cc7fcb704866b99dccbcdcc64547",
-      "createdAt": "2026-09-28T15:12:40Z",
+      "createdAt": "2026-10-03T16:01:05Z",
       "gameMode": "squad",
       "gameModeLabel": "스쿼드 3인칭",
       "mapName": "사녹",
-      "duration": 23.4,
+      "duration": 24.4,
       "rank": 1,
-      "kills": 0,
-      "assists": 1,
-      "damage": 111,
-      "dbnos": 0,
+      "kills": 2,
+      "assists": 0,
+      "damage": 79,
+      "dbnos": 2,
       "headshotKills": 0,
-      "longestKill": 0,
-      "survivedMinutes": 16.2
+      "longestKill": 17,
+      "survivedMinutes": 22.3
     }
   },
   "groupedMatches": []
