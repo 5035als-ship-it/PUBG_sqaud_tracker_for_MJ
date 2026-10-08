@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-07T19:35:02.307Z",
+  "generatedAt": "2026-10-08T10:17:54.638Z",
   "shard": "steam",
   "trackedPlayers": [
     "ClassMusic",
@@ -408,18 +408,18 @@
       "displayEmoji": "✈️",
       "shardId": "steam",
       "stats": {
-        "matches": 5,
+        "matches": 3,
         "wins": 0,
-        "top10": 2,
+        "top10": 1,
         "winRate": 0,
-        "top10Rate": 40,
-        "avgKills": 0.2,
-        "avgDamage": 68,
-        "kd": 0.2,
+        "top10Rate": 33.3,
+        "avgKills": 0,
+        "avgDamage": 19,
+        "kd": 0,
         "totals": {
-          "kills": 1,
+          "kills": 0,
           "assists": 0,
-          "damage": 341,
+          "damage": 58,
           "dbnos": 0
         }
       },
@@ -483,46 +483,6 @@
           "headshotKills": 0,
           "longestKill": 0,
           "survivedMinutes": 18.3
-        },
-        {
-          "id": "9488ee40-df11-4fe4-b193-7096a2931b6f",
-          "playerName": "Machine_Jun",
-          "displayName": "김민준",
-          "displayEmoji": "✈️",
-          "accountId": "account.07898eaabddf4b93861abc7622f9056b",
-          "createdAt": "2026-09-24T09:28:13Z",
-          "gameMode": "squad",
-          "gameModeLabel": "스쿼드 3인칭",
-          "mapName": "에란겔",
-          "duration": 27.5,
-          "rank": 15,
-          "kills": 0,
-          "assists": 0,
-          "damage": 78,
-          "dbnos": 0,
-          "headshotKills": 0,
-          "longestKill": 0,
-          "survivedMinutes": 9.9
-        },
-        {
-          "id": "a64975ef-edc6-479d-9a1d-b40e0bc1f460",
-          "playerName": "Machine_Jun",
-          "displayName": "김민준",
-          "displayEmoji": "✈️",
-          "accountId": "account.07898eaabddf4b93861abc7622f9056b",
-          "createdAt": "2026-09-24T09:08:26Z",
-          "gameMode": "squad",
-          "gameModeLabel": "스쿼드 3인칭",
-          "mapName": "에란겔",
-          "duration": 27.9,
-          "rank": 10,
-          "kills": 1,
-          "assists": 0,
-          "damage": 205,
-          "dbnos": 0,
-          "headshotKills": 0,
-          "longestKill": 18,
-          "survivedMinutes": 18.1
         }
       ]
     },
