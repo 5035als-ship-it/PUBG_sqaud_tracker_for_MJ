@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-28T14:23:00.441Z",
+  "generatedAt": "2026-10-28T19:41:01.419Z",
   "shard": "steam",
   "trackedPlayers": [
     "ClassMusic",
@@ -25,16 +25,36 @@
         "winRate": 33.3,
         "top10Rate": 50,
         "avgKills": 0.8,
-        "avgDamage": 155,
+        "avgDamage": 158,
         "kd": 0.83,
         "totals": {
           "kills": 5,
           "assists": 1,
-          "damage": 928,
+          "damage": 949,
           "dbnos": 6
         }
       },
       "matches": [
+        {
+          "id": "d9bc1828-1725-4f75-9655-0d74fdb9f197",
+          "playerName": "ClassMusic",
+          "displayName": "이성용",
+          "displayEmoji": "☕",
+          "accountId": "account.bb94cc7fcb704866b99dccbcdcc64547",
+          "createdAt": "2026-10-28T14:22:47Z",
+          "gameMode": "squad",
+          "gameModeLabel": "스쿼드 3인칭",
+          "mapName": "에란겔",
+          "duration": 26.2,
+          "rank": 22,
+          "kills": 0,
+          "assists": 0,
+          "damage": 21,
+          "dbnos": 0,
+          "headshotKills": 0,
+          "longestKill": 0,
+          "survivedMinutes": 4.9
+        },
         {
           "id": "81360ae0-a4be-4dbf-8fbb-a1716cf7859c",
           "playerName": "ClassMusic",
@@ -134,26 +154,6 @@
           "headshotKills": 0,
           "longestKill": 0,
           "survivedMinutes": 37.1
-        },
-        {
-          "id": "de917ea3-ad92-498b-b260-83bada09c502",
-          "playerName": "ClassMusic",
-          "displayName": "이성용",
-          "displayEmoji": "☕",
-          "accountId": "account.bb94cc7fcb704866b99dccbcdcc64547",
-          "createdAt": "2026-10-14T13:42:28Z",
-          "gameMode": "duo",
-          "gameModeLabel": "듀오 3인칭",
-          "mapName": "에란겔",
-          "duration": 28.3,
-          "rank": 26,
-          "kills": 0,
-          "assists": 0,
-          "damage": 0,
-          "dbnos": 0,
-          "headshotKills": 0,
-          "longestKill": 0,
-          "survivedMinutes": 13.9
         }
       ]
     },
