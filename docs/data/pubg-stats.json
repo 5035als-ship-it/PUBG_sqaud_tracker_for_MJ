@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-26T19:27:13.691Z",
+  "generatedAt": "2026-10-28T14:23:00.441Z",
   "shard": "steam",
   "trackedPlayers": [
     "ClassMusic",
@@ -19,18 +19,18 @@
       "displayEmoji": "☕",
       "shardId": "steam",
       "stats": {
-        "matches": 8,
+        "matches": 6,
         "wins": 2,
         "top10": 3,
-        "winRate": 25,
-        "top10Rate": 37.5,
-        "avgKills": 0.6,
-        "avgDamage": 131,
-        "kd": 0.63,
+        "winRate": 33.3,
+        "top10Rate": 50,
+        "avgKills": 0.8,
+        "avgDamage": 155,
+        "kd": 0.83,
         "totals": {
           "kills": 5,
           "assists": 1,
-          "damage": 1051,
+          "damage": 928,
           "dbnos": 6
         }
       },
@@ -154,46 +154,6 @@
           "headshotKills": 0,
           "longestKill": 0,
           "survivedMinutes": 13.9
-        },
-        {
-          "id": "74a9e109-6fb9-4782-a322-6cfe30f4b650",
-          "playerName": "ClassMusic",
-          "displayName": "이성용",
-          "displayEmoji": "☕",
-          "accountId": "account.bb94cc7fcb704866b99dccbcdcc64547",
-          "createdAt": "2026-10-14T13:37:45Z",
-          "gameMode": "duo",
-          "gameModeLabel": "듀오 3인칭",
-          "mapName": "에란겔",
-          "duration": 28.6,
-          "rank": 48,
-          "kills": 0,
-          "assists": 0,
-          "damage": 0,
-          "dbnos": 0,
-          "headshotKills": 0,
-          "longestKill": 0,
-          "survivedMinutes": 2.4
-        },
-        {
-          "id": "426ba9df-a20d-493c-85d1-2d93a021458c",
-          "playerName": "ClassMusic",
-          "displayName": "이성용",
-          "displayEmoji": "☕",
-          "accountId": "account.bb94cc7fcb704866b99dccbcdcc64547",
-          "createdAt": "2026-10-14T13:16:38Z",
-          "gameMode": "duo",
-          "gameModeLabel": "듀오 3인칭",
-          "mapName": "에란겔",
-          "duration": 28.4,
-          "rank": 20,
-          "kills": 0,
-          "assists": 0,
-          "damage": 123,
-          "dbnos": 0,
-          "headshotKills": 0,
-          "longestKill": 0,
-          "survivedMinutes": 16.1
         }
       ]
     },
