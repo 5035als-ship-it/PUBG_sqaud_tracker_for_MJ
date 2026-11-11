@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-09T19:10:59.341Z",
+  "generatedAt": "2026-11-11T17:07:29.895Z",
   "shard": "steam",
   "trackedPlayers": [
     "ClassMusic",
@@ -19,18 +19,18 @@
       "displayEmoji": "☕",
       "shardId": "steam",
       "stats": {
-        "matches": 3,
+        "matches": 2,
         "wins": 0,
         "top10": 1,
         "winRate": 0,
-        "top10Rate": 33.3,
+        "top10Rate": 50,
         "avgKills": 0,
-        "avgDamage": 7,
+        "avgDamage": 0,
         "kd": 0,
         "totals": {
           "kills": 0,
           "assists": 0,
-          "damage": 21,
+          "damage": 0,
           "dbnos": 0
         }
       },
@@ -74,26 +74,6 @@
           "headshotKills": 0,
           "longestKill": 0,
           "survivedMinutes": 18.3
-        },
-        {
-          "id": "d9bc1828-1725-4f75-9655-0d74fdb9f197",
-          "playerName": "ClassMusic",
-          "displayName": "이성용",
-          "displayEmoji": "☕",
-          "accountId": "account.bb94cc7fcb704866b99dccbcdcc64547",
-          "createdAt": "2026-10-28T14:22:47Z",
-          "gameMode": "squad",
-          "gameModeLabel": "스쿼드 3인칭",
-          "mapName": "에란겔",
-          "duration": 26.2,
-          "rank": 22,
-          "kills": 0,
-          "assists": 0,
-          "damage": 21,
-          "dbnos": 0,
-          "headshotKills": 0,
-          "longestKill": 0,
-          "survivedMinutes": 4.9
         }
       ]
     },
@@ -172,24 +152,24 @@
   ],
   "highlights": {
     "bestDamage": {
-      "id": "d9bc1828-1725-4f75-9655-0d74fdb9f197",
+      "id": "05dc592c-31a8-461c-9322-2db7ecd30481",
       "playerName": "ClassMusic",
       "displayName": "이성용",
       "displayEmoji": "☕",
       "accountId": "account.bb94cc7fcb704866b99dccbcdcc64547",
-      "createdAt": "2026-10-28T14:22:47Z",
-      "gameMode": "squad",
-      "gameModeLabel": "스쿼드 3인칭",
-      "mapName": "에란겔",
-      "duration": 26.2,
-      "rank": 22,
+      "createdAt": "2026-11-09T15:32:17Z",
+      "gameMode": "solo",
+      "gameModeLabel": "솔로 3인칭",
+      "mapName": "사녹",
+      "duration": 313.9,
+      "rank": 58,
       "kills": 0,
       "assists": 0,
-      "damage": 21,
+      "damage": 0,
       "dbnos": 0,
       "headshotKills": 0,
       "longestKill": 0,
-      "survivedMinutes": 4.9
+      "survivedMinutes": 4.3
     },
     "bestKills": {
       "id": "05dc592c-31a8-461c-9322-2db7ecd30481",
