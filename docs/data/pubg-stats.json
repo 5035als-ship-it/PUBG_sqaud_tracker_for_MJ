@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-11T17:07:29.895Z",
+  "generatedAt": "2026-11-19T15:23:46.941Z",
   "shard": "steam",
   "trackedPlayers": [
     "ClassMusic",
@@ -19,11 +19,11 @@
       "displayEmoji": "☕",
       "shardId": "steam",
       "stats": {
-        "matches": 2,
+        "matches": 1,
         "wins": 0,
-        "top10": 1,
+        "top10": 0,
         "winRate": 0,
-        "top10Rate": 50,
+        "top10Rate": 0,
         "avgKills": 0,
         "avgDamage": 0,
         "kd": 0,
@@ -54,26 +54,6 @@
           "headshotKills": 0,
           "longestKill": 0,
           "survivedMinutes": 4.3
-        },
-        {
-          "id": "8d50bd21-fd2e-47f5-971b-c3f3680a26a9",
-          "playerName": "ClassMusic",
-          "displayName": "이성용",
-          "displayEmoji": "☕",
-          "accountId": "account.bb94cc7fcb704866b99dccbcdcc64547",
-          "createdAt": "2026-11-05T14:05:34Z",
-          "gameMode": "squad",
-          "gameModeLabel": "스쿼드 3인칭",
-          "mapName": "에란겔",
-          "duration": 26.6,
-          "rank": 7,
-          "kills": 0,
-          "assists": 0,
-          "damage": 0,
-          "dbnos": 0,
-          "headshotKills": 0,
-          "longestKill": 0,
-          "survivedMinutes": 18.3
         }
       ]
     },
